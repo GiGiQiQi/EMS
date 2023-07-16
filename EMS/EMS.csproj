@@ -153,6 +153,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAdmin.cs" />
+    <Compile Include="CRescuers.cs" />
     <Compile Include="ESite.cs" />
     <Compile Include="Evacuee_Registration.cs">
       <SubType>Form</SubType>

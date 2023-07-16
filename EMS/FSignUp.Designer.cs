@@ -29,58 +29,44 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.AAddress = new System.Windows.Forms.TextBox();
+            this.ANumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.SAPass = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.APass = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AUser = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.AGender = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox2
+            // AAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 182);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 20);
-            this.textBox2.TabIndex = 1;
+            this.AAddress.Location = new System.Drawing.Point(110, 182);
+            this.AAddress.Name = "AAddress";
+            this.AAddress.Size = new System.Drawing.Size(183, 20);
+            this.AAddress.TabIndex = 1;
             // 
-            // textBox3
+            // ANumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 244);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(183, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(110, 304);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(183, 20);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(110, 367);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(183, 20);
-            this.textBox5.TabIndex = 4;
+            this.ANumber.Location = new System.Drawing.Point(110, 244);
+            this.ANumber.Name = "ANumber";
+            this.ANumber.Size = new System.Drawing.Size(183, 20);
+            this.ANumber.TabIndex = 2;
             // 
             // label1
             // 
@@ -114,9 +100,9 @@ namespace EMS
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(107, 288);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Age";
+            this.label4.Text = "BirthDate";
             // 
             // label5
             // 
@@ -129,11 +115,11 @@ namespace EMS
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.SAPass);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.APass);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.AUser);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(447, 89);
             this.groupBox1.Name = "groupBox1";
@@ -143,44 +129,12 @@ namespace EMS
             this.groupBox1.Text = "Account";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label6
+            // SAPass
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Username";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(110, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(26, 70);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(183, 20);
-            this.textBox6.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 110);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Password";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(26, 136);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(183, 20);
-            this.textBox7.TabIndex = 14;
+            this.SAPass.Location = new System.Drawing.Point(26, 240);
+            this.SAPass.Name = "SAPass";
+            this.SAPass.Size = new System.Drawing.Size(183, 20);
+            this.SAPass.TabIndex = 16;
             // 
             // label8
             // 
@@ -191,12 +145,44 @@ namespace EMS
             this.label8.TabIndex = 15;
             this.label8.Text = "Admin Password";
             // 
-            // textBox8
+            // APass
             // 
-            this.textBox8.Location = new System.Drawing.Point(26, 240);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(183, 20);
-            this.textBox8.TabIndex = 16;
+            this.APass.Location = new System.Drawing.Point(26, 136);
+            this.APass.Name = "APass";
+            this.APass.Size = new System.Drawing.Size(183, 20);
+            this.APass.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Password";
+            // 
+            // AUser
+            // 
+            this.AUser.Location = new System.Drawing.Point(26, 70);
+            this.AUser.Name = "AUser";
+            this.AUser.Size = new System.Drawing.Size(183, 20);
+            this.AUser.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Username";
+            // 
+            // AName
+            // 
+            this.AName.Location = new System.Drawing.Point(110, 127);
+            this.AName.Name = "AName";
+            this.AName.Size = new System.Drawing.Size(183, 20);
+            this.AName.TabIndex = 0;
             // 
             // button1
             // 
@@ -206,6 +192,7 @@ namespace EMS
             this.button1.TabIndex = 11;
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -238,11 +225,32 @@ namespace EMS
             this.label9.TabIndex = 0;
             this.label9.Text = "Admin SignUp";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 317);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(183, 20);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
+            // AGender
+            // 
+            this.AGender.FormattingEnabled = true;
+            this.AGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.AGender.Location = new System.Drawing.Point(110, 377);
+            this.AGender.Name = "AGender";
+            this.AGender.Size = new System.Drawing.Size(183, 21);
+            this.AGender.TabIndex = 15;
+            // 
             // FSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AGender);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -252,13 +260,12 @@ namespace EMS
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ANumber);
+            this.Controls.Add(this.AAddress);
+            this.Controls.Add(this.AName);
             this.Name = "FSignUp";
             this.Text = "FSignUp";
+            this.Load += new System.EventHandler(this.FSignUp_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -269,26 +276,26 @@ namespace EMS
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox AAddress;
+        private System.Windows.Forms.TextBox ANumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox SAPass;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox APass;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox AUser;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox AGender;
     }
 }
