@@ -49,7 +49,7 @@ namespace EMS
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(170, 378);
             this.panel1.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace EMS
             // 
             this.UserTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserTB.Location = new System.Drawing.Point(365, 142);
-            this.UserTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserTB.Margin = new System.Windows.Forms.Padding(2);
             this.UserTB.Name = "UserTB";
             this.UserTB.Size = new System.Drawing.Size(248, 26);
             this.UserTB.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace EMS
             // 
             this.PassTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PassTB.Location = new System.Drawing.Point(365, 188);
-            this.PassTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PassTB.Margin = new System.Windows.Forms.Padding(2);
             this.PassTB.Name = "PassTB";
             this.PassTB.Size = new System.Drawing.Size(248, 26);
             this.PassTB.TabIndex = 2;
@@ -100,7 +100,7 @@ namespace EMS
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(214, 340);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 27);
             this.button1.TabIndex = 5;
@@ -111,7 +111,7 @@ namespace EMS
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(284, 340);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 27);
             this.button2.TabIndex = 6;
@@ -122,7 +122,7 @@ namespace EMS
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(352, 340);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(56, 27);
             this.button3.TabIndex = 7;
@@ -190,9 +190,10 @@ namespace EMS
             this.Controls.Add(this.PassTB);
             this.Controls.Add(this.UserTB);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

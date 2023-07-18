@@ -165,6 +165,7 @@ namespace EMS
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "Sign Up";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // FUser
             // 
@@ -184,6 +185,7 @@ namespace EMS
             this.Controls.Add(this.panel1);
             this.Name = "FUser";
             this.Text = "FUser";
+            this.Load += new System.EventHandler(this.FUser_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

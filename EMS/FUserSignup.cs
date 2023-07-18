@@ -13,44 +13,38 @@ using System.Configuration;
 
 namespace EMS
 {
-    public partial class Evacuee_Registration : Form
+    public partial class FUserSignup : Form
     {
-        IMongoCollection<CEvacuee> evacueeCollection;
-        public Evacuee_Registration()
+        IMongoCollection<CPersonnel> personnelCollection;
+        public FUserSignup()
         {
             InitializeComponent();
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Evacuee_Registration_Load(object sender, EventArgs e)
+        private void FUserSignup_Load(object sender, EventArgs e)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
             var databaseName = MongoUrl.Create(connectionString).DatabaseName;
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
-            evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+            personnelCollection = database.GetCollection<CPersonnel>("PersonnelInfo");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var evacuees = new CEvacuee
+            var personnels = new CPersonnel
             {
-                RFID_Number = RFIDTB.Text,
-                Evacuee_Name = NAMETB.Text,
-                Evacuee_Address = AddTB.Text,
-                Barangay = BrgTB.Text,
-                Contact_Number = CNTB.Text,
-                Dependents = decimal.Parse(DepTB.Text),
-                Contact_Person = CPTB.Text,
-                Contact_Person_Number = CPNTB.Text,
-                Relationship = RelTB.Text
+                Personnel_Name = NameTB.Text,
+                Personnel_Address = AddTB.Text,
+                Personnel_CNumber = ConTB.Text,
+                BirthDate = dateTimePicker1.Text,
+                Gender = GenCB.Text,
+                Username = userTB.Text,
+                Password = passTB.Text
             };
-            evacueeCollection.InsertOne(evacuees);
-            if (evacuees != null)
+
+            personnelCollection.InsertOne(personnels);
+            if (personnels != null)
             {
                 MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -58,6 +52,13 @@ namespace EMS
             {
                 MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FUser form21 = new FUser();
+            form21.Show();
         }
     }
 }
