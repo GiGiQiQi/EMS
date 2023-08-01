@@ -37,17 +37,21 @@ namespace EMS
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
             var evacuees = new CEvacuee
             {
-                RFID_Number = RFIDTB.Text,
-                Evacuee_Name = NAMETB.Text,
-                Evacuee_Address = AddTB.Text,
-                Barangay = BrgTB.Text,
-                Contact_Number = CNTB.Text,
-                Dependents = decimal.Parse(DepTB.Text),
-                Contact_Person = CPTB.Text,
-                Contact_Person_Number = CPNTB.Text,
-                Relationship = RelTB.Text
+                RFID_Number = RFIDTB.Texts,
+                Evacuee_Name = NAMETB.Texts,
+                Evacuee_Address = AddTB.Texts,
+                Barangay = BrgTB.Texts,
+                Contact_Number = CNTB.Texts,
+                Dependents = decimal.Parse(DepTB.Texts),
+                Contact_Person = CPTB.Texts,
+                Contact_Person_Number = CPNTB.Texts,
+                Relationship = RelTB.Texts
             };
             evacueeCollection.InsertOne(evacuees);
             if (evacuees != null)

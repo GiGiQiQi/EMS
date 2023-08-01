@@ -29,173 +29,186 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.UserTB = new System.Windows.Forms.TextBox();
-            this.PassTB = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
+            this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
+            this.rjTextBox2 = new RJCodeAdvance.RJControls.RJTextBox();
+            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
+            this.AdminRad = new RJCodeAdvance.RJControls.RJRadioButton();
+            this.PersonnelRad = new RJCodeAdvance.RJControls.RJRadioButton();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 378);
+            this.panel1.Size = new System.Drawing.Size(452, 500);
             this.panel1.TabIndex = 0;
             // 
-            // UserTB
+            // pictureBox1
             // 
-            this.UserTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserTB.Location = new System.Drawing.Point(365, 142);
-            this.UserTB.Margin = new System.Windows.Forms.Padding(2);
-            this.UserTB.Name = "UserTB";
-            this.UserTB.Size = new System.Drawing.Size(248, 26);
-            this.UserTB.TabIndex = 1;
-            // 
-            // PassTB
-            // 
-            this.PassTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassTB.Location = new System.Drawing.Point(365, 188);
-            this.PassTB.Margin = new System.Windows.Forms.Padding(2);
-            this.PassTB.Name = "PassTB";
-            this.PassTB.Size = new System.Drawing.Size(248, 26);
-            this.PassTB.TabIndex = 2;
-            this.PassTB.UseSystemPasswordChar = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 142);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Username";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(237, 188);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Password";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(214, 340);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 27);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Admin";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(284, 340);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 27);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "User";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(352, 340);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 27);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Offline";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(451, 237);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Login";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(519, 237);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Signup";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(452, 500);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(170, 0);
+            this.panel2.Location = new System.Drawing.Point(452, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(525, 56);
+            this.panel2.Size = new System.Drawing.Size(489, 31);
             this.panel2.TabIndex = 10;
             // 
-            // label5
+            // rjTextBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(191, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Admin Login";
+            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.rjTextBox1.BorderColor = System.Drawing.Color.Navy;
+            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.Gold;
+            this.rjTextBox1.BorderRadius = 0;
+            this.rjTextBox1.BorderSize = 2;
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rjTextBox1.Location = new System.Drawing.Point(575, 182);
+            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox1.Multiline = false;
+            this.rjTextBox1.Name = "rjTextBox1";
+            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox1.PasswordChar = false;
+            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox1.PlaceholderText = "Username";
+            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
+            this.rjTextBox1.TabIndex = 11;
+            this.rjTextBox1.Texts = "";
+            this.rjTextBox1.UnderlinedStyle = true;
+            // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox2.BorderColor = System.Drawing.Color.Navy;
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.Gold;
+            this.rjTextBox2.BorderRadius = 0;
+            this.rjTextBox2.BorderSize = 2;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox2.Location = new System.Drawing.Point(575, 244);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox2.Multiline = false;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox2.PasswordChar = true;
+            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox2.PlaceholderText = "Password";
+            this.rjTextBox2.Size = new System.Drawing.Size(250, 31);
+            this.rjTextBox2.TabIndex = 12;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinedStyle = true;
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(575, 349);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(250, 34);
+            this.rjButton1.TabIndex = 13;
+            this.rjButton1.Text = "Login";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(852, 454);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(77, 34);
+            this.rjButton2.TabIndex = 14;
+            this.rjButton2.Text = "SignUp";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
+            // 
+            // AdminRad
+            // 
+            this.AdminRad.AutoSize = true;
+            this.AdminRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.AdminRad.Location = new System.Drawing.Point(588, 307);
+            this.AdminRad.MinimumSize = new System.Drawing.Size(0, 21);
+            this.AdminRad.Name = "AdminRad";
+            this.AdminRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.AdminRad.Size = new System.Drawing.Size(70, 21);
+            this.AdminRad.TabIndex = 15;
+            this.AdminRad.TabStop = true;
+            this.AdminRad.Text = "ADMIN";
+            this.AdminRad.UnCheckedColor = System.Drawing.Color.Gray;
+            this.AdminRad.UseVisualStyleBackColor = true;
+            // 
+            // PersonnelRad
+            // 
+            this.PersonnelRad.AutoSize = true;
+            this.PersonnelRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.PersonnelRad.Location = new System.Drawing.Point(710, 307);
+            this.PersonnelRad.MinimumSize = new System.Drawing.Size(0, 21);
+            this.PersonnelRad.Name = "PersonnelRad";
+            this.PersonnelRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.PersonnelRad.Size = new System.Drawing.Size(101, 21);
+            this.PersonnelRad.TabIndex = 16;
+            this.PersonnelRad.TabStop = true;
+            this.PersonnelRad.Text = "PERSONNEL";
+            this.PersonnelRad.UnCheckedColor = System.Drawing.Color.Gray;
+            this.PersonnelRad.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 378);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(941, 500);
+            this.Controls.Add(this.PersonnelRad);
+            this.Controls.Add(this.AdminRad);
+            this.Controls.Add(this.rjButton2);
+            this.Controls.Add(this.rjButton1);
+            this.Controls.Add(this.rjTextBox2);
+            this.Controls.Add(this.rjTextBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PassTB);
-            this.Controls.Add(this.UserTB);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,17 +217,14 @@ namespace EMS
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox UserTB;
-        private System.Windows.Forms.TextBox PassTB;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private RJCodeAdvance.RJControls.RJTextBox rjTextBox1;
+        private RJCodeAdvance.RJControls.RJTextBox rjTextBox2;
+        private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private RJCodeAdvance.RJControls.RJButton rjButton2;
+        private RJCodeAdvance.RJControls.RJRadioButton AdminRad;
+        private RJCodeAdvance.RJControls.RJRadioButton PersonnelRad;
     }
 }
 

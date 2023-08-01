@@ -34,12 +34,22 @@ namespace EMS
 
         private void BADD_Click(object sender, EventArgs e)
         {
+        }
+        private void LoadDataGrid()
+        {
+            var filterDefinition = Builders<ESite>.Filter.Empty;
+            var site = sitesCollection.Find(filterDefinition).ToList();
+            dataGridView1.DataSource = site;
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
             var sites = new ESite
             {
-                Evacuation_name = ENAME.Text,
-                Est_type = ETYPE.Text,
-                Address = EADD.Text,
-                Capacity = ECAP.Text
+                Evacuation_name = ENAME.Texts,
+                Est_type = ETYPE.Texts,
+                Address = EADD.Texts,
+                Capacity = ECAP.Texts
             };
 
             LoadDataGrid();
@@ -52,12 +62,6 @@ namespace EMS
             {
                 MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void LoadDataGrid()
-        {
-            var filterDefinition = Builders<ESite>.Filter.Empty;
-            var site = sitesCollection.Find(filterDefinition).ToList();
-            dataGridView1.DataSource = site;
         }
     }
 }

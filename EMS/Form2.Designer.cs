@@ -62,7 +62,7 @@ namespace EMS
             // PsideMenu
             // 
             this.PsideMenu.AutoScroll = true;
-            this.PsideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
+            this.PsideMenu.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.PsideMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PsideMenu.Controls.Add(this.button8);
             this.PsideMenu.Controls.Add(this.regMenu);
@@ -87,7 +87,7 @@ namespace EMS
             this.button8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 403);
+            this.button8.Location = new System.Drawing.Point(0, 420);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button8.Size = new System.Drawing.Size(219, 41);
@@ -99,19 +99,19 @@ namespace EMS
             // 
             // regMenu
             // 
-            this.regMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(138)))), ((int)(((byte)(153)))));
+            this.regMenu.BackColor = System.Drawing.Color.RoyalBlue;
             this.regMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.regMenu.Controls.Add(this.button7);
             this.regMenu.Controls.Add(this.button6);
             this.regMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.regMenu.Location = new System.Drawing.Point(0, 309);
+            this.regMenu.Location = new System.Drawing.Point(0, 326);
             this.regMenu.Name = "regMenu";
             this.regMenu.Size = new System.Drawing.Size(219, 94);
             this.regMenu.TabIndex = 0;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(138)))), ((int)(((byte)(153)))));
+            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -131,7 +131,7 @@ namespace EMS
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(138)))), ((int)(((byte)(153)))));
+            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +173,7 @@ namespace EMS
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 268);
+            this.button5.Location = new System.Drawing.Point(0, 285);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -187,12 +187,12 @@ namespace EMS
             // 
             // EvacDropDown
             // 
-            this.EvacDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(138)))), ((int)(((byte)(153)))));
+            this.EvacDropDown.BackColor = System.Drawing.Color.RoyalBlue;
             this.EvacDropDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EvacDropDown.Controls.Add(this.button4);
             this.EvacDropDown.Controls.Add(this.button3);
             this.EvacDropDown.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EvacDropDown.Location = new System.Drawing.Point(0, 179);
+            this.EvacDropDown.Location = new System.Drawing.Point(0, 196);
             this.EvacDropDown.Margin = new System.Windows.Forms.Padding(2);
             this.EvacDropDown.Name = "EvacDropDown";
             this.EvacDropDown.Size = new System.Drawing.Size(219, 89);
@@ -200,7 +200,7 @@ namespace EMS
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(138)))), ((int)(((byte)(153)))));
+            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -222,7 +222,7 @@ namespace EMS
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(138)))), ((int)(((byte)(153)))));
+            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -251,7 +251,7 @@ namespace EMS
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 138);
+            this.button2.Location = new System.Drawing.Point(0, 155);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -272,7 +272,7 @@ namespace EMS
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Location = new System.Drawing.Point(0, 114);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -286,17 +286,18 @@ namespace EMS
             // 
             // panel2
             // 
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(219, 97);
+            this.panel2.Size = new System.Drawing.Size(219, 114);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(221, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -306,7 +307,7 @@ namespace EMS
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(221, 548);
             this.panel1.Name = "panel1";
@@ -328,7 +329,7 @@ namespace EMS
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
+            this.panel6.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(332, 56);
             this.panel6.Name = "panel6";
@@ -355,7 +356,7 @@ namespace EMS
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
+            this.panel5.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel5.Controls.Add(this.label1);
             this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(76, 56);

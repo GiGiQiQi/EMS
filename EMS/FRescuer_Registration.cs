@@ -34,13 +34,23 @@ namespace EMS
 
         private void ADD_Click(object sender, EventArgs e)
         {
+        }
+        private void LoadDataGrid()
+        {
+            var filterDefinition = Builders<CRescuers>.Filter.Empty;
+            var site = rescuersCollection.Find(filterDefinition).ToList();
+            dataGridView1.DataSource = site;
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
             var rescuers = new CRescuers
             {
-                RescuerName = RName.Text,
-                Address = RAddress.Text,
-                BirtDate = dateTimePicker1.Text,
-                Gender = RGender.Text,
-                Contact_Number = RName.Text
+                RescuerName = RName.Texts,
+                Address = RAddress.Texts,
+                BirtDate = RGen.Text,
+                Gender = RGender.Texts,
+                Contact_Number = RCont.Texts
             };
             LoadDataGrid();
             rescuersCollection.InsertOne(rescuers);
@@ -52,12 +62,6 @@ namespace EMS
             {
                 MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void LoadDataGrid()
-        {
-            var filterDefinition = Builders<CRescuers>.Filter.Empty;
-            var site = rescuersCollection.Find(filterDefinition).ToList();
-            dataGridView1.DataSource = site;
         }
     }
 }

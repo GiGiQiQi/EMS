@@ -16,6 +16,7 @@ namespace EMS
     public partial class Form1 : Form
     {
         IMongoCollection<CAdmin> adminCollection;
+        IMongoCollection<CPersonnel> personnelCollection;
         public Form1()
         {
             InitializeComponent();
@@ -23,37 +24,14 @@ namespace EMS
 
         private void label3_Click(object sender, EventArgs e)
         {
-            string username = UserTB.Text;
-            string password = PassTB.Text;
-
-            var filter = Builders<CAdmin>.Filter.Eq(u => u.Username, username) & Builders<CAdmin>.Filter.Eq(u => u.Password, password);
-            var user = adminCollection.Find(filter).FirstOrDefault();
-
-            if (user != null)
-            {
-                MessageBox.Show("Login successful!");
-                this.Hide();
-                Form2 form2 = new Form2();
-                form2.Show();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password!");
-            }
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FSignUp form9 = new FSignUp();
-            form9.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FUser Form10 = new FUser();
-            Form10.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +45,59 @@ namespace EMS
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
             adminCollection = database.GetCollection<CAdmin>("AdminInfo");
+            personnelCollection = database.GetCollection<CPersonnel>("PersonnelInfo");
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            string username = rjTextBox1.Texts;
+            string password = rjTextBox2.Texts;
+
+            if (AdminRad.Checked)
+            {
+                var filter = Builders<CAdmin>.Filter.Eq(u => u.Username, username) & Builders<CAdmin>.Filter.Eq(u => u.Password, password);
+                var user = adminCollection.Find(filter).FirstOrDefault();
+
+                if (user != null)
+                {
+                    MessageBox.Show("Login successful!");
+                    this.Hide();
+                    Form2 form2 = new Form2();
+                    form2.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!");
+                }
+            }
+            else if (PersonnelRad.Checked)
+            {
+                var filters = Builders<CPersonnel>.Filter.Eq(u => u.Username, username) & Builders<CPersonnel>.Filter.Eq(u => u.Password, password);
+                var user = personnelCollection.Find(filters).FirstOrDefault();
+
+                if (user != null)
+                {
+                    MessageBox.Show("Login successful!");
+                    this.Hide();
+                    FUserDashboard form22 = new FUserDashboard();
+                    form22.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a User Type");
+            }
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FSignUp form9 = new FSignUp();
+            form9.Show();
         }
     }
 }
