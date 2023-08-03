@@ -21,9 +21,9 @@ namespace EMS
         public string CPerson { get; set; }
         [BsonElement("EvacuationSite"), BsonRepresentation(BsonType.String)]
         public string ESite { get; set; }
-        [BsonElement("EvacuationAddress"), BsonRepresentation(BsonType.String)]
-        public string SAddress { get; set; }
         [BsonElement("Dependents"), BsonRepresentation(BsonType.Decimal128)]
         public decimal DPS { get; set; }
+        [BsonElement("Date"), BsonRepresentation(BsonType.String)]
+        public String Date { get; set; }
     }
 }

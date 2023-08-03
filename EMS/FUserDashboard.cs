@@ -44,6 +44,7 @@ namespace EMS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            openChildForm(new FEvacTI());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,6 +110,11 @@ namespace EMS
                     MessageBox.Show("Record not found!");
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FEvacueeTI());
         }
     }
 }

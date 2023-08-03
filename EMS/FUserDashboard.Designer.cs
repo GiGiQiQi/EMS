@@ -38,17 +38,18 @@ namespace EMS
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
+            this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -129,7 +130,6 @@ namespace EMS
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox2);
             this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,6 +137,18 @@ namespace EMS
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(979, 524);
             this.panel5.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Southville 8 Elementary School",
+            "Southville 8B High School",
+            "San Isidro National High School"});
+            this.comboBox1.Location = new System.Drawing.Point(277, 283);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(225, 21);
+            this.comboBox1.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -146,28 +158,23 @@ namespace EMS
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Southville 8 Elementary School",
-            "Southville 8B High School",
-            "San Isidro National High School"});
-            this.comboBox1.Location = new System.Drawing.Point(713, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(277, 311);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.button4.Location = new System.Drawing.Point(0, 219);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(221, 61);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Manual";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FUserDashboard
             // 
@@ -200,7 +207,7 @@ namespace EMS
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button4;
     }
 }
