@@ -50,11 +50,40 @@ namespace EMS
                 Address = RAddress.Texts,
                 BirtDate = RGen.Text,
                 Gender = RGender.Texts,
-                Contact_Number = RCont.Texts
+                Contact_Number = RCont.Texts,
+                ResRFID = rjTextBox1.Texts
             };
             LoadDataGrid();
             rescuersCollection.InsertOne(rescuers);
             if (rescuers != null)
+            {
+                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            var filterDefinition = Builders<CRescuers>.Filter.Eq(a => a.ResRFID, rjTextBox1.Texts);
+            var updateDefinition = Builders<CRescuers>.Update
+                .Set(a => a.RescuerName, RName.Texts)
+                .Set(a => a.Address, RAddress.Texts)
+                .Set(a => a.Contact_Number, RCont.Texts)
+                .Set(a => a.BirtDate, RGender.Texts)
+                .Set(a => a.BirtDate, RGen.Text);
+
+            rescuersCollection.UpdateOne(filterDefinition, updateDefinition);
+            LoadDataGrid();
+
+            if (updateDefinition != null)
             {
                 MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

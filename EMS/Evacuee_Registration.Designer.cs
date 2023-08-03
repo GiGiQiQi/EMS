@@ -31,7 +31,6 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.RFIDTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.NAMETB = new RJCodeAdvance.RJControls.RJTextBox();
             this.AddTB = new RJCodeAdvance.RJControls.RJTextBox();
@@ -42,17 +41,8 @@ namespace EMS
             this.CPNTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.RelTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(539, 427);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 29);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RFIDTB
             // 
@@ -65,7 +55,7 @@ namespace EMS
             this.RFIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.RFIDTB.Location = new System.Drawing.Point(96, 68);
             this.RFIDTB.Margin = new System.Windows.Forms.Padding(4);
-            this.RFIDTB.Multiline = true;
+            this.RFIDTB.Multiline = false;
             this.RFIDTB.Name = "RFIDTB";
             this.RFIDTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.RFIDTB.PasswordChar = false;
@@ -75,6 +65,7 @@ namespace EMS
             this.RFIDTB.TabIndex = 18;
             this.RFIDTB.Texts = "";
             this.RFIDTB.UnderlinedStyle = false;
+            this.RFIDTB._TextChanged += new System.EventHandler(this.RFIDTB__TextChanged);
             // 
             // NAMETB
             // 
@@ -279,12 +270,32 @@ namespace EMS
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(841, 12);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(110, 40);
+            this.rjButton2.TabIndex = 28;
+            this.rjButton2.Text = "EVACUEES";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
+            // 
             // Evacuee_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(963, 485);
+            this.Controls.Add(this.rjButton2);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.RelTB);
             this.Controls.Add(this.CPNTB);
@@ -295,7 +306,6 @@ namespace EMS
             this.Controls.Add(this.AddTB);
             this.Controls.Add(this.NAMETB);
             this.Controls.Add(this.RFIDTB);
-            this.Controls.Add(this.button1);
             this.Name = "Evacuee_Registration";
             this.Text = "Evacuee_Registration";
             this.Load += new System.EventHandler(this.Evacuee_Registration_Load);
@@ -309,7 +319,6 @@ namespace EMS
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private RJCodeAdvance.RJControls.RJTextBox RFIDTB;
         private RJCodeAdvance.RJControls.RJTextBox NAMETB;
         private RJCodeAdvance.RJControls.RJTextBox AddTB;
@@ -320,5 +329,6 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJTextBox CPNTB;
         private RJCodeAdvance.RJControls.RJTextBox RelTB;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private RJCodeAdvance.RJControls.RJButton rjButton2;
     }
 }

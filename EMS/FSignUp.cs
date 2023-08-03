@@ -16,6 +16,7 @@ namespace EMS
     public partial class FSignUp : Form
     {
         IMongoCollection<CAdmin> adminCollection;
+        IMongoCollection<CPersonnel> personnelCollection;
         public FSignUp()
         {
             InitializeComponent();
@@ -28,38 +29,10 @@ namespace EMS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var admins = new CAdmin
-            {
-                Admin_Name = AName.Text,
-                Address = AAddress.Text,
-                Contact_Number = ANumber.Text,
-                BirtDate = dateTimePicker1.Text,
-                Gender = AGender.Text,
-                Username = AUser.Text,
-                Password = APass.Text
-            };
-            adminCollection.InsertOne(admins);
-            if (admins != null)
-            {
-                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            AName.Clear();
-            AAddress.Clear();
-            ANumber.Clear();
-            AUser.Clear();
-            APass.Clear();
-            AGender.Text = "";
         }
 
         private void FSignUp_Load(object sender, EventArgs e)
@@ -69,6 +42,86 @@ namespace EMS
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
             adminCollection = database.GetCollection<CAdmin>("AdminInfo");
+            personnelCollection = database.GetCollection<CPersonnel>("PersonnelInfo");
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            if(KeyTB.Texts == "0007399431")
+            {
+                if (AdminRad.Checked)
+                {
+                    var admins = new CAdmin
+                    {
+                        Admin_Name = AName.Texts,
+                        Address = AAddress.Texts,
+                        Contact_Number = ANumber.Texts,
+                        BirtDate = rjDatePicker1.Text,
+                        Gender = AGender.Texts,
+                        Username = AUser.Texts,
+                        Password = APass.Texts
+                    };
+                    adminCollection.InsertOne(admins);
+                    if (admins != null)
+                    {
+                        MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    AName.Texts = "";
+                    AAddress.Texts = "";
+                    ANumber.Texts = "";
+                    AUser.Texts = "";
+                    APass.Texts = "";
+                    AGender.Text = "";
+                }
+                else if (PersonRad.Checked)
+                {
+                    var personnels = new CPersonnel
+                    {
+                        Personnel_Name = AName.Texts,
+                        Personnel_Address = AAddress.Texts,
+                        Personnel_CNumber = ANumber.Texts,
+                        BirthDate = rjDatePicker1.Text,
+                        Gender = AGender.Texts,
+                        Username = AUser.Texts,
+                        Password = APass.Texts
+                    };
+                    personnelCollection.InsertOne(personnels);
+                    if (personnels != null)
+                    {
+                        MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    AName.Texts = "";
+                    AAddress.Texts = "";
+                    ANumber.Texts = "";
+                    AUser.Texts = "";
+                    APass.Texts = "";
+                    AGender.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Please select a user type");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter the key");
+            }
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
         }
     }
 }
+

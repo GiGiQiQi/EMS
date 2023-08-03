@@ -62,6 +62,26 @@ namespace EMS
             {
                 MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            RFIDTB.Texts = "";
+            NAMETB.Texts = "";
+            AddTB.Texts = "";
+            BrgTB.Texts = "";
+            CNTB.Texts = "";
+            DepTB.Texts = "";
+            CPTB.Texts = "";
+            CPNTB.Texts = "";
+            RelTB.Texts = "";
+        }
+
+        private void RFIDTB__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            FEvacuees form28 = new FEvacuees();
+            form28.Show();
         }
     }
 }

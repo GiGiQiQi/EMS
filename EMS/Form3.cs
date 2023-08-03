@@ -46,6 +46,7 @@ namespace EMS
         {
             var sites = new ESite
             {
+                Site_ID = SiteID.Texts,
                 Evacuation_name = ENAME.Texts,
                 Est_type = ETYPE.Texts,
                 Address = EADD.Texts,
@@ -62,6 +63,53 @@ namespace EMS
             {
                 MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            var filterDefinition = Builders<ESite>.Filter.Eq(a => a.Site_ID, SiteID.Texts);
+            var updateDefinition = Builders<ESite>.Update
+                .Set(a => a.Evacuation_name, ENAME.Texts)
+                .Set(a => a.Address, EADD.Texts)
+                .Set(a => a.Capacity, ECAP.Texts)
+                .Set(a => a.Est_type, ETYPE.Texts);
+
+            sitesCollection.UpdateOne(filterDefinition, updateDefinition);
+            LoadDataGrid();
+            if (updateDefinition != null)
+            {
+                MessageBox.Show("Record Updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Record Updated unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                SiteID.Texts = selectedRow.Cells["Site_ID"].Value.ToString();
+                ENAME.Texts = selectedRow.Cells["Evacuation_name"].Value.ToString();
+                EADD.Texts = selectedRow.Cells["Address"].Value.ToString();
+                ECAP.Texts = selectedRow.Cells["Capacity"].Value.ToString();
+                ETYPE.Texts = selectedRow.Cells["Est_Type"].Value.ToString();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            var filterDefinition = Builders<ESite>.Filter.Eq(a => a.Site_ID, SiteID.Texts);
+            var site = sitesCollection.Find(filterDefinition).ToList();
+            dataGridView1.DataSource = site;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace EMS
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
+            this.SiteID = new RJCodeAdvance.RJControls.RJTextBox();
             this.ENAME = new RJCodeAdvance.RJControls.RJTextBox();
             this.EADD = new RJCodeAdvance.RJControls.RJTextBox();
             this.ECAP = new RJCodeAdvance.RJControls.RJTextBox();
@@ -38,6 +38,11 @@ namespace EMS
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton3 = new RJCodeAdvance.RJControls.RJButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,35 +55,37 @@ namespace EMS
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(559, 341);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // rjTextBox1
+            // SiteID
             // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 0;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(58, 97);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "ID";
-            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox1.TabIndex = 14;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
+            this.SiteID.BackColor = System.Drawing.SystemColors.Window;
+            this.SiteID.BorderColor = System.Drawing.Color.DarkBlue;
+            this.SiteID.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.SiteID.BorderRadius = 15;
+            this.SiteID.BorderSize = 2;
+            this.SiteID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SiteID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SiteID.Location = new System.Drawing.Point(58, 97);
+            this.SiteID.Margin = new System.Windows.Forms.Padding(4);
+            this.SiteID.Multiline = false;
+            this.SiteID.Name = "SiteID";
+            this.SiteID.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.SiteID.PasswordChar = false;
+            this.SiteID.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.SiteID.PlaceholderText = "";
+            this.SiteID.Size = new System.Drawing.Size(250, 31);
+            this.SiteID.TabIndex = 14;
+            this.SiteID.Texts = "";
+            this.SiteID.UnderlinedStyle = false;
             // 
             // ENAME
             // 
             this.ENAME.BackColor = System.Drawing.SystemColors.Window;
             this.ENAME.BorderColor = System.Drawing.Color.DarkBlue;
             this.ENAME.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.ENAME.BorderRadius = 0;
+            this.ENAME.BorderRadius = 15;
             this.ENAME.BorderSize = 2;
             this.ENAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ENAME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -89,18 +96,18 @@ namespace EMS
             this.ENAME.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.ENAME.PasswordChar = false;
             this.ENAME.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ENAME.PlaceholderText = "Site Name";
+            this.ENAME.PlaceholderText = "";
             this.ENAME.Size = new System.Drawing.Size(250, 31);
             this.ENAME.TabIndex = 15;
             this.ENAME.Texts = "";
-            this.ENAME.UnderlinedStyle = true;
+            this.ENAME.UnderlinedStyle = false;
             // 
             // EADD
             // 
             this.EADD.BackColor = System.Drawing.SystemColors.Window;
             this.EADD.BorderColor = System.Drawing.Color.DarkBlue;
             this.EADD.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.EADD.BorderRadius = 0;
+            this.EADD.BorderRadius = 15;
             this.EADD.BorderSize = 2;
             this.EADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EADD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -111,18 +118,18 @@ namespace EMS
             this.EADD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.EADD.PasswordChar = false;
             this.EADD.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.EADD.PlaceholderText = "Address";
+            this.EADD.PlaceholderText = "";
             this.EADD.Size = new System.Drawing.Size(250, 31);
             this.EADD.TabIndex = 17;
             this.EADD.Texts = "";
-            this.EADD.UnderlinedStyle = true;
+            this.EADD.UnderlinedStyle = false;
             // 
             // ECAP
             // 
             this.ECAP.BackColor = System.Drawing.SystemColors.Window;
             this.ECAP.BorderColor = System.Drawing.Color.DarkBlue;
             this.ECAP.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.ECAP.BorderRadius = 0;
+            this.ECAP.BorderRadius = 15;
             this.ECAP.BorderSize = 2;
             this.ECAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ECAP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -133,11 +140,11 @@ namespace EMS
             this.ECAP.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.ECAP.PasswordChar = false;
             this.ECAP.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ECAP.PlaceholderText = "Capacity";
+            this.ECAP.PlaceholderText = "";
             this.ECAP.Size = new System.Drawing.Size(250, 31);
             this.ECAP.TabIndex = 18;
             this.ECAP.Texts = "";
-            this.ECAP.UnderlinedStyle = true;
+            this.ECAP.UnderlinedStyle = false;
             // 
             // ETYPE
             // 
@@ -158,11 +165,11 @@ namespace EMS
             "Gymnasium"});
             this.ETYPE.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.ETYPE.ListTextColor = System.Drawing.Color.DimGray;
-            this.ETYPE.Location = new System.Drawing.Point(58, 361);
+            this.ETYPE.Location = new System.Drawing.Point(70, 361);
             this.ETYPE.MinimumSize = new System.Drawing.Size(200, 30);
             this.ETYPE.Name = "ETYPE";
             this.ETYPE.Padding = new System.Windows.Forms.Padding(1);
-            this.ETYPE.Size = new System.Drawing.Size(250, 30);
+            this.ETYPE.Size = new System.Drawing.Size(229, 30);
             this.ETYPE.TabIndex = 19;
             this.ETYPE.Texts = "";
             // 
@@ -202,6 +209,7 @@ namespace EMS
             this.rjButton2.Text = "UPDATE";
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // rjButton3
             // 
@@ -220,6 +228,52 @@ namespace EMS
             this.rjButton3.Text = "SEARCH";
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(67, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "SITE ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(67, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "SITE NAME";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "ADDRESS";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(67, 274);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "CAPACITY";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(67, 345);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 13);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "ESTABLISHMENT TYPE";
             // 
             // Add_Site_Form
             // 
@@ -227,6 +281,11 @@ namespace EMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(963, 485);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rjButton3);
             this.Controls.Add(this.rjButton2);
             this.Controls.Add(this.rjButton1);
@@ -234,7 +293,7 @@ namespace EMS
             this.Controls.Add(this.ECAP);
             this.Controls.Add(this.EADD);
             this.Controls.Add(this.ENAME);
-            this.Controls.Add(this.rjTextBox1);
+            this.Controls.Add(this.SiteID);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Add_Site_Form";
@@ -242,12 +301,13 @@ namespace EMS
             this.Load += new System.EventHandler(this.Add_Site_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
-        private RJCodeAdvance.RJControls.RJTextBox rjTextBox1;
+        private RJCodeAdvance.RJControls.RJTextBox SiteID;
         private RJCodeAdvance.RJControls.RJTextBox ENAME;
         private RJCodeAdvance.RJControls.RJTextBox EADD;
         private RJCodeAdvance.RJControls.RJTextBox ECAP;
@@ -255,5 +315,10 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJButton rjButton1;
         private RJCodeAdvance.RJControls.RJButton rjButton2;
         private RJCodeAdvance.RJControls.RJButton rjButton3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

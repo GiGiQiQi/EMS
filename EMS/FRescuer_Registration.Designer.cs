@@ -29,8 +29,6 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.ADD = new System.Windows.Forms.Button();
-            this.UPD = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
             this.RName = new RJCodeAdvance.RJControls.RJTextBox();
@@ -41,27 +39,13 @@ namespace EMS
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ADD
-            // 
-            this.ADD.Location = new System.Drawing.Point(418, 440);
-            this.ADD.Name = "ADD";
-            this.ADD.Size = new System.Drawing.Size(75, 23);
-            this.ADD.TabIndex = 11;
-            this.ADD.Text = "Add";
-            this.ADD.UseVisualStyleBackColor = true;
-            this.ADD.Click += new System.EventHandler(this.ADD_Click);
-            // 
-            // UPD
-            // 
-            this.UPD.Location = new System.Drawing.Point(523, 440);
-            this.UPD.Name = "UPD";
-            this.UPD.Size = new System.Drawing.Size(75, 23);
-            this.UPD.TabIndex = 12;
-            this.UPD.Text = "Update";
-            this.UPD.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -78,88 +62,88 @@ namespace EMS
             this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.rjTextBox1.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 0;
+            this.rjTextBox1.BorderRadius = 10;
             this.rjTextBox1.BorderSize = 2;
             this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(31, 60);
+            this.rjTextBox1.Location = new System.Drawing.Point(31, 79);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox1.Multiline = false;
             this.rjTextBox1.Name = "rjTextBox1";
             this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.rjTextBox1.PasswordChar = false;
             this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "RFID";
+            this.rjTextBox1.PlaceholderText = "";
             this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
             this.rjTextBox1.TabIndex = 14;
             this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
+            this.rjTextBox1.UnderlinedStyle = false;
             // 
             // RName
             // 
             this.RName.BackColor = System.Drawing.SystemColors.Window;
             this.RName.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.RName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.RName.BorderRadius = 0;
+            this.RName.BorderRadius = 10;
             this.RName.BorderSize = 2;
             this.RName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RName.Location = new System.Drawing.Point(31, 113);
+            this.RName.Location = new System.Drawing.Point(31, 134);
             this.RName.Margin = new System.Windows.Forms.Padding(4);
             this.RName.Multiline = false;
             this.RName.Name = "RName";
             this.RName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.RName.PasswordChar = false;
             this.RName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.RName.PlaceholderText = "NAME";
+            this.RName.PlaceholderText = "";
             this.RName.Size = new System.Drawing.Size(250, 31);
             this.RName.TabIndex = 15;
             this.RName.Texts = "";
-            this.RName.UnderlinedStyle = true;
+            this.RName.UnderlinedStyle = false;
             // 
             // RAddress
             // 
             this.RAddress.BackColor = System.Drawing.SystemColors.Window;
             this.RAddress.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.RAddress.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.RAddress.BorderRadius = 0;
+            this.RAddress.BorderRadius = 10;
             this.RAddress.BorderSize = 2;
             this.RAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RAddress.Location = new System.Drawing.Point(31, 167);
+            this.RAddress.Location = new System.Drawing.Point(31, 191);
             this.RAddress.Margin = new System.Windows.Forms.Padding(4);
             this.RAddress.Multiline = false;
             this.RAddress.Name = "RAddress";
             this.RAddress.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.RAddress.PasswordChar = false;
             this.RAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.RAddress.PlaceholderText = "ADDRESS";
+            this.RAddress.PlaceholderText = "";
             this.RAddress.Size = new System.Drawing.Size(250, 31);
             this.RAddress.TabIndex = 16;
             this.RAddress.Texts = "";
-            this.RAddress.UnderlinedStyle = true;
+            this.RAddress.UnderlinedStyle = false;
             // 
             // RCont
             // 
             this.RCont.BackColor = System.Drawing.SystemColors.Window;
             this.RCont.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.RCont.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.RCont.BorderRadius = 0;
+            this.RCont.BorderRadius = 10;
             this.RCont.BorderSize = 2;
             this.RCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RCont.Location = new System.Drawing.Point(31, 222);
+            this.RCont.Location = new System.Drawing.Point(31, 243);
             this.RCont.Margin = new System.Windows.Forms.Padding(4);
             this.RCont.Multiline = false;
             this.RCont.Name = "RCont";
             this.RCont.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.RCont.PasswordChar = false;
             this.RCont.PlaceholderColor = System.Drawing.Color.DimGray;
-            this.RCont.PlaceholderText = "CONTACT NUMBER";
+            this.RCont.PlaceholderText = "";
             this.RCont.Size = new System.Drawing.Size(250, 31);
             this.RCont.TabIndex = 17;
             this.RCont.Texts = "";
-            this.RCont.UnderlinedStyle = true;
+            this.RCont.UnderlinedStyle = false;
             // 
             // RGender
             // 
@@ -189,7 +173,7 @@ namespace EMS
             this.RGen.BorderSize = 0;
             this.RGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.RGen.Location = new System.Drawing.Point(35, 371);
-            this.RGen.MinimumSize = new System.Drawing.Size(0, 35);
+            this.RGen.MinimumSize = new System.Drawing.Size(4, 35);
             this.RGen.Name = "RGen";
             this.RGen.Size = new System.Drawing.Size(250, 35);
             this.RGen.SkinColor = System.Drawing.Color.DarkSlateBlue;
@@ -235,11 +219,76 @@ namespace EMS
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(38, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "RFID NUMBER";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(35, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "NAME";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(35, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "ADDRESS";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(38, 226);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "CONTACT NUMBER";
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(728, 423);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(99, 40);
+            this.rjButton2.TabIndex = 27;
+            this.rjButton2.Text = "UPDATE";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
+            // 
             // FRescuer_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 485);
+            this.Controls.Add(this.rjButton2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -250,8 +299,6 @@ namespace EMS
             this.Controls.Add(this.RName);
             this.Controls.Add(this.rjTextBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.UPD);
-            this.Controls.Add(this.ADD);
             this.Name = "FRescuer_Registration";
             this.Text = "FRescuer_Registration";
             this.Load += new System.EventHandler(this.FRescuer_Registration_Load);
@@ -262,8 +309,6 @@ namespace EMS
         }
 
         #endregion
-        private System.Windows.Forms.Button ADD;
-        private System.Windows.Forms.Button UPD;
         private System.Windows.Forms.DataGridView dataGridView1;
         private RJCodeAdvance.RJControls.RJTextBox rjTextBox1;
         private RJCodeAdvance.RJControls.RJTextBox RName;
@@ -274,5 +319,10 @@ namespace EMS
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private RJCodeAdvance.RJControls.RJButton rjButton2;
     }
 }

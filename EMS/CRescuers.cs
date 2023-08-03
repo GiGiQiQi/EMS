@@ -23,5 +23,7 @@ namespace EMS
         public string BirtDate { get; set; }
         [BsonElement("Gender"), BsonRepresentation(BsonType.String)]
         public string Gender { get; set; }
+        [BsonElement("RescuerRFID"), BsonRepresentation(BsonType.String)]
+        public string ResRFID { get; set; }
     }
 }

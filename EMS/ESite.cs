@@ -13,6 +13,8 @@ namespace EMS
     {
         [BsonId, BsonElement("_id"), BsonRepresentation(BsonType.ObjectId)]
         public string Evacuation_ID { get; set; }
+        [BsonElement("Site_ID"), BsonRepresentation(BsonType.String)]
+        public string Site_ID { get; set; }
 
         [BsonElement("Site_Name"), BsonRepresentation(BsonType.String)]
         public string Evacuation_name { get; set; }

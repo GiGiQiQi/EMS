@@ -29,273 +29,343 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.AAddress = new System.Windows.Forms.TextBox();
-            this.ANumber = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.AName = new RJCodeAdvance.RJControls.RJTextBox();
+            this.AAddress = new RJCodeAdvance.RJControls.RJTextBox();
+            this.ANumber = new RJCodeAdvance.RJControls.RJTextBox();
+            this.AGender = new RJCodeAdvance.RJControls.RJComboBox();
+            this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AUser = new RJCodeAdvance.RJControls.RJTextBox();
+            this.APass = new RJCodeAdvance.RJControls.RJTextBox();
+            this.KeyTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SAPass = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.APass = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.AUser = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.AName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.AGender = new System.Windows.Forms.ComboBox();
+            this.AdminRad = new RJCodeAdvance.RJControls.RJRadioButton();
+            this.PersonRad = new RJCodeAdvance.RJControls.RJRadioButton();
+            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // AAddress
-            // 
-            this.AAddress.Location = new System.Drawing.Point(110, 182);
-            this.AAddress.Name = "AAddress";
-            this.AAddress.Size = new System.Drawing.Size(183, 20);
-            this.AAddress.TabIndex = 1;
-            // 
-            // ANumber
-            // 
-            this.ANumber.Location = new System.Drawing.Point(110, 244);
-            this.ANumber.Name = "ANumber";
-            this.ANumber.Size = new System.Drawing.Size(183, 20);
-            this.ANumber.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Address";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 228);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Contact Number";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(107, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "BirthDate";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(107, 351);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Gender";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.SAPass);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.APass);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.AUser);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(447, 89);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 298);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Account";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // SAPass
-            // 
-            this.SAPass.Location = new System.Drawing.Point(26, 240);
-            this.SAPass.Name = "SAPass";
-            this.SAPass.Size = new System.Drawing.Size(183, 20);
-            this.SAPass.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 215);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Admin Password";
-            // 
-            // APass
-            // 
-            this.APass.Location = new System.Drawing.Point(26, 136);
-            this.APass.Name = "APass";
-            this.APass.Size = new System.Drawing.Size(183, 20);
-            this.APass.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 110);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Password";
-            // 
-            // AUser
-            // 
-            this.AUser.Location = new System.Drawing.Point(26, 70);
-            this.AUser.Name = "AUser";
-            this.AUser.Size = new System.Drawing.Size(183, 20);
-            this.AUser.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Username";
-            // 
-            // AName
-            // 
-            this.AName.Location = new System.Drawing.Point(110, 127);
-            this.AName.Name = "AName";
-            this.AName.Size = new System.Drawing.Size(183, 20);
-            this.AName.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(693, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Sign Up";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 63);
+            this.panel1.Size = new System.Drawing.Size(860, 39);
             this.panel1.TabIndex = 13;
             // 
-            // label9
+            // AName
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(309, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 23);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Admin SignUp";
+            this.AName.BackColor = System.Drawing.SystemColors.Window;
+            this.AName.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.AName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.AName.BorderRadius = 0;
+            this.AName.BorderSize = 2;
+            this.AName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AName.Location = new System.Drawing.Point(66, 94);
+            this.AName.Margin = new System.Windows.Forms.Padding(4);
+            this.AName.Multiline = false;
+            this.AName.Name = "AName";
+            this.AName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.AName.PasswordChar = false;
+            this.AName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.AName.PlaceholderText = "NAME";
+            this.AName.Size = new System.Drawing.Size(250, 31);
+            this.AName.TabIndex = 14;
+            this.AName.Texts = "";
+            this.AName.UnderlinedStyle = true;
             // 
-            // dateTimePicker1
+            // AAddress
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 317);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(183, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.AAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.AAddress.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.AAddress.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.AAddress.BorderRadius = 0;
+            this.AAddress.BorderSize = 2;
+            this.AAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AAddress.Location = new System.Drawing.Point(66, 150);
+            this.AAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.AAddress.Multiline = false;
+            this.AAddress.Name = "AAddress";
+            this.AAddress.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.AAddress.PasswordChar = false;
+            this.AAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.AAddress.PlaceholderText = "ADDRESS";
+            this.AAddress.Size = new System.Drawing.Size(250, 31);
+            this.AAddress.TabIndex = 15;
+            this.AAddress.Texts = "";
+            this.AAddress.UnderlinedStyle = true;
+            // 
+            // ANumber
+            // 
+            this.ANumber.BackColor = System.Drawing.SystemColors.Window;
+            this.ANumber.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.ANumber.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.ANumber.BorderRadius = 0;
+            this.ANumber.BorderSize = 2;
+            this.ANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ANumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ANumber.Location = new System.Drawing.Point(66, 205);
+            this.ANumber.Margin = new System.Windows.Forms.Padding(4);
+            this.ANumber.Multiline = false;
+            this.ANumber.Name = "ANumber";
+            this.ANumber.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.ANumber.PasswordChar = false;
+            this.ANumber.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.ANumber.PlaceholderText = "CONTACT NUMBER";
+            this.ANumber.Size = new System.Drawing.Size(250, 31);
+            this.ANumber.TabIndex = 16;
+            this.ANumber.Texts = "";
+            this.ANumber.UnderlinedStyle = true;
             // 
             // AGender
             // 
-            this.AGender.FormattingEnabled = true;
-            this.AGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.AGender.Location = new System.Drawing.Point(110, 377);
+            this.AGender.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AGender.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.AGender.BorderSize = 1;
+            this.AGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.AGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.AGender.ForeColor = System.Drawing.Color.DimGray;
+            this.AGender.IconColor = System.Drawing.Color.DarkSlateBlue;
+            this.AGender.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.AGender.ListTextColor = System.Drawing.Color.DimGray;
+            this.AGender.Location = new System.Drawing.Point(66, 298);
+            this.AGender.MinimumSize = new System.Drawing.Size(200, 30);
             this.AGender.Name = "AGender";
-            this.AGender.Size = new System.Drawing.Size(183, 21);
-            this.AGender.TabIndex = 15;
+            this.AGender.Padding = new System.Windows.Forms.Padding(1);
+            this.AGender.Size = new System.Drawing.Size(250, 30);
+            this.AGender.TabIndex = 18;
+            this.AGender.Texts = "";
+            // 
+            // rjDatePicker1
+            // 
+            this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjDatePicker1.BorderSize = 0;
+            this.rjDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.rjDatePicker1.Location = new System.Drawing.Point(66, 374);
+            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
+            this.rjDatePicker1.Name = "rjDatePicker1";
+            this.rjDatePicker1.Size = new System.Drawing.Size(250, 35);
+            this.rjDatePicker1.SkinColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjDatePicker1.TabIndex = 19;
+            this.rjDatePicker1.TextColor = System.Drawing.Color.White;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.PersonRad);
+            this.groupBox1.Controls.Add(this.KeyTB);
+            this.groupBox1.Controls.Add(this.AdminRad);
+            this.groupBox1.Controls.Add(this.APass);
+            this.groupBox1.Controls.Add(this.AUser);
+            this.groupBox1.Location = new System.Drawing.Point(422, 81);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(374, 328);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Account";
+            // 
+            // AUser
+            // 
+            this.AUser.BackColor = System.Drawing.SystemColors.Window;
+            this.AUser.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.AUser.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.AUser.BorderRadius = 0;
+            this.AUser.BorderSize = 2;
+            this.AUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AUser.Location = new System.Drawing.Point(29, 50);
+            this.AUser.Margin = new System.Windows.Forms.Padding(4);
+            this.AUser.Multiline = false;
+            this.AUser.Name = "AUser";
+            this.AUser.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.AUser.PasswordChar = false;
+            this.AUser.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.AUser.PlaceholderText = "USERNAME";
+            this.AUser.Size = new System.Drawing.Size(250, 31);
+            this.AUser.TabIndex = 0;
+            this.AUser.Texts = "";
+            this.AUser.UnderlinedStyle = true;
+            // 
+            // APass
+            // 
+            this.APass.BackColor = System.Drawing.SystemColors.Window;
+            this.APass.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.APass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.APass.BorderRadius = 0;
+            this.APass.BorderSize = 2;
+            this.APass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.APass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.APass.Location = new System.Drawing.Point(29, 124);
+            this.APass.Margin = new System.Windows.Forms.Padding(4);
+            this.APass.Multiline = false;
+            this.APass.Name = "APass";
+            this.APass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.APass.PasswordChar = false;
+            this.APass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.APass.PlaceholderText = "PASSWORD";
+            this.APass.Size = new System.Drawing.Size(250, 31);
+            this.APass.TabIndex = 1;
+            this.APass.Texts = "";
+            this.APass.UnderlinedStyle = true;
+            // 
+            // KeyTB
+            // 
+            this.KeyTB.BackColor = System.Drawing.SystemColors.Window;
+            this.KeyTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.KeyTB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.KeyTB.BorderRadius = 15;
+            this.KeyTB.BorderSize = 2;
+            this.KeyTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.KeyTB.Location = new System.Drawing.Point(29, 238);
+            this.KeyTB.Margin = new System.Windows.Forms.Padding(4);
+            this.KeyTB.Multiline = false;
+            this.KeyTB.Name = "KeyTB";
+            this.KeyTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.KeyTB.PasswordChar = false;
+            this.KeyTB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.KeyTB.PlaceholderText = "KEY";
+            this.KeyTB.Size = new System.Drawing.Size(250, 31);
+            this.KeyTB.TabIndex = 2;
+            this.KeyTB.Texts = "";
+            this.KeyTB.UnderlinedStyle = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(63, 282);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "GENDER";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(66, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "BIRTHDATE";
+            // 
+            // AdminRad
+            // 
+            this.AdminRad.AutoSize = true;
+            this.AdminRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.AdminRad.Location = new System.Drawing.Point(38, 293);
+            this.AdminRad.MinimumSize = new System.Drawing.Size(0, 21);
+            this.AdminRad.Name = "AdminRad";
+            this.AdminRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.AdminRad.Size = new System.Drawing.Size(70, 21);
+            this.AdminRad.TabIndex = 3;
+            this.AdminRad.TabStop = true;
+            this.AdminRad.Text = "ADMIN";
+            this.AdminRad.UnCheckedColor = System.Drawing.Color.Gray;
+            this.AdminRad.UseVisualStyleBackColor = true;
+            // 
+            // PersonRad
+            // 
+            this.PersonRad.AutoSize = true;
+            this.PersonRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.PersonRad.Location = new System.Drawing.Point(163, 293);
+            this.PersonRad.MinimumSize = new System.Drawing.Size(0, 21);
+            this.PersonRad.Name = "PersonRad";
+            this.PersonRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.PersonRad.Size = new System.Drawing.Size(101, 21);
+            this.PersonRad.TabIndex = 23;
+            this.PersonRad.TabStop = true;
+            this.PersonRad.Text = "PERSONNEL";
+            this.PersonRad.UnCheckedColor = System.Drawing.Color.Gray;
+            this.PersonRad.UseVisualStyleBackColor = true;
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(676, 448);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(120, 40);
+            this.rjButton1.TabIndex = 23;
+            this.rjButton1.Text = "SignUp";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(66, 448);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(119, 40);
+            this.rjButton2.TabIndex = 24;
+            this.rjButton2.Text = "BACK";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // FSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AGender);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(860, 500);
+            this.Controls.Add(this.rjButton2);
+            this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.rjDatePicker1);
+            this.Controls.Add(this.AGender);
             this.Controls.Add(this.ANumber);
             this.Controls.Add(this.AAddress);
             this.Controls.Add(this.AName);
+            this.Controls.Add(this.panel1);
             this.Name = "FSignUp";
             this.Text = "FSignUp";
             this.Load += new System.EventHandler(this.FSignUp_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox AAddress;
-        private System.Windows.Forms.TextBox ANumber;
+        private System.Windows.Forms.Panel panel1;
+        private RJCodeAdvance.RJControls.RJTextBox AName;
+        private RJCodeAdvance.RJControls.RJTextBox AAddress;
+        private RJCodeAdvance.RJControls.RJTextBox ANumber;
+        private RJCodeAdvance.RJControls.RJComboBox AGender;
+        private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private RJCodeAdvance.RJControls.RJTextBox KeyTB;
+        private RJCodeAdvance.RJControls.RJTextBox APass;
+        private RJCodeAdvance.RJControls.RJTextBox AUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox SAPass;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox APass;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox AUser;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox AName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox AGender;
+        private RJCodeAdvance.RJControls.RJRadioButton PersonRad;
+        private RJCodeAdvance.RJControls.RJRadioButton AdminRad;
+        private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private RJCodeAdvance.RJControls.RJButton rjButton2;
     }
 }
