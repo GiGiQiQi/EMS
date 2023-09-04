@@ -31,6 +31,7 @@ namespace EMS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.PsideMenu = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.regMenu = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
@@ -46,21 +47,21 @@ namespace EMS
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.PsideMenu.SuspendLayout();
             this.regMenu.SuspendLayout();
             this.EvacDropDown.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // PsideMenu
@@ -83,6 +84,25 @@ namespace EMS
             this.PsideMenu.Name = "PsideMenu";
             this.PsideMenu.Size = new System.Drawing.Size(221, 600);
             this.PsideMenu.TabIndex = 0;
+            // 
+            // button10
+            // 
+            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(0, 461);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(219, 41);
+            this.button10.TabIndex = 10;
+            this.button10.Text = "Warning";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button8
             // 
@@ -323,6 +343,7 @@ namespace EMS
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.dateTimePicker1);
@@ -333,6 +354,27 @@ namespace EMS
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(979, 524);
             this.panel4.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.ForeColor = System.Drawing.Color.Black;
+            this.panel7.Location = new System.Drawing.Point(574, 56);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 206);
+            this.panel7.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(13, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Active Rescuers";
             // 
             // panel6
             // 
@@ -382,45 +424,12 @@ namespace EMS
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Evacuees";
             // 
-            // panel7
+            // textBox1
             // 
-            this.panel7.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.ForeColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(574, 56);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 206);
-            this.panel7.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(13, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Active Rescuers";
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(0, 461);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(219, 41);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "Warning";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.textBox1.Location = new System.Drawing.Point(76, 410);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 4;
             // 
             // Form2
             // 
@@ -442,12 +451,13 @@ namespace EMS
             this.regMenu.ResumeLayout(false);
             this.EvacDropDown.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -478,5 +488,6 @@ namespace EMS
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -360,7 +360,6 @@
     <EmbeddedResource Include="Evacuation_Sites.resx">
       <DependentUpon>Evacuation_Sites.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="EMS_TemporaryKey.pfx" />
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
