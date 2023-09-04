@@ -103,5 +103,17 @@ namespace EMS
             openChildForm(new FDashboard());
             hideSideMenu();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FAssign());
+            hideSideMenu();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FWarnings());
+            hideSideMenu();
+        }
     }
 }
