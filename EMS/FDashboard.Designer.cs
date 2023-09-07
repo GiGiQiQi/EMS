@@ -29,20 +29,27 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ScanTimer = new System.Windows.Forms.Timer(this.components);
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(332, 56);
+            this.panel6.Location = new System.Drawing.Point(322, 56);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 206);
             this.panel6.TabIndex = 2;
@@ -86,21 +93,69 @@ namespace EMS
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Evacuees";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(574, 56);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 206);
+            this.panel1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(12, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Active Rescuers";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(76, 400);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(264, 20);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(73, 384);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "RESCUER RFID";
+            // 
+            // ScanTimer
+            // 
+            this.ScanTimer.Tick += new System.EventHandler(this.ScanTimer_Tick);
+            // 
             // FDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 485);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panel5);
             this.Name = "FDashboard";
             this.Text = "FDashboard";
+            this.Load += new System.EventHandler(this.FDashboard_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -111,5 +166,10 @@ namespace EMS
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer ScanTimer;
     }
 }

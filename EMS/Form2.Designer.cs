@@ -29,6 +29,7 @@ namespace EMS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.PsideMenu = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -55,6 +56,8 @@ namespace EMS
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ScanTimer = new System.Windows.Forms.Timer(this.components);
             this.PsideMenu.SuspendLayout();
             this.regMenu.SuspendLayout();
             this.EvacDropDown.SuspendLayout();
@@ -343,6 +346,7 @@ namespace EMS
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
@@ -426,10 +430,20 @@ namespace EMS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 410);
+            this.textBox1.Location = new System.Drawing.Point(76, 400);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.Size = new System.Drawing.Size(264, 20);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(73, 384);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "RESCUER RFID";
             // 
             // Form2
             // 
@@ -447,6 +461,7 @@ namespace EMS
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.PsideMenu.ResumeLayout(false);
             this.regMenu.ResumeLayout(false);
             this.EvacDropDown.ResumeLayout(false);
@@ -489,5 +504,7 @@ namespace EMS
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer ScanTimer;
     }
 }

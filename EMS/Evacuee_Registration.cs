@@ -41,36 +41,43 @@ namespace EMS
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            var evacuees = new CEvacuee
+            if (RFIDTB.Texts == "" || NAMETB.Texts == "" || AddTB.Texts == "" || BrgTB.Texts == "" || CNTB.Texts == "" || DepTB.Texts == "" || CPTB.Texts == "" || CPNTB.Texts == "" || RelTB.Texts == "")
             {
-                RFID_Number = RFIDTB.Texts,
-                Evacuee_Name = NAMETB.Texts,
-                Evacuee_Address = AddTB.Texts,
-                Barangay = BrgTB.Texts,
-                Contact_Number = CNTB.Texts,
-                Dependents = decimal.Parse(DepTB.Texts),
-                Contact_Person = CPTB.Texts,
-                Contact_Person_Number = CPNTB.Texts,
-                Relationship = RelTB.Texts
-            };
-            evacueeCollection.InsertOne(evacuees);
-            if (evacuees != null)
-            {
-                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill out the necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var evacuees = new CEvacuee
+                {
+                    RFID_Number = RFIDTB.Texts,
+                    Evacuee_Name = NAMETB.Texts,
+                    Evacuee_Address = AddTB.Texts,
+                    Barangay = BrgTB.Texts,
+                    Contact_Number = CNTB.Texts,
+                    Dependents = decimal.Parse(DepTB.Texts),
+                    Contact_Person = CPTB.Texts,
+                    Contact_Person_Number = CPNTB.Texts,
+                    Relationship = RelTB.Texts
+                };
+                evacueeCollection.InsertOne(evacuees);
+                if (evacuees != null)
+                {
+                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RFIDTB.Texts = "";
+                    NAMETB.Texts = "";
+                    AddTB.Texts = "";
+                    BrgTB.Texts = "";
+                    CNTB.Texts = "";
+                    DepTB.Texts = "";
+                    CPTB.Texts = "";
+                    CPNTB.Texts = "";
+                    RelTB.Texts = "";
+                }
+                else
+                {
+                    MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            RFIDTB.Texts = "";
-            NAMETB.Texts = "";
-            AddTB.Texts = "";
-            BrgTB.Texts = "";
-            CNTB.Texts = "";
-            DepTB.Texts = "";
-            CPTB.Texts = "";
-            CPNTB.Texts = "";
-            RelTB.Texts = "";
         }
 
         private void RFIDTB__TextChanged(object sender, EventArgs e)

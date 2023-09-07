@@ -191,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CActiveEvacuees.cs" />
+    <Compile Include="CActiveRescuers.cs" />
     <Compile Include="CAdmin.cs" />
     <Compile Include="CEvacuee.cs" />
     <Compile Include="CPersonnel.cs" />
