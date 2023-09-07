@@ -17,7 +17,8 @@ namespace EMS
     {
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CEvacuee> evacueeCollection;
-        private const int DelayMilliseconds = 5;
+        IMongoCollection<CEHistory> evacuationHistory;
+        private const int DelayMilliseconds = 500;
         private bool isRfidProcessed = false;
 
 
@@ -35,14 +36,35 @@ namespace EMS
             var filter = Builders<CEvacuee>.Filter.Eq(u => u.RFID_Number, SCANTB.Text);
             var user = evacueeCollection.Find(filter).FirstOrDefault();
 
+            var filters = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
+            var users = activeEvacuues.Find(filters).FirstOrDefault();
+
             if (!isRfidProcessed && SCANTB.Text.Length == 10)
             {
                 isRfidProcessed = true; // Move this line above the data insertion block.
 
-                if (user != null)
+                if(users != null)
+                {
+                    var archive = new CEHistory
+                    {
+                        EvacueeName = users.EName,
+                        EvacueeAddress = users.EAddress,
+                        EvacSite = users.ESite,
+                        Dependents = users.DPS,
+                        dateIn = users.Date,
+                        dateOut = dateTimePicker1.Text
+                    };
+                    evacuationHistory.InsertOne(archive);
+
+                    var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
+                    activeEvacuues.DeleteOne(del);
+                    MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (user != null)
                 {
                     var active = new CActiveEvacuees
                     {
+                        RFID = SCANTB.Text,
                         EName = user.Evacuee_Name,
                         EAddress = user.Evacuee_Address,
                         CPerson = user.Contact_Person_Number,
@@ -76,6 +98,7 @@ namespace EMS
             var database = mongoClient.GetDatabase(databaseName);
             activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
             evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+            evacuationHistory = database.GetCollection<CEHistory>("EvacuationHistory");
         }
     }
 }

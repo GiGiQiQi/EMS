@@ -13,6 +13,8 @@ namespace EMS
     {
         [BsonId, BsonElement("_id"), BsonRepresentation(BsonType.ObjectId)]
         public string Evacuee_ID { get; set; }
+        [BsonElement("EID"), BsonRepresentation(BsonType.String)]
+        public String RFID { get; set; }
         [BsonElement("Name"), BsonRepresentation(BsonType.String)]
         public string EName { get; set; }
         [BsonElement("Address"), BsonRepresentation(BsonType.String)]
