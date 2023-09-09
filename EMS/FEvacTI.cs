@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Configuration;
+using System.IO.Ports;
+using System.Threading;
 
 namespace EMS
 {
@@ -18,7 +20,7 @@ namespace EMS
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CEvacuee> evacueeCollection;
         IMongoCollection<CEHistory> evacuationHistory;
-        private const int DelayMilliseconds = 500;
+        private const int DelayMilliseconds = 20;
         private bool isRfidProcessed = false;
 
 
@@ -32,6 +34,8 @@ namespace EMS
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
+            var msgIN = "Time in";
+            var msgOUT = "Time out";
 
             var filter = Builders<CEvacuee>.Filter.Eq(u => u.RFID_Number, SCANTB.Text);
             var user = evacueeCollection.Find(filter).FirstOrDefault();
@@ -55,10 +59,33 @@ namespace EMS
                         dateOut = dateTimePicker1.Text
                     };
                     evacuationHistory.InsertOne(archive);
-
+                    SerialPort sp = new SerialPort();
+                    sp.PortName = "COM3";
+                    sp.Open();
+                    sp.WriteLine("AT" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine(msgOUT + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.Write(new byte[] { 26 }, 0, 1);
+                    Thread.Sleep(200);
+                    var response = sp.ReadExisting();
+                    if (response.Contains("ERROR"))
+                    {
+                        MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    sp.Close();
                     var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
                     activeEvacuues.DeleteOne(del);
-                    MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (user != null)
                 {
@@ -73,7 +100,31 @@ namespace EMS
                         Date = dateTimePicker1.Text
                     };
                     activeEvacuues.InsertOne(active);
-                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SerialPort sp = new SerialPort();
+                    sp.PortName = "COM3";
+                    sp.Open();
+                    sp.WriteLine("AT" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine(msgIN + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.Write(new byte[] { 26 }, 0, 1);
+                    Thread.Sleep(200);
+                    var response = sp.ReadExisting();
+                    if (response.Contains("ERROR"))
+                    {
+                        MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    sp.Close();
                 }
                 else
                 {

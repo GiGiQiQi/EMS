@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Configuration;
+using System.IO.Ports;
+using System.Threading;
 
 namespace EMS
 {
@@ -17,7 +19,8 @@ namespace EMS
     {
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CEvacuee> evacueeCollection;
-        private const int DelayMilliseconds = 5;
+        IMongoCollection<CEHistory> historyCollection;
+        private const int DelayMilliseconds = 20;
         private bool isRfidProcessed = false;
 
         public FUserDashboard()
@@ -79,31 +82,103 @@ namespace EMS
             var database = mongoClient.GetDatabase(databaseName);
             activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
             evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+            historyCollection = database.GetCollection<CEHistory>("EvacuationHistory");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
+            var msg = "Umamin ka na";
+            var msg1 = "Out";
 
             var filter = Builders<CEvacuee>.Filter.Eq(u => u.RFID_Number, textBox1.Text);
             var user = evacueeCollection.Find(filter).FirstOrDefault();
+
+            var filters = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, textBox1.Text);
+            var users = activeEvacuues.Find(filters).FirstOrDefault();
 
             if (!isRfidProcessed && textBox1.Text.Length == 10)
             {
                 isRfidProcessed = true; // Move this line above the data insertion block.
 
-                if (user != null)
+                if (users != null)
+                {
+                    var archive = new CEHistory
+                    {
+                        EvacueeName = users.EName,
+                        EvacueeAddress = users.EAddress,
+                        EvacSite = users.ESite,
+                        Dependents = users.DPS,
+                        dateIn = users.Date,
+                        dateOut = dateTimePicker1.Text
+                    };
+                    historyCollection.InsertOne(archive);
+                    SerialPort sp = new SerialPort();
+                    sp.PortName = textBox2.Text;
+                    sp.Open();
+                    sp.WriteLine("AT" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine(msg1 + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.Write(new byte[] { 26 }, 0, 1);
+                    Thread.Sleep(200);
+                    var response = sp.ReadExisting();
+                    if (response.Contains("ERROR"))
+                    {
+                        MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    sp.Close();
+                    var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, textBox1.Text);
+                    activeEvacuues.DeleteOne(del);
+                }
+                else if (user != null)
                 {
                     var active = new CActiveEvacuees
                     {
+                        RFID = textBox1.Text,
                         EName = user.Evacuee_Name,
                         EAddress = user.Evacuee_Address,
                         CPerson = user.Contact_Person_Number,
                         ESite = comboBox1.Text,
-                        DPS = user.Dependents
+                        DPS = user.Dependents,
+                        Date = dateTimePicker1.Text
                     };
                     activeEvacuues.InsertOne(active);
-                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SerialPort sp = new SerialPort();
+                    sp.PortName = textBox2.Text;
+                    sp.Open();
+                    sp.WriteLine("AT" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.WriteLine(msg + Environment.NewLine);
+                    Thread.Sleep(200);
+                    sp.Write(new byte[] { 26 }, 0, 1);
+                    Thread.Sleep(200);
+                    var response = sp.ReadExisting();
+                    if (response.Contains("ERROR"))
+                    {
+                        MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    sp.Close();
                 }
                 else
                 {

@@ -31,6 +31,7 @@ namespace EMS
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,7 +42,8 @@ namespace EMS
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button4 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +61,20 @@ namespace EMS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(221, 600);
             this.panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.button4.Location = new System.Drawing.Point(0, 219);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(221, 61);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Manual";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -130,6 +146,8 @@ namespace EMS
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.dateTimePicker1);
             this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,19 +180,19 @@ namespace EMS
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button4
+            // dateTimePicker1
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.button4.Location = new System.Drawing.Point(0, 219);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(221, 61);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Manual";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.dateTimePicker1.Location = new System.Drawing.Point(277, 328);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(533, 283);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 3;
             // 
             // FUserDashboard
             // 
@@ -209,5 +227,7 @@ namespace EMS
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

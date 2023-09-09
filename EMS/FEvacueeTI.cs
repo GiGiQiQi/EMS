@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MongoDB.Driver;
+using System;
 using System.Configuration;
-using MongoDB.Driver;
-using MongoDB.Bson;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace EMS
 {
@@ -36,6 +29,42 @@ namespace EMS
             var filterDefinition = Builders<CActiveEvacuees>.Filter.Empty;
             var site = activeEvacuues.Find(filterDefinition).ToList();
             dataGridView1.DataSource = site;
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            var active = new CActiveEvacuees
+            {
+                RFID = "No RFID",
+                EName = NameTB.Texts,
+                EAddress = AddTB.Texts,
+                CPerson = ConTB.Texts,
+                ESite = ETB.Texts,
+                DPS = decimal.Parse(DPTB.Texts),
+                Date = rjDatePicker1.Text
+            };
+            LoadDataGrid();
+            activeEvacuues.InsertOne(active);
+            LoadDataGrid();
+            if (active != null)
+            {
+                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            var filterDefinition = Builders<CActiveEvacuees>.Filter.Or(
+                Builders<CActiveEvacuees>.Filter.Eq(a => a.EName, searchTB.Texts),
+                Builders<CActiveEvacuees>.Filter.Eq(a => a.EAddress, searchTB.Texts),
+                Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, searchTB.Texts)
+                );
+            var families = activeEvacuues.Find(filterDefinition).ToList();
+            dataGridView1.DataSource = families;
         }
     }
 }
