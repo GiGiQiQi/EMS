@@ -195,6 +195,7 @@
     <Compile Include="CAdmin.cs" />
     <Compile Include="CEHistory.cs" />
     <Compile Include="CEvacuee.cs" />
+    <Compile Include="CMNumbers1.cs" />
     <Compile Include="CPersonnel.cs" />
     <Compile Include="CRescuers.cs" />
     <Compile Include="ESite.cs" />
