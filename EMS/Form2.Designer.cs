@@ -48,6 +48,8 @@ namespace EMS
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -55,9 +57,10 @@ namespace EMS
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.ScanTimer = new System.Windows.Forms.Timer(this.components);
+            this.TELabel = new System.Windows.Forms.Label();
+            this.RLabel = new System.Windows.Forms.Label();
+            this.ACLabel = new System.Windows.Forms.Label();
             this.PsideMenu.SuspendLayout();
             this.regMenu.SuspendLayout();
             this.EvacDropDown.SuspendLayout();
@@ -359,9 +362,27 @@ namespace EMS
             this.panel4.Size = new System.Drawing.Size(979, 524);
             this.panel4.TabIndex = 3;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(73, 384);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "RESCUER RFID";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(76, 400);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(264, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel7.Controls.Add(this.ACLabel);
             this.panel7.Controls.Add(this.label3);
             this.panel7.ForeColor = System.Drawing.Color.Black;
             this.panel7.Location = new System.Drawing.Point(574, 56);
@@ -383,6 +404,7 @@ namespace EMS
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel6.Controls.Add(this.RLabel);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(322, 56);
             this.panel6.Name = "panel6";
@@ -410,6 +432,7 @@ namespace EMS
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel5.Controls.Add(this.TELabel);
             this.panel5.Controls.Add(this.label1);
             this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(76, 56);
@@ -428,22 +451,35 @@ namespace EMS
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Evacuees";
             // 
-            // textBox1
+            // TELabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 400);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.TELabel.AutoSize = true;
+            this.TELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TELabel.Location = new System.Drawing.Point(79, 95);
+            this.TELabel.Name = "TELabel";
+            this.TELabel.Size = new System.Drawing.Size(25, 26);
+            this.TELabel.TabIndex = 1;
+            this.TELabel.Text = "0";
             // 
-            // label4
+            // RLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 384);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "RESCUER RFID";
+            this.RLabel.AutoSize = true;
+            this.RLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RLabel.Location = new System.Drawing.Point(85, 95);
+            this.RLabel.Name = "RLabel";
+            this.RLabel.Size = new System.Drawing.Size(25, 26);
+            this.RLabel.TabIndex = 4;
+            this.RLabel.Text = "0";
+            // 
+            // ACLabel
+            // 
+            this.ACLabel.AutoSize = true;
+            this.ACLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ACLabel.Location = new System.Drawing.Point(86, 95);
+            this.ACLabel.Name = "ACLabel";
+            this.ACLabel.Size = new System.Drawing.Size(25, 26);
+            this.ACLabel.TabIndex = 1;
+            this.ACLabel.Text = "0";
             // 
             // Form2
             // 
@@ -506,5 +542,8 @@ namespace EMS
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer ScanTimer;
+        private System.Windows.Forms.Label ACLabel;
+        private System.Windows.Forms.Label RLabel;
+        private System.Windows.Forms.Label TELabel;
     }
 }

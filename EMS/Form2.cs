@@ -17,6 +17,7 @@ namespace EMS
     {
         IMongoCollection<CActiveRescuers> activeRescuers;
         IMongoCollection<CRescuers> rescuersInfo;
+        IMongoCollection<CActiveEvacuees> activeEvacuues;
         private const int DelayMilliseconds = 500;
         private bool isRfidProcessed = false;
 
@@ -172,6 +173,40 @@ namespace EMS
             var database = mongoClient.GetDatabase(databaseName);
             activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
             rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
+            activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuues");
+
+            //Start of loading the counting Data feature
+            var eCount = 0;
+            var rCount = 0;
+            
+            var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
+            var ARFilter = Builders<CActiveRescuers>.Filter.Empty;
+
+            var docAEF = activeEvacuues.Find(AEFilter).ToList();
+            var docARF = activeRescuers.Find(ARFilter).ToList();
+
+            List<CActiveEvacuees> evacueeList = new List<CActiveEvacuees>();
+            List<CActiveRescuers> rescuerList = new List<CActiveRescuers>();
+
+            foreach (var Edocument in docAEF)
+            {
+                evacueeList.Add(Edocument);
+            }
+            foreach (var Rdocument in docARF)
+            {
+                rescuerList.Add(Rdocument);
+            }
+
+            foreach (var eData in evacueeList)
+            {
+                eCount = eCount + 1;
+            }
+            TELabel.Text = eCount.ToString();
+            foreach (var rDate in rescuerList)
+            {
+                rCount = rCount + 1;
+            }
+            ACLabel.Text = rCount.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

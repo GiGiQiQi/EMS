@@ -19,6 +19,10 @@ namespace EMS
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
             FHistory form7 = new FHistory();
             form7.Show();
         }
