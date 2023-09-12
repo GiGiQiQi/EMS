@@ -60,7 +60,7 @@ namespace EMS
                     };
                     evacuationHistory.InsertOne(archive);
                     SerialPort sp = new SerialPort();
-                    sp.PortName = "COM4";
+                    sp.PortName = "COM8";
                     sp.Open();
                     sp.WriteLine("AT" + Environment.NewLine);
                     Thread.Sleep(200);
@@ -101,7 +101,7 @@ namespace EMS
                     };
                     activeEvacuues.InsertOne(active);
                     SerialPort sp = new SerialPort();
-                    sp.PortName = "COM4";
+                    sp.PortName = "COM8";
                     sp.Open();
                     sp.WriteLine("AT" + Environment.NewLine);
                     Thread.Sleep(200);

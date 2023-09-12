@@ -38,7 +38,7 @@ namespace EMS
             foreach (var data in dataList)
             {
                 SerialPort sp = new SerialPort();
-                sp.PortName = "COM4";
+                sp.PortName = "COM8";
                 sp.Open();
                 sp.WriteLine("AT" + Environment.NewLine);
                 Thread.Sleep(500);

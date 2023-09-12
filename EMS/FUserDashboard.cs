@@ -88,8 +88,8 @@ namespace EMS
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            var msg = "Umamin ka na";
-            var msg1 = "Out";
+            var msg = "Time in";
+            var msg1 = "Time Out";
 
             var filter = Builders<CEvacuee>.Filter.Eq(u => u.RFID_Number, textBox1.Text);
             var user = evacueeCollection.Find(filter).FirstOrDefault();
