@@ -61,7 +61,7 @@ namespace EMS
                         Username = AUser.Texts,
                         Password = APass.Texts
                     };
-                    adminCollection.InsertOne(admins);
+                    adminCollection.InsertOneAsync(admins);
                     if (admins != null)
                     {
                         MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -89,7 +89,7 @@ namespace EMS
                         Username = AUser.Texts,
                         Password = APass.Texts
                     };
-                    personnelCollection.InsertOne(personnels);
+                    personnelCollection.InsertOneAsync(personnels);
                     if (personnels != null)
                     {
                         MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
