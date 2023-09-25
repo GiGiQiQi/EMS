@@ -54,7 +54,7 @@ namespace EMS
             };
 
             LoadDataGrid();
-            sitesCollection.InsertOne(sites);
+            sitesCollection.InsertOneAsync(sites);
             if (sites != null)
             {
                 MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -74,7 +74,7 @@ namespace EMS
                 .Set(a => a.Capacity, ECAP.Texts)
                 .Set(a => a.Est_type, ETYPE.Texts);
 
-            sitesCollection.UpdateOne(filterDefinition, updateDefinition);
+            sitesCollection.UpdateOneAsync(filterDefinition, updateDefinition);
             LoadDataGrid();
             if (updateDefinition != null)
             {

@@ -54,7 +54,7 @@ namespace EMS
                 .Set(a => a.Contact_Person_Number, ContNumTB.Texts)
                 .Set(a => a.Relationship, RelTB.Texts);
 
-            evacueeCollection.UpdateOne(filterDefinition, updateDefinition);
+            evacueeCollection.UpdateOneAsync(filterDefinition, updateDefinition);
             LoadDataGrid();
 
             if (updateDefinition != null)

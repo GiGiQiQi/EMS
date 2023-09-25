@@ -155,7 +155,7 @@ namespace EMS
                         RName = user.RescuerName,
                         RescuerRFID = textBox1.Text
                     };
-                    activeRescuers.InsertOne(active);
+                    activeRescuers.InsertOneAsync(active);
                     MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

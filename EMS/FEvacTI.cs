@@ -58,7 +58,7 @@ namespace EMS
                         dateIn = users.Date,
                         dateOut = dateTimePicker1.Text
                     };
-                    evacuationHistory.InsertOne(archive);
+                    evacuationHistory.InsertOneAsync(archive);
                     SerialPort sp = new SerialPort();
                     sp.PortName = "COM8";
                     sp.Open();
@@ -85,7 +85,7 @@ namespace EMS
                     }
                     sp.Close();
                     var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
-                    activeEvacuues.DeleteOne(del);
+                    activeEvacuues.DeleteOneAsync(del);
                 }
                 else if (user != null)
                 {
@@ -99,7 +99,7 @@ namespace EMS
                         DPS = user.Dependents,
                         Date = dateTimePicker1.Text
                     };
-                    activeEvacuues.InsertOne(active);
+                    activeEvacuues.InsertOneAsync(active);
                     SerialPort sp = new SerialPort();
                     sp.PortName = "COM8";
                     sp.Open();

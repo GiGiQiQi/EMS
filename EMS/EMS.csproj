@@ -97,6 +97,9 @@
     <Reference Include="MongoDB.Libmongocrypt, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Libmongocrypt.1.8.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
     </Reference>
@@ -197,6 +200,7 @@
     <Compile Include="CEvacuee.cs" />
     <Compile Include="CMNumbers1.cs" />
     <Compile Include="CPersonnel.cs" />
+    <Compile Include="CRequests.cs" />
     <Compile Include="CRescuers.cs" />
     <Compile Include="ESite.cs" />
     <Compile Include="Evacuee_Registration.cs">

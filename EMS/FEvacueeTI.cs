@@ -44,7 +44,7 @@ namespace EMS
                 Date = rjDatePicker1.Text
             };
             LoadDataGrid();
-            activeEvacuues.InsertOne(active);
+            activeEvacuues.InsertOneAsync(active);
             LoadDataGrid();
             if (active != null)
             {

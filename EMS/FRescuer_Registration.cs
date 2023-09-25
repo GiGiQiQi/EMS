@@ -54,7 +54,7 @@ namespace EMS
                 ResRFID = rjTextBox1.Texts
             };
             LoadDataGrid();
-            rescuersCollection.InsertOne(rescuers);
+            rescuersCollection.InsertOneAsync(rescuers);
             if (rescuers != null)
             {
                 MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -80,7 +80,7 @@ namespace EMS
                 .Set(a => a.BirtDate, RGender.Texts)
                 .Set(a => a.BirtDate, RGen.Text);
 
-            rescuersCollection.UpdateOne(filterDefinition, updateDefinition);
+            rescuersCollection.UpdateOneAsync(filterDefinition, updateDefinition);
             LoadDataGrid();
 
             if (updateDefinition != null)

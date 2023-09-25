@@ -31,11 +31,11 @@ namespace EMS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
-            this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
+            this.RescuerName = new RJCodeAdvance.RJControls.RJTextBox();
             this.rjComboBox1 = new RJCodeAdvance.RJControls.RJComboBox();
-            this.rjTextBox2 = new RJCodeAdvance.RJControls.RJTextBox();
+            this.EvacueeName = new RJCodeAdvance.RJControls.RJTextBox();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
-            this.rjTextBox3 = new RJCodeAdvance.RJControls.RJTextBox();
+            this.AddressTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@ namespace EMS
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(626, 359);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rjButton1
             // 
@@ -71,27 +72,27 @@ namespace EMS
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
-            // rjTextBox1
+            // RescuerName
             // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 0;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(32, 125);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox1.TabIndex = 2;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
+            this.RescuerName.BackColor = System.Drawing.SystemColors.Window;
+            this.RescuerName.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.RescuerName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.RescuerName.BorderRadius = 10;
+            this.RescuerName.BorderSize = 1;
+            this.RescuerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RescuerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.RescuerName.Location = new System.Drawing.Point(32, 125);
+            this.RescuerName.Margin = new System.Windows.Forms.Padding(4);
+            this.RescuerName.Multiline = false;
+            this.RescuerName.Name = "RescuerName";
+            this.RescuerName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.RescuerName.PasswordChar = false;
+            this.RescuerName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.RescuerName.PlaceholderText = "";
+            this.RescuerName.Size = new System.Drawing.Size(250, 31);
+            this.RescuerName.TabIndex = 2;
+            this.RescuerName.Texts = "";
+            this.RescuerName.UnderlinedStyle = false;
             // 
             // rjComboBox1
             // 
@@ -112,27 +113,27 @@ namespace EMS
             this.rjComboBox1.TabIndex = 3;
             this.rjComboBox1.Texts = "";
             // 
-            // rjTextBox2
+            // EvacueeName
             // 
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 0;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(32, 194);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox2.TabIndex = 4;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = false;
+            this.EvacueeName.BackColor = System.Drawing.SystemColors.Window;
+            this.EvacueeName.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.EvacueeName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.EvacueeName.BorderRadius = 10;
+            this.EvacueeName.BorderSize = 1;
+            this.EvacueeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EvacueeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.EvacueeName.Location = new System.Drawing.Point(32, 194);
+            this.EvacueeName.Margin = new System.Windows.Forms.Padding(4);
+            this.EvacueeName.Multiline = false;
+            this.EvacueeName.Name = "EvacueeName";
+            this.EvacueeName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.EvacueeName.PasswordChar = false;
+            this.EvacueeName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.EvacueeName.PlaceholderText = "";
+            this.EvacueeName.Size = new System.Drawing.Size(250, 31);
+            this.EvacueeName.TabIndex = 4;
+            this.EvacueeName.Texts = "";
+            this.EvacueeName.UnderlinedStyle = false;
             // 
             // rjButton2
             // 
@@ -152,36 +153,36 @@ namespace EMS
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
             // 
-            // rjTextBox3
+            // AddressTB
             // 
-            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox3.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox3.BorderRadius = 0;
-            this.rjTextBox3.BorderSize = 2;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(32, 273);
-            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox3.Multiline = false;
-            this.rjTextBox3.Name = "rjTextBox3";
-            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox3.PasswordChar = false;
-            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox3.PlaceholderText = "";
-            this.rjTextBox3.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox3.TabIndex = 6;
-            this.rjTextBox3.Texts = "";
-            this.rjTextBox3.UnderlinedStyle = false;
+            this.AddressTB.BackColor = System.Drawing.SystemColors.Window;
+            this.AddressTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.AddressTB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.AddressTB.BorderRadius = 10;
+            this.AddressTB.BorderSize = 1;
+            this.AddressTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AddressTB.Location = new System.Drawing.Point(32, 273);
+            this.AddressTB.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressTB.Multiline = false;
+            this.AddressTB.Name = "AddressTB";
+            this.AddressTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.AddressTB.PasswordChar = false;
+            this.AddressTB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.AddressTB.PlaceholderText = "";
+            this.AddressTB.Size = new System.Drawing.Size(250, 31);
+            this.AddressTB.TabIndex = 6;
+            this.AddressTB.Texts = "";
+            this.AddressTB.UnderlinedStyle = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(32, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Rescuer Name";
+            this.label1.Text = "Rescuer ID";
             // 
             // label2
             // 
@@ -219,15 +220,16 @@ namespace EMS
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rjTextBox3);
+            this.Controls.Add(this.AddressTB);
             this.Controls.Add(this.rjButton2);
-            this.Controls.Add(this.rjTextBox2);
+            this.Controls.Add(this.EvacueeName);
             this.Controls.Add(this.rjComboBox1);
-            this.Controls.Add(this.rjTextBox1);
+            this.Controls.Add(this.RescuerName);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FAssign";
             this.Text = "FAssign";
+            this.Load += new System.EventHandler(this.FAssign_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,11 +240,11 @@ namespace EMS
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
-        private RJCodeAdvance.RJControls.RJTextBox rjTextBox1;
+        private RJCodeAdvance.RJControls.RJTextBox RescuerName;
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox1;
-        private RJCodeAdvance.RJControls.RJTextBox rjTextBox2;
+        private RJCodeAdvance.RJControls.RJTextBox EvacueeName;
         private RJCodeAdvance.RJControls.RJButton rjButton2;
-        private RJCodeAdvance.RJControls.RJTextBox rjTextBox3;
+        private RJCodeAdvance.RJControls.RJTextBox AddressTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
