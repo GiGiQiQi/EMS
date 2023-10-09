@@ -17,6 +17,8 @@ namespace EMS
     {
         IMongoCollection<CActiveRescuers> activeRescuers;
         IMongoCollection<CRescuers> rescuersInfo;
+        IMongoCollection<CActiveEvacuees> activeEvacuues;
+        IMongoCollection<CRequests> requestCollection;
         private const int DelayMilliseconds = 500;
         private bool isRfidProcessed = false;
 
@@ -40,6 +42,21 @@ namespace EMS
             var database = mongoClient.GetDatabase(databaseName);
             activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
             rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
+            activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
+            requestCollection = database.GetCollection<CRequests>("requests");
+
+            var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
+            long eCount = activeEvacuues.CountDocuments(AEFilter);
+
+            var ARFilter = Builders<CActiveRescuers>.Filter.Empty;
+            long rCount = activeRescuers.CountDocuments(ARFilter);
+
+            var RFilter = Builders<CRequests>.Filter.Empty;
+            long rqCount = requestCollection.CountDocuments(RFilter);
+
+            TELabel.Text = eCount.ToString();
+            ACLabel.Text = rCount.ToString();
+            RLabel.Text = rqCount.ToString();
         }
 
         private void ScanTimer_Tick(object sender, EventArgs e)

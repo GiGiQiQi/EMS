@@ -20,6 +20,7 @@ namespace EMS
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CEvacuee> evacueeCollection;
         IMongoCollection<CEHistory> historyCollection;
+        IMongoCollection<ESite> sitesCollection;
         private const int DelayMilliseconds = 20;
         private bool isRfidProcessed = false;
 
@@ -83,6 +84,15 @@ namespace EMS
             activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
             evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
             historyCollection = database.GetCollection<CEHistory>("EvacuationHistory");
+            sitesCollection = database.GetCollection<ESite>("EvacuationSites");
+
+            LoadComboBoxItems();
+            LoadDataGrid();
+
+            var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
+            long eCount = activeEvacuues.CountDocuments(AEFilter);
+
+            AELabel.Text = eCount.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -190,6 +200,24 @@ namespace EMS
         private void button4_Click(object sender, EventArgs e)
         {
             openChildForm(new FEvacueeTI());
+        }
+        private void LoadComboBoxItems()
+        {
+            var filter = Builders<ESite>.Filter.Empty;
+            var projection = Builders<ESite>.Projection.Include("Site_Name");
+
+            var cursor = sitesCollection.Find(filter).Project(projection).ToCursor();
+
+            foreach(var document in cursor.ToEnumerable())
+            {
+                comboBox1.Items.Add(document["Site_Name"].AsString);
+            }
+        }
+        private void LoadDataGrid()
+        {
+            var filterDefinition = Builders<CActiveEvacuees>.Filter.Empty;
+            var site = activeEvacuues.Find(filterDefinition).ToList();
+            dataGridView1.DataSource = site;
         }
     }
 }

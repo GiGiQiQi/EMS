@@ -40,6 +40,9 @@ namespace EMS
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ScanTimer = new System.Windows.Forms.Timer(this.components);
+            this.TELabel = new System.Windows.Forms.Label();
+            this.RLabel = new System.Windows.Forms.Label();
+            this.ACLabel = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -48,6 +51,7 @@ namespace EMS
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel6.Controls.Add(this.RLabel);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(322, 56);
             this.panel6.Name = "panel6";
@@ -75,6 +79,7 @@ namespace EMS
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel5.Controls.Add(this.TELabel);
             this.panel5.Controls.Add(this.label1);
             this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(76, 56);
@@ -96,6 +101,7 @@ namespace EMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.ACLabel);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(574, 56);
             this.panel1.Name = "panel1";
@@ -134,6 +140,36 @@ namespace EMS
             // 
             this.ScanTimer.Tick += new System.EventHandler(this.ScanTimer_Tick);
             // 
+            // TELabel
+            // 
+            this.TELabel.AutoSize = true;
+            this.TELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.TELabel.Location = new System.Drawing.Point(79, 95);
+            this.TELabel.Name = "TELabel";
+            this.TELabel.Size = new System.Drawing.Size(25, 26);
+            this.TELabel.TabIndex = 1;
+            this.TELabel.Text = "0";
+            // 
+            // RLabel
+            // 
+            this.RLabel.AutoSize = true;
+            this.RLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.RLabel.Location = new System.Drawing.Point(85, 95);
+            this.RLabel.Name = "RLabel";
+            this.RLabel.Size = new System.Drawing.Size(25, 26);
+            this.RLabel.TabIndex = 4;
+            this.RLabel.Text = "0";
+            // 
+            // ACLabel
+            // 
+            this.ACLabel.AutoSize = true;
+            this.ACLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.ACLabel.Location = new System.Drawing.Point(86, 95);
+            this.ACLabel.Name = "ACLabel";
+            this.ACLabel.Size = new System.Drawing.Size(25, 26);
+            this.ACLabel.TabIndex = 4;
+            this.ACLabel.Text = "0";
+            // 
             // FDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,5 +207,8 @@ namespace EMS
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer ScanTimer;
+        private System.Windows.Forms.Label RLabel;
+        private System.Windows.Forms.Label TELabel;
+        private System.Windows.Forms.Label ACLabel;
     }
 }

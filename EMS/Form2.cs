@@ -18,6 +18,7 @@ namespace EMS
         IMongoCollection<CActiveRescuers> activeRescuers;
         IMongoCollection<CRescuers> rescuersInfo;
         IMongoCollection<CActiveEvacuees> activeEvacuues;
+        IMongoCollection<CRequests> requestCollection;
         private const int DelayMilliseconds = 500;
         private bool isRfidProcessed = false;
 
@@ -174,6 +175,7 @@ namespace EMS
             activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
             rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
             activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
+            requestCollection = database.GetCollection<CRequests>("requests");
 
             //Start of loading the counting Data feature
             var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
@@ -182,8 +184,12 @@ namespace EMS
             var ARFilter = Builders<CActiveRescuers>.Filter.Empty;
             long rCount = activeRescuers.CountDocuments(ARFilter);
 
+            var RFilter = Builders<CRequests>.Filter.Empty;
+            long rqCount = requestCollection.CountDocuments(RFilter);
+
             TELabel.Text = eCount.ToString();
             ACLabel.Text = rCount.ToString();
+            RLabel.Text = rqCount.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

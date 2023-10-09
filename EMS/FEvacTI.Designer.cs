@@ -31,33 +31,33 @@ namespace EMS
         {
             this.components = new System.ComponentModel.Container();
             this.SCANTB = new System.Windows.Forms.TextBox();
-            this.ESITETB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AELabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SCANTB
             // 
-            this.SCANTB.Location = new System.Drawing.Point(254, 200);
+            this.SCANTB.Location = new System.Drawing.Point(132, 60);
             this.SCANTB.Name = "SCANTB";
             this.SCANTB.Size = new System.Drawing.Size(369, 20);
             this.SCANTB.TabIndex = 0;
             this.SCANTB.TextChanged += new System.EventHandler(this.SCANTB_TextChanged);
             // 
-            // ESITETB
-            // 
-            this.ESITETB.Location = new System.Drawing.Point(648, 62);
-            this.ESITETB.Name = "ESITETB";
-            this.ESITETB.Size = new System.Drawing.Size(271, 20);
-            this.ESITETB.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 184);
+            this.label1.Location = new System.Drawing.Point(132, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 2;
@@ -66,7 +66,7 @@ namespace EMS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(648, 43);
+            this.label2.Location = new System.Drawing.Point(132, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace EMS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(651, 103);
+            this.label3.Location = new System.Drawing.Point(132, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 4;
@@ -83,7 +83,7 @@ namespace EMS
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(648, 119);
+            this.dateTimePicker1.Location = new System.Drawing.Point(132, 198);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(271, 20);
             this.dateTimePicker1.TabIndex = 5;
@@ -92,20 +92,81 @@ namespace EMS
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(132, 134);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(225, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(401, 134);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 261);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(963, 224);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.AELabel);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(714, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 206);
+            this.panel1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(16, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            // 
+            // AELabel
+            // 
+            this.AELabel.AutoSize = true;
+            this.AELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.AELabel.Location = new System.Drawing.Point(86, 102);
+            this.AELabel.Name = "AELabel";
+            this.AELabel.Size = new System.Drawing.Size(25, 26);
+            this.AELabel.TabIndex = 1;
+            this.AELabel.Text = "0";
+            // 
             // FEvacTI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 485);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ESITETB);
             this.Controls.Add(this.SCANTB);
             this.Name = "FEvacTI";
             this.Text = "FEvacTI";
             this.Load += new System.EventHandler(this.FEvacTI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,11 +175,16 @@ namespace EMS
         #endregion
 
         private System.Windows.Forms.TextBox SCANTB;
-        private System.Windows.Forms.TextBox ESITETB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label AELabel;
+        private System.Windows.Forms.Label label4;
     }
 }
