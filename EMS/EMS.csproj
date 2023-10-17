@@ -209,6 +209,12 @@
     <Compile Include="Evacuee_Registration.Designer.cs">
       <DependentUpon>Evacuee_Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FActiveRescuers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FActiveRescuers.Designer.cs">
+      <DependentUpon>FActiveRescuers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAssign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     </Compile>
     <EmbeddedResource Include="Evacuee_Registration.resx">
       <DependentUpon>Evacuee_Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FActiveRescuers.resx">
+      <DependentUpon>FActiveRescuers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FAssign.resx">
       <DependentUpon>FAssign.cs</DependentUpon>

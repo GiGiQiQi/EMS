@@ -152,6 +152,7 @@ namespace EMS
             this.rjButton2.Text = "Rescuers";
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // AddressTB
             // 

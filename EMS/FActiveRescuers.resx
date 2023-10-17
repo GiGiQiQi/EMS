@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAALEAAACxAcYtSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABbklEQVRIS92Vvy4GQRRHN4RIFDRKOqEgHoCaBKVaIxGFgsYziEInIfEW/jQiEqJXiQ4FhUioSERw
-        frtzk81kZmfIR+EkJ9/euzP3zu7st1v8SzpxHe/xM9M71BzNTaKBoSI5am4SW/l4GeUxgZqjK0liq/ku
-        2fP+vME5Ws73DA3LJfEHqojlfE/ROMHj6rAZm/xr/KTBAm7hZBkl8BuE9uAZR1EsY/3cIfZjFBtohPZA
-        DUawD59cbqd2fIltGMSK5LCNGqtVi0F8xw/sViJEboMxVLE3HFYCNlFzj8oogt+gvge32INCj6VyKiqG
-        UM3UVM2j+A3qe3CDajDn4gfsRXGAyum2NWLFYnThNWrMohIwg4q1ydr4RlIN5lHnL7AdO/DK5VYxiV65
-        GqxXcIgN1Pm1MqqKKlYTNUsS++Dso9DzrngJV/DFxdOYhX0y7UrMPRS7qPjR/UpdVcvQrXtFFdYiZrHl
-        DOAURv+tFUXxBcROqx5cf7dTAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAEFSURBVEhL5dW/SkJhHMbxVyiJwCsoFcpF76WppSVvoVvw
-        Fhpd2wrCzU0cBXF2bWjVKK2xP9/f8BM57/PKyXOm+sIHRJ/3IHIOhn9TBTd4xhO6KK0aHvCdcYdjFKqN
-        ObIXd/ZZB3t1jQ+oC29b4Qq5O8It1MV26aOKnTUxhbpAHjOcQXaBF6iDv/GKS2w6QA+fUAf28QX7mQ8R
-        hlCjMgwQJltvlM2+/CY1KCJKjYqIUiM3gt3Cnr0eQ21dlBq5c2RrQW1dlBq5VGrrotTIpVJbF/UONTSp
-        1NasEWUPhRqbVGprHhHVwBLqQCq1XaAO2Sns3+sNfsCe9FR2+/rOztzjBH+mEH4AVJ8fan+yz9AAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAALEAAACxAcYtSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABAklEQVRIS9XVPWpCQRSG4VullTRZh1aSNUSxyoqMYJ8qTXbiD4p1rLID0/vT2ETfjzhwGM8dda4B
-        feGBwITj9WQ0xa3UwRibgxHauEp97Er0UCk9uTfYaiE7rcUbag2R3RreUGuF7M55gSWy023xhloDZKer
-        6A21XlApXUVvsHRxlXQVdVv0NxGtpfKT339PeMMX9P0T71+r+kRWr9AHKB5q/aCOi9PwX3hDgy0asM0w
-        /fuxPK3l1JPLO+LCWTLt3A4q00RcOEs2hx1UpgaltXjn4q7rnPXII5SGeOcywVELeL8ce0ZcOEuW+vdo
-        fSAunCV7gF7k1Dv5RpzW5a7lHyuKPQTXxws8Bg4rAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

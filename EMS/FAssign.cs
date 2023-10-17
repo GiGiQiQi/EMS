@@ -52,5 +52,11 @@ namespace EMS
                 AddressTB.Texts = selectedRow.Cells["ReqAddress"].Value.ToString();
             }
         }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            FActiveRescuers form1 = new FActiveRescuers();
+            form1.Show();
+        }
     }
 }
