@@ -190,9 +190,9 @@ namespace EMS
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Evacuee Name";
+            this.label2.Text = "Request Number";
             // 
             // label3
             // 

@@ -36,13 +36,13 @@ namespace EMS
             this.AGender = new RJCodeAdvance.RJControls.RJComboBox();
             this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AUser = new RJCodeAdvance.RJControls.RJTextBox();
-            this.APass = new RJCodeAdvance.RJControls.RJTextBox();
+            this.PersonRad = new RJCodeAdvance.RJControls.RJRadioButton();
             this.KeyTB = new RJCodeAdvance.RJControls.RJTextBox();
+            this.AdminRad = new RJCodeAdvance.RJControls.RJRadioButton();
+            this.APass = new RJCodeAdvance.RJControls.RJTextBox();
+            this.AUser = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.AdminRad = new RJCodeAdvance.RJControls.RJRadioButton();
-            this.PersonRad = new RJCodeAdvance.RJControls.RJRadioButton();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
@@ -132,6 +132,9 @@ namespace EMS
             this.AGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.AGender.ForeColor = System.Drawing.Color.DimGray;
             this.AGender.IconColor = System.Drawing.Color.DarkSlateBlue;
+            this.AGender.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
             this.AGender.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.AGender.ListTextColor = System.Drawing.Color.DimGray;
             this.AGender.Location = new System.Drawing.Point(66, 298);
@@ -148,7 +151,7 @@ namespace EMS
             this.rjDatePicker1.BorderSize = 0;
             this.rjDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.rjDatePicker1.Location = new System.Drawing.Point(66, 374);
-            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
+            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.rjDatePicker1.Name = "rjDatePicker1";
             this.rjDatePicker1.Size = new System.Drawing.Size(250, 35);
             this.rjDatePicker1.SkinColor = System.Drawing.Color.DarkSlateBlue;
@@ -169,49 +172,20 @@ namespace EMS
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account";
             // 
-            // AUser
+            // PersonRad
             // 
-            this.AUser.BackColor = System.Drawing.SystemColors.Window;
-            this.AUser.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.AUser.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.AUser.BorderRadius = 0;
-            this.AUser.BorderSize = 2;
-            this.AUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AUser.Location = new System.Drawing.Point(29, 50);
-            this.AUser.Margin = new System.Windows.Forms.Padding(4);
-            this.AUser.Multiline = false;
-            this.AUser.Name = "AUser";
-            this.AUser.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.AUser.PasswordChar = false;
-            this.AUser.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.AUser.PlaceholderText = "USERNAME";
-            this.AUser.Size = new System.Drawing.Size(250, 31);
-            this.AUser.TabIndex = 0;
-            this.AUser.Texts = "";
-            this.AUser.UnderlinedStyle = true;
-            // 
-            // APass
-            // 
-            this.APass.BackColor = System.Drawing.SystemColors.Window;
-            this.APass.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.APass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.APass.BorderRadius = 0;
-            this.APass.BorderSize = 2;
-            this.APass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.APass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.APass.Location = new System.Drawing.Point(29, 124);
-            this.APass.Margin = new System.Windows.Forms.Padding(4);
-            this.APass.Multiline = false;
-            this.APass.Name = "APass";
-            this.APass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.APass.PasswordChar = false;
-            this.APass.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.APass.PlaceholderText = "PASSWORD";
-            this.APass.Size = new System.Drawing.Size(250, 31);
-            this.APass.TabIndex = 1;
-            this.APass.Texts = "";
-            this.APass.UnderlinedStyle = true;
+            this.PersonRad.AutoSize = true;
+            this.PersonRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.PersonRad.Location = new System.Drawing.Point(163, 293);
+            this.PersonRad.MinimumSize = new System.Drawing.Size(0, 21);
+            this.PersonRad.Name = "PersonRad";
+            this.PersonRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.PersonRad.Size = new System.Drawing.Size(101, 21);
+            this.PersonRad.TabIndex = 23;
+            this.PersonRad.TabStop = true;
+            this.PersonRad.Text = "PERSONNEL";
+            this.PersonRad.UnCheckedColor = System.Drawing.Color.Gray;
+            this.PersonRad.UseVisualStyleBackColor = true;
             // 
             // KeyTB
             // 
@@ -235,6 +209,65 @@ namespace EMS
             this.KeyTB.Texts = "";
             this.KeyTB.UnderlinedStyle = false;
             // 
+            // AdminRad
+            // 
+            this.AdminRad.AutoSize = true;
+            this.AdminRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.AdminRad.Location = new System.Drawing.Point(38, 293);
+            this.AdminRad.MinimumSize = new System.Drawing.Size(0, 21);
+            this.AdminRad.Name = "AdminRad";
+            this.AdminRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.AdminRad.Size = new System.Drawing.Size(70, 21);
+            this.AdminRad.TabIndex = 3;
+            this.AdminRad.TabStop = true;
+            this.AdminRad.Text = "ADMIN";
+            this.AdminRad.UnCheckedColor = System.Drawing.Color.Gray;
+            this.AdminRad.UseVisualStyleBackColor = true;
+            // 
+            // APass
+            // 
+            this.APass.BackColor = System.Drawing.SystemColors.Window;
+            this.APass.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.APass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.APass.BorderRadius = 0;
+            this.APass.BorderSize = 2;
+            this.APass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.APass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.APass.Location = new System.Drawing.Point(29, 124);
+            this.APass.Margin = new System.Windows.Forms.Padding(4);
+            this.APass.Multiline = false;
+            this.APass.Name = "APass";
+            this.APass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.APass.PasswordChar = false;
+            this.APass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.APass.PlaceholderText = "PASSWORD";
+            this.APass.Size = new System.Drawing.Size(250, 31);
+            this.APass.TabIndex = 1;
+            this.APass.Texts = "";
+            this.APass.UnderlinedStyle = true;
+            // 
+            // AUser
+            // 
+            this.AUser.BackColor = System.Drawing.SystemColors.Window;
+            this.AUser.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.AUser.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.AUser.BorderRadius = 0;
+            this.AUser.BorderSize = 2;
+            this.AUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.AUser.Location = new System.Drawing.Point(29, 50);
+            this.AUser.Margin = new System.Windows.Forms.Padding(4);
+            this.AUser.Multiline = false;
+            this.AUser.Name = "AUser";
+            this.AUser.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.AUser.PasswordChar = false;
+            this.AUser.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.AUser.PlaceholderText = "USERNAME";
+            this.AUser.Size = new System.Drawing.Size(250, 31);
+            this.AUser.TabIndex = 0;
+            this.AUser.Texts = "";
+            this.AUser.UnderlinedStyle = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -254,36 +287,6 @@ namespace EMS
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "BIRTHDATE";
-            // 
-            // AdminRad
-            // 
-            this.AdminRad.AutoSize = true;
-            this.AdminRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.AdminRad.Location = new System.Drawing.Point(38, 293);
-            this.AdminRad.MinimumSize = new System.Drawing.Size(0, 21);
-            this.AdminRad.Name = "AdminRad";
-            this.AdminRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.AdminRad.Size = new System.Drawing.Size(70, 21);
-            this.AdminRad.TabIndex = 3;
-            this.AdminRad.TabStop = true;
-            this.AdminRad.Text = "ADMIN";
-            this.AdminRad.UnCheckedColor = System.Drawing.Color.Gray;
-            this.AdminRad.UseVisualStyleBackColor = true;
-            // 
-            // PersonRad
-            // 
-            this.PersonRad.AutoSize = true;
-            this.PersonRad.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.PersonRad.Location = new System.Drawing.Point(163, 293);
-            this.PersonRad.MinimumSize = new System.Drawing.Size(0, 21);
-            this.PersonRad.Name = "PersonRad";
-            this.PersonRad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.PersonRad.Size = new System.Drawing.Size(101, 21);
-            this.PersonRad.TabIndex = 23;
-            this.PersonRad.TabStop = true;
-            this.PersonRad.Text = "PERSONNEL";
-            this.PersonRad.UnCheckedColor = System.Drawing.Color.Gray;
-            this.PersonRad.UseVisualStyleBackColor = true;
             // 
             // rjButton1
             // 
