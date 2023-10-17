@@ -16,6 +16,7 @@ namespace EMS
     public partial class Evacuee_Registration : Form
     {
         IMongoCollection<CEvacuee> evacueeCollection;
+        IMongoCollection<CMNumbers1> mobileNumbers;
         public Evacuee_Registration()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace EMS
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
             evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+            mobileNumbers = database.GetCollection<CMNumbers1>("MobileNumbers");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,7 +61,13 @@ namespace EMS
                     Contact_Person_Number = CPNTB.Texts,
                     Relationship = RelTB.Texts
                 };
-                evacueeCollection.InsertOne(evacuees);
+                evacueeCollection.InsertOneAsync(evacuees);
+
+                var numbers = new CMNumbers1
+                {
+                    Number = CNTB.Texts
+                };
+                mobileNumbers.InsertOneAsync(numbers);
                 if (evacuees != null)
                 {
                     MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
