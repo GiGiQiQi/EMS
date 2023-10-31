@@ -66,7 +66,7 @@ namespace EMS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            openChildForm(new Evacuation_Sites());
+            openChildForm(new FHistory());
             hideSideMenu();
         }
         private Form activeForm = null;
@@ -91,7 +91,7 @@ namespace EMS
 
         private void button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new Evacuee_Registration());
+            openChildForm(new FEvacuees());
             hideSideMenu();
         }
 

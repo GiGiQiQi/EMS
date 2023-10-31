@@ -86,13 +86,7 @@ namespace EMS
             historyCollection = database.GetCollection<CEHistory>("EvacuationHistory");
             sitesCollection = database.GetCollection<ESite>("EvacuationSites");
 
-            LoadComboBoxItems();
-            LoadDataGrid();
-
-            var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
-            long eCount = activeEvacuues.CountDocuments(AEFilter);
-
-            AELabel.Text = eCount.ToString();
+            openChildForm(new FEvacTI());
         }
 
         private void timer1_Tick(object sender, EventArgs e)

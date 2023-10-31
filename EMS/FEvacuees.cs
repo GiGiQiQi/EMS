@@ -16,6 +16,7 @@ namespace EMS
     public partial class FEvacuees : Form
     {
         IMongoCollection<CEvacuee> evacueeCollection;
+        IMongoCollection<CMNumbers1> mobileNumbers;
         public FEvacuees()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace EMS
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
             evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+            mobileNumbers = database.GetCollection<CMNumbers1>("MobileNumbers");
             LoadDataGrid();
         }
         private void LoadDataGrid()
@@ -90,6 +92,66 @@ namespace EMS
                 ContNumTB.Texts = selectedRow.Cells["Contact_Person_Number"].Value.ToString();
                 RelTB.Texts = selectedRow.Cells["Relationship"].Value.ToString();
             }
+        }
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            if (RFIDTB.Texts == "" || NameTB.Texts == "" || AddTB.Texts == "" || BrgTB.Texts == "" || ContTB.Texts == "" || DepTB.Texts == "" || ContPerTB.Texts == "" || ContNumTB.Texts == "" || RelTB.Texts == "")
+            {
+                MessageBox.Show("Please fill out the necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var evacuees = new CEvacuee
+                {
+                    RFID_Number = RFIDTB.Texts,
+                    Evacuee_Name = NameTB.Texts,
+                    Evacuee_Address = AddTB.Texts,
+                    Barangay = BrgTB.Texts,
+                    Contact_Number = ContTB.Texts,
+                    Dependents = decimal.Parse(DepTB.Texts),
+                    Contact_Person = ContPerTB.Texts,
+                    Contact_Person_Number = ContNumTB.Texts,
+                    Relationship = RelTB.Texts
+                };
+                evacueeCollection.InsertOneAsync(evacuees);
+
+                var numbers = new CMNumbers1
+                {
+                    Number = ContTB.Texts
+                };
+                mobileNumbers.InsertOneAsync(numbers);
+                if (evacuees != null)
+                {
+                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RFIDTB.Texts = "";
+                    NameTB.Texts = "";
+                    AddTB.Texts = "";
+                    BrgTB.Texts = "";
+                    ContTB.Texts = "";
+                    DepTB.Texts = "";
+                    ContPerTB.Texts = "";
+                    ContNumTB.Texts = "";
+                    RelTB.Texts = "";
+                }
+                else
+                {
+                    MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void responsiveDesign()
+        {
+            if (this.Height > 50)
+            {
+                panel2.Height = panel1.Height;
+            }
+        }
+
+        private void panel2_Resize(object sender, EventArgs e)
+        {
+            responsiveDesign();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

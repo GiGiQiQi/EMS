@@ -38,37 +38,48 @@ namespace EMS
             this.ContTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.ContPerTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.DepTB = new RJCodeAdvance.RJControls.RJComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ContNumTB = new RJCodeAdvance.RJControls.RJTextBox();
-            this.RelTB = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.RelTB = new RJCodeAdvance.RJControls.RJTextBox();
+            this.ContNumTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
+            this.rjButton3 = new RJCodeAdvance.RJControls.RJButton();
+            this.RFIDTB = new RJCodeAdvance.RJControls.RJTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 94);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(617, 567);
+            this.dataGridView1.Size = new System.Drawing.Size(726, 637);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SearchTB
             // 
+            this.SearchTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchTB.BackColor = System.Drawing.SystemColors.Window;
             this.SearchTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.SearchTB.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -76,7 +87,7 @@ namespace EMS
             this.SearchTB.BorderSize = 2;
             this.SearchTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SearchTB.Location = new System.Drawing.Point(590, 42);
+            this.SearchTB.Location = new System.Drawing.Point(393, 51);
             this.SearchTB.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTB.Multiline = false;
             this.SearchTB.Name = "SearchTB";
@@ -91,6 +102,7 @@ namespace EMS
             // 
             // rjButton1
             // 
+            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -99,7 +111,7 @@ namespace EMS
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(847, 42);
+            this.rjButton1.Location = new System.Drawing.Point(650, 51);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(94, 32);
             this.rjButton1.TabIndex = 2;
@@ -117,7 +129,7 @@ namespace EMS
             this.NameTB.BorderSize = 2;
             this.NameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.NameTB.Location = new System.Drawing.Point(10, 50);
+            this.NameTB.Location = new System.Drawing.Point(14, 120);
             this.NameTB.Margin = new System.Windows.Forms.Padding(4);
             this.NameTB.Multiline = false;
             this.NameTB.Name = "NameTB";
@@ -139,7 +151,7 @@ namespace EMS
             this.AddTB.BorderSize = 2;
             this.AddTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AddTB.Location = new System.Drawing.Point(10, 109);
+            this.AddTB.Location = new System.Drawing.Point(14, 181);
             this.AddTB.Margin = new System.Windows.Forms.Padding(4);
             this.AddTB.Multiline = false;
             this.AddTB.Name = "AddTB";
@@ -162,7 +174,7 @@ namespace EMS
             this.BrgTB.BorderSize = 2;
             this.BrgTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrgTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BrgTB.Location = new System.Drawing.Point(10, 176);
+            this.BrgTB.Location = new System.Drawing.Point(14, 251);
             this.BrgTB.Margin = new System.Windows.Forms.Padding(4);
             this.BrgTB.Multiline = false;
             this.BrgTB.Name = "BrgTB";
@@ -184,7 +196,7 @@ namespace EMS
             this.ContTB.BorderSize = 2;
             this.ContTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ContTB.Location = new System.Drawing.Point(10, 241);
+            this.ContTB.Location = new System.Drawing.Point(14, 317);
             this.ContTB.Margin = new System.Windows.Forms.Padding(4);
             this.ContTB.Multiline = false;
             this.ContTB.Name = "ContTB";
@@ -206,7 +218,7 @@ namespace EMS
             this.ContPerTB.BorderSize = 2;
             this.ContPerTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContPerTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ContPerTB.Location = new System.Drawing.Point(7, 49);
+            this.ContPerTB.Location = new System.Drawing.Point(14, 46);
             this.ContPerTB.Margin = new System.Windows.Forms.Padding(4);
             this.ContPerTB.Multiline = false;
             this.ContPerTB.Name = "ContPerTB";
@@ -221,6 +233,8 @@ namespace EMS
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.RFIDTB);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -231,12 +245,57 @@ namespace EMS
             this.groupBox1.Controls.Add(this.AddTB);
             this.groupBox1.Controls.Add(this.ContTB);
             this.groupBox1.Controls.Add(this.BrgTB);
-            this.groupBox1.Location = new System.Drawing.Point(13, 53);
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 364);
+            this.groupBox1.Size = new System.Drawing.Size(306, 446);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EVACUEE INFO";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 369);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "DEPENDENTS";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 300);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "CONTACT NUMBER";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 234);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "BARANGAY";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 164);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "ADDRESS";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "NAME";
             // 
             // DepTB
             // 
@@ -247,9 +306,20 @@ namespace EMS
             this.DepTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DepTB.ForeColor = System.Drawing.Color.DimGray;
             this.DepTB.IconColor = System.Drawing.Color.DarkSlateBlue;
+            this.DepTB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10+"});
             this.DepTB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.DepTB.ListTextColor = System.Drawing.Color.DimGray;
-            this.DepTB.Location = new System.Drawing.Point(14, 307);
+            this.DepTB.Location = new System.Drawing.Point(18, 385);
             this.DepTB.MinimumSize = new System.Drawing.Size(200, 30);
             this.DepTB.Name = "DepTB";
             this.DepTB.Padding = new System.Windows.Forms.Padding(1);
@@ -265,34 +335,39 @@ namespace EMS
             this.groupBox2.Controls.Add(this.RelTB);
             this.groupBox2.Controls.Add(this.ContNumTB);
             this.groupBox2.Controls.Add(this.ContPerTB);
-            this.groupBox2.Location = new System.Drawing.Point(20, 434);
+            this.groupBox2.Location = new System.Drawing.Point(12, 539);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(299, 223);
+            this.groupBox2.Size = new System.Drawing.Size(306, 223);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONTACT INFO";
             // 
-            // ContNumTB
+            // label8
             // 
-            this.ContNumTB.BackColor = System.Drawing.SystemColors.Window;
-            this.ContNumTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.ContNumTB.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.ContNumTB.BorderRadius = 10;
-            this.ContNumTB.BorderSize = 2;
-            this.ContNumTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContNumTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ContNumTB.Location = new System.Drawing.Point(7, 112);
-            this.ContNumTB.Margin = new System.Windows.Forms.Padding(4);
-            this.ContNumTB.Multiline = false;
-            this.ContNumTB.Name = "ContNumTB";
-            this.ContNumTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.ContNumTB.PasswordChar = false;
-            this.ContNumTB.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ContNumTB.PlaceholderText = "";
-            this.ContNumTB.Size = new System.Drawing.Size(250, 31);
-            this.ContNumTB.TabIndex = 8;
-            this.ContNumTB.Texts = "";
-            this.ContNumTB.UnderlinedStyle = false;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 155);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "RELATIONSHIP";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "CONTACT NUMBER";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "CONTACT PERSON";
             // 
             // RelTB
             // 
@@ -303,7 +378,7 @@ namespace EMS
             this.RelTB.BorderSize = 2;
             this.RelTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RelTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RelTB.Location = new System.Drawing.Point(7, 173);
+            this.RelTB.Location = new System.Drawing.Point(17, 172);
             this.RelTB.Margin = new System.Windows.Forms.Padding(4);
             this.RelTB.Multiline = false;
             this.RelTB.Name = "RelTB";
@@ -316,80 +391,31 @@ namespace EMS
             this.RelTB.Texts = "";
             this.RelTB.UnderlinedStyle = false;
             // 
-            // label1
+            // ContNumTB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "NAME";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "ADDRESS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "BARANGAY";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 224);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "CONTACT NUMBER";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 291);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "DEPENDENTS";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "CONTACT PERSON";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "CONTACT NUMBER";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 156);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "RELATIONSHIP";
+            this.ContNumTB.BackColor = System.Drawing.SystemColors.Window;
+            this.ContNumTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.ContNumTB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.ContNumTB.BorderRadius = 10;
+            this.ContNumTB.BorderSize = 2;
+            this.ContNumTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContNumTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ContNumTB.Location = new System.Drawing.Point(17, 109);
+            this.ContNumTB.Margin = new System.Windows.Forms.Padding(4);
+            this.ContNumTB.Multiline = false;
+            this.ContNumTB.Name = "ContNumTB";
+            this.ContNumTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.ContNumTB.PasswordChar = false;
+            this.ContNumTB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.ContNumTB.PlaceholderText = "";
+            this.ContNumTB.Size = new System.Drawing.Size(250, 31);
+            this.ContNumTB.TabIndex = 8;
+            this.ContNumTB.Texts = "";
+            this.ContNumTB.UnderlinedStyle = false;
             // 
             // rjButton2
             // 
+            this.rjButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -398,7 +424,7 @@ namespace EMS
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(791, 680);
+            this.rjButton2.Location = new System.Drawing.Point(425, 737);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(150, 40);
             this.rjButton2.TabIndex = 10;
@@ -407,19 +433,90 @@ namespace EMS
             this.rjButton2.UseVisualStyleBackColor = false;
             this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
+            // rjButton3
+            // 
+            this.rjButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rjButton3.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton3.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton3.BorderRadius = 15;
+            this.rjButton3.BorderSize = 0;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.ForeColor = System.Drawing.Color.White;
+            this.rjButton3.Location = new System.Drawing.Point(594, 737);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(150, 40);
+            this.rjButton3.TabIndex = 11;
+            this.rjButton3.Text = "ADD";
+            this.rjButton3.TextColor = System.Drawing.Color.White;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
+            // 
+            // RFIDTB
+            // 
+            this.RFIDTB.BackColor = System.Drawing.SystemColors.Window;
+            this.RFIDTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.RFIDTB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.RFIDTB.BorderRadius = 10;
+            this.RFIDTB.BorderSize = 2;
+            this.RFIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RFIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.RFIDTB.Location = new System.Drawing.Point(10, 57);
+            this.RFIDTB.Margin = new System.Windows.Forms.Padding(4);
+            this.RFIDTB.Multiline = false;
+            this.RFIDTB.Name = "RFIDTB";
+            this.RFIDTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.RFIDTB.PasswordChar = false;
+            this.RFIDTB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.RFIDTB.PlaceholderText = "";
+            this.RFIDTB.Size = new System.Drawing.Size(254, 31);
+            this.RFIDTB.TabIndex = 12;
+            this.RFIDTB.Texts = "";
+            this.RFIDTB.UnderlinedStyle = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "RFID";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 789);
+            this.panel1.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.SearchTB);
+            this.panel2.Controls.Add(this.rjButton1);
+            this.panel2.Controls.Add(this.rjButton3);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.rjButton2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(344, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(763, 789);
+            this.panel2.TabIndex = 13;
+            this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
+            // 
             // FEvacuees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(963, 732);
-            this.Controls.Add(this.rjButton2);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rjButton1);
-            this.Controls.Add(this.SearchTB);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1107, 789);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "FEvacuees";
             this.Text = "FEvacuees";
             this.Load += new System.EventHandler(this.FEvacuees_Load);
@@ -428,6 +525,8 @@ namespace EMS
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -456,5 +555,10 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJTextBox RelTB;
         private RJCodeAdvance.RJControls.RJTextBox ContNumTB;
         private RJCodeAdvance.RJControls.RJButton rjButton2;
+        private RJCodeAdvance.RJControls.RJButton rjButton3;
+        private System.Windows.Forms.Label label9;
+        private RJCodeAdvance.RJControls.RJTextBox RFIDTB;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
