@@ -44,17 +44,24 @@ namespace EMS
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(312, 60);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 67);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(639, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(620, 349);
             this.dataGridView1.TabIndex = 13;
             // 
             // rjTextBox1
@@ -66,7 +73,7 @@ namespace EMS
             this.rjTextBox1.BorderSize = 2;
             this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(31, 79);
+            this.rjTextBox1.Location = new System.Drawing.Point(51, 67);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox1.Multiline = false;
             this.rjTextBox1.Name = "rjTextBox1";
@@ -88,7 +95,7 @@ namespace EMS
             this.RName.BorderSize = 2;
             this.RName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RName.Location = new System.Drawing.Point(31, 134);
+            this.RName.Location = new System.Drawing.Point(51, 130);
             this.RName.Margin = new System.Windows.Forms.Padding(4);
             this.RName.Multiline = false;
             this.RName.Name = "RName";
@@ -110,7 +117,7 @@ namespace EMS
             this.RAddress.BorderSize = 2;
             this.RAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RAddress.Location = new System.Drawing.Point(31, 191);
+            this.RAddress.Location = new System.Drawing.Point(51, 191);
             this.RAddress.Margin = new System.Windows.Forms.Padding(4);
             this.RAddress.Multiline = false;
             this.RAddress.Name = "RAddress";
@@ -132,7 +139,7 @@ namespace EMS
             this.RCont.BorderSize = 2;
             this.RCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RCont.Location = new System.Drawing.Point(31, 243);
+            this.RCont.Location = new System.Drawing.Point(51, 256);
             this.RCont.Margin = new System.Windows.Forms.Padding(4);
             this.RCont.Multiline = false;
             this.RCont.Name = "RCont";
@@ -159,7 +166,7 @@ namespace EMS
             "FEMALE"});
             this.RGender.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.RGender.ListTextColor = System.Drawing.Color.DimGray;
-            this.RGender.Location = new System.Drawing.Point(35, 307);
+            this.RGender.Location = new System.Drawing.Point(51, 319);
             this.RGender.MinimumSize = new System.Drawing.Size(200, 30);
             this.RGender.Name = "RGender";
             this.RGender.Padding = new System.Windows.Forms.Padding(1);
@@ -172,7 +179,7 @@ namespace EMS
             this.RGen.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.RGen.BorderSize = 0;
             this.RGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.RGen.Location = new System.Drawing.Point(35, 371);
+            this.RGen.Location = new System.Drawing.Point(51, 381);
             this.RGen.MinimumSize = new System.Drawing.Size(4, 35);
             this.RGen.Name = "RGen";
             this.RGen.Size = new System.Drawing.Size(250, 35);
@@ -184,7 +191,7 @@ namespace EMS
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(35, 288);
+            this.label1.Location = new System.Drawing.Point(58, 303);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 20;
@@ -194,7 +201,7 @@ namespace EMS
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(38, 352);
+            this.label2.Location = new System.Drawing.Point(58, 365);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 21;
@@ -202,6 +209,7 @@ namespace EMS
             // 
             // rjButton1
             // 
+            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -210,7 +218,7 @@ namespace EMS
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(852, 423);
+            this.rjButton1.Location = new System.Drawing.Point(518, 433);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(99, 40);
             this.rjButton1.TabIndex = 22;
@@ -223,7 +231,7 @@ namespace EMS
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(38, 62);
+            this.label3.Location = new System.Drawing.Point(64, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 23;
@@ -233,7 +241,7 @@ namespace EMS
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(35, 117);
+            this.label4.Location = new System.Drawing.Point(64, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 24;
@@ -244,7 +252,7 @@ namespace EMS
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(35, 174);
+            this.label5.Location = new System.Drawing.Point(64, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 25;
@@ -254,7 +262,7 @@ namespace EMS
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(38, 226);
+            this.label6.Location = new System.Drawing.Point(58, 239);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 26;
@@ -262,6 +270,7 @@ namespace EMS
             // 
             // rjButton2
             // 
+            this.rjButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -270,7 +279,7 @@ namespace EMS
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(728, 423);
+            this.rjButton2.Location = new System.Drawing.Point(396, 433);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(99, 40);
             this.rjButton2.TabIndex = 27;
@@ -279,32 +288,54 @@ namespace EMS
             this.rjButton2.UseVisualStyleBackColor = false;
             this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.rjTextBox1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.RGen);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.RGender);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.RName);
+            this.panel1.Controls.Add(this.RAddress);
+            this.panel1.Controls.Add(this.RCont);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(334, 485);
+            this.panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.rjButton2);
+            this.panel2.Controls.Add(this.rjButton1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(334, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(629, 485);
+            this.panel2.TabIndex = 29;
+            // 
             // FRescuer_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 485);
-            this.Controls.Add(this.rjButton2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.rjButton1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.RGen);
-            this.Controls.Add(this.RGender);
-            this.Controls.Add(this.RCont);
-            this.Controls.Add(this.RAddress);
-            this.Controls.Add(this.RName);
-            this.Controls.Add(this.rjTextBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "FRescuer_Registration";
             this.Text = "FRescuer_Registration";
             this.Load += new System.EventHandler(this.FRescuer_Registration_Load);
+            this.SizeChanged += new System.EventHandler(this.FRescuer_Registration_SizeChanged);
+            this.Resize += new System.EventHandler(this.FRescuer_Registration_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -324,5 +355,7 @@ namespace EMS
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private RJCodeAdvance.RJControls.RJButton rjButton2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

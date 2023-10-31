@@ -43,20 +43,31 @@ namespace EMS
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(392, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 76);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 341);
+            this.dataGridView1.RowHeadersWidth = 42;
+            this.dataGridView1.Size = new System.Drawing.Size(620, 341);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Resize += new System.EventHandler(this.dataGridView1_Resize);
             // 
             // SiteID
             // 
@@ -67,7 +78,7 @@ namespace EMS
             this.SiteID.BorderSize = 2;
             this.SiteID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SiteID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SiteID.Location = new System.Drawing.Point(58, 97);
+            this.SiteID.Location = new System.Drawing.Point(27, 93);
             this.SiteID.Margin = new System.Windows.Forms.Padding(4);
             this.SiteID.Multiline = false;
             this.SiteID.Name = "SiteID";
@@ -89,7 +100,7 @@ namespace EMS
             this.ENAME.BorderSize = 2;
             this.ENAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ENAME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ENAME.Location = new System.Drawing.Point(58, 155);
+            this.ENAME.Location = new System.Drawing.Point(27, 157);
             this.ENAME.Margin = new System.Windows.Forms.Padding(4);
             this.ENAME.Multiline = false;
             this.ENAME.Name = "ENAME";
@@ -111,7 +122,7 @@ namespace EMS
             this.EADD.BorderSize = 2;
             this.EADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EADD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.EADD.Location = new System.Drawing.Point(58, 223);
+            this.EADD.Location = new System.Drawing.Point(27, 219);
             this.EADD.Margin = new System.Windows.Forms.Padding(4);
             this.EADD.Multiline = false;
             this.EADD.Name = "EADD";
@@ -133,7 +144,7 @@ namespace EMS
             this.ECAP.BorderSize = 2;
             this.ECAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ECAP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ECAP.Location = new System.Drawing.Point(58, 291);
+            this.ECAP.Location = new System.Drawing.Point(27, 283);
             this.ECAP.Margin = new System.Windows.Forms.Padding(4);
             this.ECAP.Multiline = false;
             this.ECAP.Name = "ECAP";
@@ -165,7 +176,7 @@ namespace EMS
             "Gymnasium"});
             this.ETYPE.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.ETYPE.ListTextColor = System.Drawing.Color.DimGray;
-            this.ETYPE.Location = new System.Drawing.Point(70, 361);
+            this.ETYPE.Location = new System.Drawing.Point(39, 353);
             this.ETYPE.MinimumSize = new System.Drawing.Size(200, 30);
             this.ETYPE.Name = "ETYPE";
             this.ETYPE.Padding = new System.Windows.Forms.Padding(1);
@@ -175,6 +186,7 @@ namespace EMS
             // 
             // rjButton1
             // 
+            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -183,7 +195,7 @@ namespace EMS
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(837, 429);
+            this.rjButton1.Location = new System.Drawing.Point(257, 433);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(114, 40);
             this.rjButton1.TabIndex = 20;
@@ -194,6 +206,7 @@ namespace EMS
             // 
             // rjButton2
             // 
+            this.rjButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -202,7 +215,7 @@ namespace EMS
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(707, 429);
+            this.rjButton2.Location = new System.Drawing.Point(377, 433);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(114, 40);
             this.rjButton2.TabIndex = 21;
@@ -213,6 +226,7 @@ namespace EMS
             // 
             // rjButton3
             // 
+            this.rjButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton3.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton3.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -221,7 +235,7 @@ namespace EMS
             this.rjButton3.FlatAppearance.BorderSize = 0;
             this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton3.ForeColor = System.Drawing.Color.White;
-            this.rjButton3.Location = new System.Drawing.Point(578, 429);
+            this.rjButton3.Location = new System.Drawing.Point(497, 433);
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(114, 40);
             this.rjButton3.TabIndex = 22;
@@ -233,7 +247,7 @@ namespace EMS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 80);
+            this.label1.Location = new System.Drawing.Point(36, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 23;
@@ -242,7 +256,7 @@ namespace EMS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 138);
+            this.label2.Location = new System.Drawing.Point(36, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 24;
@@ -251,7 +265,7 @@ namespace EMS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 206);
+            this.label3.Location = new System.Drawing.Point(36, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 25;
@@ -260,7 +274,7 @@ namespace EMS
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 274);
+            this.label4.Location = new System.Drawing.Point(36, 266);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 26;
@@ -269,11 +283,43 @@ namespace EMS
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 345);
+            this.label5.Location = new System.Drawing.Point(36, 337);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 13);
             this.label5.TabIndex = 27;
             this.label5.Text = "ESTABLISHMENT TYPE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.SiteID);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.ENAME);
+            this.panel1.Controls.Add(this.EADD);
+            this.panel1.Controls.Add(this.ETYPE);
+            this.panel1.Controls.Add(this.ECAP);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(334, 485);
+            this.panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.rjButton1);
+            this.panel2.Controls.Add(this.rjButton3);
+            this.panel2.Controls.Add(this.rjButton2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(334, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(629, 485);
+            this.panel2.TabIndex = 29;
             // 
             // Add_Site_Form
             // 
@@ -281,27 +327,18 @@ namespace EMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(963, 485);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.rjButton3);
-            this.Controls.Add(this.rjButton2);
-            this.Controls.Add(this.rjButton1);
-            this.Controls.Add(this.ETYPE);
-            this.Controls.Add(this.ECAP);
-            this.Controls.Add(this.EADD);
-            this.Controls.Add(this.ENAME);
-            this.Controls.Add(this.SiteID);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Add_Site_Form";
             this.Text = "Add Site";
             this.Load += new System.EventHandler(this.Add_Site_Form_Load);
+            this.Resize += new System.EventHandler(this.Add_Site_Form_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -320,5 +357,7 @@ namespace EMS
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

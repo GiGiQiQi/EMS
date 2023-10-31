@@ -92,5 +92,23 @@ namespace EMS
                 MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void responsiveDesign()
+        {
+            if (this.Height > 50)
+            {
+                panel2.Height = panel1.Height;
+            }
+        }
+
+        private void FRescuer_Registration_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRescuer_Registration_Resize(object sender, EventArgs e)
+        {
+            responsiveDesign();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

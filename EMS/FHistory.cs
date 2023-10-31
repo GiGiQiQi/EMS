@@ -30,6 +30,10 @@ namespace EMS
             evacHistory = database.GetCollection<CEHistory>("EvacuationHistory");
 
             LoadDataGrid();
+            var EFilter = Builders<CEHistory>.Filter.Empty;
+            long eCount = evacHistory.CountDocuments(EFilter);
+
+            ELabel.Text = eCount.ToString();
         }
         private void LoadDataGrid()
         {
@@ -47,6 +51,24 @@ namespace EMS
                 );
             var infos = evacHistory.Find(filterDefinition).ToList();
             dataGridView1.DataSource = infos;
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void responsiveDesign()
+        {
+            if (this.Height > 50)
+            {
+                panel3.Height = panel2.Height;
+            }
+        }
+
+        private void FHistory_Resize(object sender, EventArgs e)
+        {
+            responsiveDesign();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

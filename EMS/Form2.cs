@@ -26,8 +26,6 @@ namespace EMS
         {
             InitializeComponent();
             customDesign();
-            ScanTimer.Interval = DelayMilliseconds;
-            ScanTimer.Tick += ScanTimer_Tick;
         }
         private void customDesign()
         {
@@ -127,45 +125,6 @@ namespace EMS
             openChildForm(new FWarnings());
             hideSideMenu();
         }
-        private void ScanTimer_Tick(object sender, EventArgs e)
-        {
-            ScanTimer.Stop();
-
-            var filter = Builders<CRescuers>.Filter.Eq(u => u.ResRFID, textBox1.Text);
-            var user = rescuersInfo.Find(filter).FirstOrDefault();
-
-            var filters = Builders<CActiveRescuers>.Filter.Eq(u => u.RescuerRFID, textBox1.Text);
-            var users = activeRescuers.Find(filters).FirstOrDefault();
-
-
-            if (!isRfidProcessed && textBox1.Text.Length == 10)
-            {
-                isRfidProcessed = true; // Move this line above the data insertion block.
-
-                if(users != null)
-                {
-                    var del = Builders<CActiveRescuers>.Filter.Eq(u => u.RescuerRFID, textBox1.Text);
-                    activeRescuers.DeleteOne(del);
-                    MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                else if (user != null)
-                {
-                    var active = new CActiveRescuers
-                    {
-                        RName = user.RescuerName,
-                        RescuerRFID = textBox1.Text
-                    };
-                    activeRescuers.InsertOneAsync(active);
-                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Record not found!");
-                }
-            }
-        }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
@@ -177,19 +136,7 @@ namespace EMS
             activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
             requestCollection = database.GetCollection<CRequests>("requests");
 
-            //Start of loading the counting Data feature
-            var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
-            long eCount = activeEvacuues.CountDocuments(AEFilter);
-
-            var ARFilter = Builders<CActiveRescuers>.Filter.Empty;
-            long rCount = activeRescuers.CountDocuments(ARFilter);
-
-            var RFilter = Builders<CRequests>.Filter.Empty;
-            long rqCount = requestCollection.CountDocuments(RFilter);
-
-            TELabel.Text = eCount.ToString();
-            ACLabel.Text = rCount.ToString();
-            RLabel.Text = rqCount.ToString();
+            openChildForm(new FDashboard());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -198,6 +145,11 @@ namespace EMS
             ScanTimer.Start();
 
             isRfidProcessed = false;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

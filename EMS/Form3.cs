@@ -111,5 +111,22 @@ namespace EMS
             var site = sitesCollection.Find(filterDefinition).ToList();
             dataGridView1.DataSource = site;
         }
+        private void responsiveDesign()
+        {
+            if(this.Height > 50)
+            {
+                panel2.Height = panel1.Height;
+            }
+        }
+
+        private void Add_Site_Form_Resize(object sender, EventArgs e)
+        {
+            responsiveDesign();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void dataGridView1_Resize(object sender, EventArgs e)
+        {
+        }
     }
 }

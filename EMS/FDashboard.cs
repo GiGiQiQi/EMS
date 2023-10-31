@@ -19,7 +19,7 @@ namespace EMS
         IMongoCollection<CRescuers> rescuersInfo;
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CRequests> requestCollection;
-        private const int DelayMilliseconds = 500;
+        private const int DelayMilliseconds = 100;
         private bool isRfidProcessed = false;
 
         public FDashboard()
@@ -72,13 +72,18 @@ namespace EMS
 
             if (!isRfidProcessed && textBox1.Text.Length == 10)
             {
-                isRfidProcessed = true; // Move this line above the data insertion block.
-
+                textBox1.Enabled = false;
+                isRfidProcessed = true;
                 if (users != null)
                 {
                     var del = Builders<CActiveRescuers>.Filter.Eq(u => u.RescuerRFID, textBox1.Text);
                     activeRescuers.DeleteOne(del);
-                    MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (result == DialogResult.OK)
+                    {
+                        textBox1.Enabled = true;
+                    }
                 }
 
                 else if (user != null)
@@ -89,12 +94,18 @@ namespace EMS
                         RescuerRFID = textBox1.Text
                     };
                     activeRescuers.InsertOneAsync(active);
-                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result =  MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (result == DialogResult.OK)
+                    {
+                        textBox1.Enabled = true;
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Record not found!");
                 }
+                textBox1.Clear();
             }
         }
 
@@ -104,6 +115,11 @@ namespace EMS
             ScanTimer.Start();
 
             isRfidProcessed = false;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
