@@ -36,8 +36,8 @@ namespace EMS
 
         private void loadDataGrid()
         {
-            var filterDefinition = Builders<CRequests>.Filter.Empty;
-            var site = requests.Find(filterDefinition).ToList();
+            var filterDefinition = Builders<CActiveRescuers>.Filter.Empty;
+            var site = activeRescuers.Find(filterDefinition).ToList();
             dataGridView1.DataSource = site;
         }
 
@@ -48,8 +48,7 @@ namespace EMS
 
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
-                EvacueeName.Texts = selectedRow.Cells["ReqNumber"].Value.ToString();
-                AddressTB.Texts = selectedRow.Cells["ReqAddress"].Value.ToString();
+                RIDTB.Texts = selectedRow.Cells["RescuerRFID"].Value.ToString();
             }
         }
 
@@ -57,6 +56,19 @@ namespace EMS
         {
             FActiveRescuers form1 = new FActiveRescuers();
             form1.Show();
+        }
+        private void responsiveDesign()
+        {
+            if(this.Height > 50)
+            {
+                panel2.Height = panel1.Height;
+            }
+        }
+
+        private void panel2_Resize(object sender, EventArgs e)
+        {
+            responsiveDesign();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

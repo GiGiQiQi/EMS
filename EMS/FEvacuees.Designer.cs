@@ -38,6 +38,8 @@ namespace EMS
             this.ContTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.ContPerTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.RFIDTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@ namespace EMS
             this.ContNumTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton3 = new RJCodeAdvance.RJControls.RJButton();
-            this.RFIDTB = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -167,6 +167,7 @@ namespace EMS
             // 
             // BrgTB
             // 
+            this.BrgTB.AutoScroll = true;
             this.BrgTB.BackColor = System.Drawing.SystemColors.Window;
             this.BrgTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.BrgTB.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -251,6 +252,37 @@ namespace EMS
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EVACUEE INFO";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "RFID";
+            // 
+            // RFIDTB
+            // 
+            this.RFIDTB.BackColor = System.Drawing.SystemColors.Window;
+            this.RFIDTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.RFIDTB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.RFIDTB.BorderRadius = 10;
+            this.RFIDTB.BorderSize = 2;
+            this.RFIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RFIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.RFIDTB.Location = new System.Drawing.Point(10, 57);
+            this.RFIDTB.Margin = new System.Windows.Forms.Padding(4);
+            this.RFIDTB.Multiline = false;
+            this.RFIDTB.Name = "RFIDTB";
+            this.RFIDTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.RFIDTB.PasswordChar = false;
+            this.RFIDTB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.RFIDTB.PlaceholderText = "";
+            this.RFIDTB.Size = new System.Drawing.Size(254, 31);
+            this.RFIDTB.TabIndex = 12;
+            this.RFIDTB.Texts = "";
+            this.RFIDTB.UnderlinedStyle = false;
             // 
             // label5
             // 
@@ -453,39 +485,9 @@ namespace EMS
             this.rjButton3.UseVisualStyleBackColor = false;
             this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
             // 
-            // RFIDTB
-            // 
-            this.RFIDTB.BackColor = System.Drawing.SystemColors.Window;
-            this.RFIDTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.RFIDTB.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.RFIDTB.BorderRadius = 10;
-            this.RFIDTB.BorderSize = 2;
-            this.RFIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RFIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RFIDTB.Location = new System.Drawing.Point(10, 57);
-            this.RFIDTB.Margin = new System.Windows.Forms.Padding(4);
-            this.RFIDTB.Multiline = false;
-            this.RFIDTB.Name = "RFIDTB";
-            this.RFIDTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.RFIDTB.PasswordChar = false;
-            this.RFIDTB.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.RFIDTB.PlaceholderText = "";
-            this.RFIDTB.Size = new System.Drawing.Size(254, 31);
-            this.RFIDTB.TabIndex = 12;
-            this.RFIDTB.Texts = "";
-            this.RFIDTB.UnderlinedStyle = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "RFID";
-            // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -496,6 +498,7 @@ namespace EMS
             // 
             // panel2
             // 
+            this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.SearchTB);
             this.panel2.Controls.Add(this.rjButton1);
             this.panel2.Controls.Add(this.rjButton3);

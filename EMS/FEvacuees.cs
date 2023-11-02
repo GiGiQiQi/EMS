@@ -94,11 +94,36 @@ namespace EMS
             }
         }
 
-        private void rjButton3_Click(object sender, EventArgs e)
+        private async void rjButton3_Click(object sender, EventArgs e)
         {
+            var indexKeys = Builders<CEvacuee>.IndexKeys.Ascending("Name").Ascending("Address").Ascending("Contacts");
+            var indexOptions = new CreateIndexOptions { Unique = true };
+            var indexModel = new CreateIndexModel<CEvacuee>(indexKeys, indexOptions);
+            await evacueeCollection.Indexes.CreateOneAsync(indexModel);
+
+            var documentToInsert = new BsonDocument
+        {
+            { "Name", NameTB.Texts },
+            { "Address", AddTB.Texts },
+            { "Barangay", BrgTB.Texts }
+        };
+
+            var filter = Builders<CEvacuee>.Filter.And(
+                Builders<CEvacuee>.Filter.Eq("Name", documentToInsert["Name"]),
+                Builders<CEvacuee>.Filter.Eq("Address", documentToInsert["Address"]),
+                Builders<CEvacuee>.Filter.Eq("Barangay", documentToInsert["Barangay"])
+            );
+
+            var existingDocument = await evacueeCollection.Find(filter).FirstOrDefaultAsync();
+
+
             if (RFIDTB.Texts == "" || NameTB.Texts == "" || AddTB.Texts == "" || BrgTB.Texts == "" || ContTB.Texts == "" || DepTB.Texts == "" || ContPerTB.Texts == "" || ContNumTB.Texts == "" || RelTB.Texts == "")
             {
                 MessageBox.Show("Please fill out the necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(existingDocument != null)
+            {
+                MessageBox.Show("Evacuee Data already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -114,13 +139,13 @@ namespace EMS
                     Contact_Person_Number = ContNumTB.Texts,
                     Relationship = RelTB.Texts
                 };
-                evacueeCollection.InsertOneAsync(evacuees);
+                evacueeCollection.InsertOne(evacuees);
 
                 var numbers = new CMNumbers1
                 {
                     Number = ContTB.Texts
                 };
-                mobileNumbers.InsertOneAsync(numbers);
+                mobileNumbers.InsertOne(numbers);
                 if (evacuees != null)
                 {
                     MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
