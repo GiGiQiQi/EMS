@@ -196,6 +196,7 @@
     <Compile Include="CActiveEvacuees.cs" />
     <Compile Include="CActiveRescuers.cs" />
     <Compile Include="CAdmin.cs" />
+    <Compile Include="CATeams.cs" />
     <Compile Include="CEHistory.cs" />
     <Compile Include="CEvacuee.cs" />
     <Compile Include="CMNumbers1.cs" />
@@ -268,6 +269,12 @@
     </Compile>
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRAssign.Designer.cs">
+      <DependentUpon>FRAssign.cs</DependentUpon>
     </Compile>
     <Compile Include="FRescuer_Registration.cs">
       <SubType>Form</SubType>
@@ -345,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRAssign.resx">
+      <DependentUpon>FRAssign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRescuer_Registration.resx">
       <DependentUpon>FRescuer_Registration.cs</DependentUpon>

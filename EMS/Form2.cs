@@ -31,6 +31,7 @@ namespace EMS
         {
             EvacDropDown.Visible = false;
             regMenu.Visible = false;
+            AssignMenu.Visible = false;
         }
         private void hideSideMenu()
         {
@@ -38,6 +39,8 @@ namespace EMS
                 EvacDropDown.Visible = false;
             if (regMenu.Visible == true)
                 regMenu.Visible = false;
+            if (AssignMenu.Visible == true)
+                AssignMenu.Visible = false;
         }
         private void showSubMenu(Panel Dropdown)
         {
@@ -116,14 +119,11 @@ namespace EMS
 
         private void button8_Click(object sender, EventArgs e)
         {
-            openChildForm(new FAssign());
-            hideSideMenu();
+            showSubMenu(AssignMenu);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            openChildForm(new FWarnings());
-            hideSideMenu();
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -150,6 +150,24 @@ namespace EMS
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FWarnings());
+            hideSideMenu();
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new FAssign());
+            hideSideMenu();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FRAssign());
+            hideSideMenu();
         }
     }
 }

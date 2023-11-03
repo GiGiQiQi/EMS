@@ -15,8 +15,8 @@ namespace EMS
 {
     public partial class FAssign : Form
     {
-        IMongoCollection<CRequests> requests;
         IMongoCollection<CActiveRescuers> activeRescuers;
+        IMongoCollection<CATeams> activeTeams;
         public FAssign()
         {
             InitializeComponent();
@@ -28,8 +28,8 @@ namespace EMS
             var databaseName = MongoUrl.Create(connectionString).DatabaseName;
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
-            requests = database.GetCollection<CRequests>("requests");
             activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
+            activeTeams = database.GetCollection<CATeams>("ActiveTeams");
 
             loadDataGrid();
         }
@@ -48,7 +48,23 @@ namespace EMS
 
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
-                RIDTB.Texts = selectedRow.Cells["RescuerRFID"].Value.ToString();
+                if (RIDTB.Texts == "")
+                {
+
+                    RIDTB.Texts = selectedRow.Cells["RescuerRFID"].Value.ToString();
+                }
+                else if(RFIDTB1.Texts == "")
+                {
+                    RFIDTB1.Texts = selectedRow.Cells["RescuerRFID"].Value.ToString();
+                }
+                else if (RFIDTB2.Texts == "")
+                {
+                    RFIDTB2.Texts = selectedRow.Cells["RescuerRFID"].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Pleas Remove One of the filled Textbox for Rescruer  RfID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -69,6 +85,30 @@ namespace EMS
         {
             responsiveDesign();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            var Teams = new CATeams
+            {
+                MemberName = new List<string>
+                {
+                    RIDTB.Texts,
+                    RFIDTB1.Texts,
+                    RFIDTB2.Texts
+                },
+                TNum = TNCB.Texts,
+                TLoc = LocTB.Texts
+            };
+            activeTeams.InsertOneAsync(Teams);
+            if (Teams != null)
+            {
+                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
