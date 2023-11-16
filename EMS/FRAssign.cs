@@ -15,6 +15,7 @@ namespace EMS
     public partial class FRAssign : Form
     {
         IMongoCollection<CRequests> reqsCollection;
+        IMongoCollection<CATeams> activeTeams;
         public FRAssign()
         {
             InitializeComponent();
@@ -46,8 +47,34 @@ namespace EMS
             var mongoClient = new MongoClient(connectionString);
             var database = mongoClient.GetDatabase(databaseName);
             reqsCollection = database.GetCollection<CRequests>("requests");
+            activeTeams = database.GetCollection<CATeams>("ActiveTeams");
 
             loadDatagrid();
+            LoadComboBoxItems();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                AddTB.Texts = selectedRow.Cells["ReqAddress"].Value.ToString();
+                MobTB.Texts = selectedRow.Cells["ReqNumber"].Value.ToString();
+            }
+        }
+        private void LoadComboBoxItems()
+        {
+            var filter = Builders<CATeams>.Filter.Empty;
+            var projection = Builders<CATeams>.Projection.Include("TeamNumber");
+
+            var cursor = activeTeams.Find(filter).Project(projection).ToCursor();
+
+            foreach (var document in cursor.ToEnumerable())
+            {
+                rjComboBox1.Items.Add(document["TeamNumber"].AsString);
+            }
         }
     }
 }

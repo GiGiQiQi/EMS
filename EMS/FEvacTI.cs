@@ -46,7 +46,8 @@ namespace EMS
 
             if (!isRfidProcessed && SCANTB.Text.Length == 10)
             {
-                isRfidProcessed = true; // Move this line above the data insertion block.
+                textBox1.Enabled = false;
+                isRfidProcessed = true;
 
                 if(users != null)
                 {
@@ -78,11 +79,19 @@ namespace EMS
                     var response = sp.ReadExisting();
                     if (response.Contains("ERROR"))
                     {
-                        MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            textBox1.Enabled = true;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            textBox1.Enabled = true;
+                        }
                     }
                     sp.Close();
                     var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
@@ -118,11 +127,19 @@ namespace EMS
                     var response = sp.ReadExisting();
                     if (response.Contains("ERROR"))
                     {
-                        MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            textBox1.Enabled = true;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            textBox1.Enabled = true;
+                        }
                     }
                     sp.Close();
                 }
