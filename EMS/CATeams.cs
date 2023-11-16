@@ -13,6 +13,8 @@ namespace EMS
     {
         [BsonId, BsonElement("_id"), BsonRepresentation(BsonType.ObjectId)]
         public string TeamID { get; set; }
+        [BsonElement("TeamName"), BsonRepresentation(BsonType.String)]
+        public string TeamName { get; set; }
         [BsonElement("TeamNumber"), BsonRepresentation(BsonType.String)]
         public string TNum { get; set; }
         [BsonElement("MemberName"), BsonRepresentation(BsonType.String)]

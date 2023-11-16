@@ -87,27 +87,39 @@ namespace EMS
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
+        private async Task<bool> CheckTeamExistence(string teamNumber)
         {
-            var Teams = new CATeams
+            var filter = Builders<CATeams>.Filter.Eq("TNum", teamNumber);
+            var count = await activeTeams.CountDocumentsAsync(filter);
+            return count > 0;
+        }
+
+        private async void rjButton1_Click(object sender, EventArgs e)
+        {
+            var teamNumber = TNCB.Texts;
+
+            // Check if the team number already exists
+            if (await CheckTeamExistence(teamNumber))
             {
-                MemberName = new List<string>
-                {
-                    RIDTB.Texts,
-                    RFIDTB1.Texts,
-                    RFIDTB2.Texts
-                },
-                TNum = TNCB.Texts,
-                TLoc = LocTB.Texts
-            };
-            activeTeams.InsertOneAsync(Teams);
-            if (Teams != null)
-            {
-                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Team already exists in the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var Teams = new CATeams
+                {
+                    MemberName = new List<string>
+            {
+                RIDTB.Texts,
+                RFIDTB1.Texts,
+                RFIDTB2.Texts
+            },
+                    TNum = teamNumber,
+                    TLoc = LocTB.Texts
+                };
+
+                // Insert the team only if it doesn't exist
+                await activeTeams.InsertOneAsync(Teams);
+                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
