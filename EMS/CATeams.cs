@@ -21,5 +21,7 @@ namespace EMS
         public List<string> MemberName { get; set; }
         [BsonElement("TeamLocation"), BsonRepresentation(BsonType.String)]
         public string TLoc { get; set; }
+        [BsonElement("TeamContact"), BsonRepresentation(BsonType.String)]
+        public string TeamContact { get; set; }
     }
 }

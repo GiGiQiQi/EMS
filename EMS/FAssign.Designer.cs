@@ -32,7 +32,6 @@ namespace EMS
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.RIDTB = new RJCodeAdvance.RJControls.RJTextBox();
-            this.TNCB = new RJCodeAdvance.RJControls.RJComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LocTB = new RJCodeAdvance.RJControls.RJTextBox();
@@ -41,6 +40,7 @@ namespace EMS
             this.RFIDTB2 = new RJCodeAdvance.RJControls.RJTextBox();
             this.RFIDTB1 = new RJCodeAdvance.RJControls.RJTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TNCB = new RJCodeAdvance.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -101,36 +101,6 @@ namespace EMS
             this.RIDTB.Texts = "";
             this.RIDTB.UnderlinedStyle = false;
             // 
-            // TNCB
-            // 
-            this.TNCB.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TNCB.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.TNCB.BorderSize = 1;
-            this.TNCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.TNCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TNCB.ForeColor = System.Drawing.Color.DimGray;
-            this.TNCB.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.TNCB.Items.AddRange(new object[] {
-            "TEAM 1",
-            "TEAM 2",
-            "TEAM 3",
-            "TEAM 4",
-            "TEAM 5",
-            "TEAM 6",
-            "TEAM 7",
-            "TEAM 8",
-            "TEAM 9",
-            "TEAM 10"});
-            this.TNCB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.TNCB.ListTextColor = System.Drawing.Color.DimGray;
-            this.TNCB.Location = new System.Drawing.Point(51, 232);
-            this.TNCB.MinimumSize = new System.Drawing.Size(200, 30);
-            this.TNCB.Name = "TNCB";
-            this.TNCB.Padding = new System.Windows.Forms.Padding(1);
-            this.TNCB.Size = new System.Drawing.Size(250, 30);
-            this.TNCB.TabIndex = 3;
-            this.TNCB.Texts = "";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -182,9 +152,9 @@ namespace EMS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.TNCB);
             this.panel1.Controls.Add(this.RFIDTB2);
             this.panel1.Controls.Add(this.RFIDTB1);
-            this.panel1.Controls.Add(this.TNCB);
             this.panel1.Controls.Add(this.rjButton1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.RIDTB);
@@ -251,6 +221,28 @@ namespace EMS
             this.panel2.TabIndex = 11;
             this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
+            // TNCB
+            // 
+            this.TNCB.BackColor = System.Drawing.SystemColors.Window;
+            this.TNCB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.TNCB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TNCB.BorderRadius = 10;
+            this.TNCB.BorderSize = 1;
+            this.TNCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TNCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TNCB.Location = new System.Drawing.Point(51, 233);
+            this.TNCB.Margin = new System.Windows.Forms.Padding(4);
+            this.TNCB.Multiline = false;
+            this.TNCB.Name = "TNCB";
+            this.TNCB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TNCB.PasswordChar = false;
+            this.TNCB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TNCB.PlaceholderText = "";
+            this.TNCB.Size = new System.Drawing.Size(250, 31);
+            this.TNCB.TabIndex = 12;
+            this.TNCB.Texts = "";
+            this.TNCB.UnderlinedStyle = false;
+            // 
             // FAssign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,7 +266,6 @@ namespace EMS
         private System.Windows.Forms.DataGridView dataGridView1;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
         private RJCodeAdvance.RJControls.RJTextBox RIDTB;
-        private RJCodeAdvance.RJControls.RJComboBox TNCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private RJCodeAdvance.RJControls.RJTextBox LocTB;
@@ -283,5 +274,6 @@ namespace EMS
         private System.Windows.Forms.Panel panel2;
         private RJCodeAdvance.RJControls.RJTextBox RFIDTB2;
         private RJCodeAdvance.RJControls.RJTextBox RFIDTB1;
+        private RJCodeAdvance.RJControls.RJTextBox TNCB;
     }
 }

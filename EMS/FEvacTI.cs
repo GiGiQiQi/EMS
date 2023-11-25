@@ -42,12 +42,11 @@ namespace EMS
             var filters = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
             var users = activeEvacuues.Find(filters).FirstOrDefault();
 
-            string evacName = users.EName;
-            string evacSite = users.ESite;
+            string evacName = user.Evacuee_Name;
             string dateIn = dateTimePicker1.Text;
 
-            var msgIN = "Good day, this message is sent to inform you that" + evacName + "Have successfully evacuated at" + evacSite + " " + dateIn;
-            var msgOut = "Good day, this message is sent to inform you that" + evacName + "Have exited at" + evacSite + " " + dateIn;
+            var msgIN = "Good day, this message is sent to inform you that " + evacName + "Have successfully evacuated at" +comboBox1.Text+ " " + dateIn;
+            var msgOut = "Good day, this message is sent to inform you that " + evacName + "Have exited at" + comboBox1.Text + " " + dateIn;
 
             if (!isRfidProcessed && SCANTB.Text.Length == 10)
             {
@@ -67,7 +66,7 @@ namespace EMS
                     };
                     evacuationHistory.InsertOneAsync(archive);
                     SerialPort sp = new SerialPort();
-                    sp.PortName = "COM8";
+                    sp.PortName = textBox1.Text;
                     sp.Open();
                     sp.WriteLine("AT" + Environment.NewLine);
                     Thread.Sleep(200);
@@ -115,7 +114,7 @@ namespace EMS
                     };
                     activeEvacuues.InsertOneAsync(active);
                     SerialPort sp = new SerialPort();
-                    sp.PortName = "COM8";
+                    sp.PortName = textBox1.Text;
                     sp.Open();
                     sp.WriteLine("AT" + Environment.NewLine);
                     Thread.Sleep(200);

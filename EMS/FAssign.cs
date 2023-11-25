@@ -17,6 +17,7 @@ namespace EMS
     {
         IMongoCollection<CActiveRescuers> activeRescuers;
         IMongoCollection<CATeams> activeTeams;
+        IMongoCollection<CRescuers> rescuersInfo;
         public FAssign()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace EMS
             var database = mongoClient.GetDatabase(databaseName);
             activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
             activeTeams = database.GetCollection<CATeams>("ActiveTeams");
+            rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
 
             loadDataGrid();
         }
@@ -96,9 +98,11 @@ namespace EMS
 
         private async void rjButton1_Click(object sender, EventArgs e)
         {
+            var filter = Builders<CRescuers>.Filter.Eq(u => u.ResRFID, RIDTB.Texts);
+            var rescuer = rescuersInfo.Find(filter).FirstOrDefault();
+
             var teamNumber = TNCB.Texts;
 
-            // Check if the team number already exists
             if (await CheckTeamExistence(teamNumber))
             {
                 MessageBox.Show("Team already exists in the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -108,16 +112,15 @@ namespace EMS
                 var Teams = new CATeams
                 {
                     MemberName = new List<string>
-            {
-                RIDTB.Texts,
-                RFIDTB1.Texts,
-                RFIDTB2.Texts
-            },
+                    {
+                        RIDTB.Texts,
+                        RFIDTB1.Texts,
+                        RFIDTB2.Texts
+                    },
                     TNum = teamNumber,
-                    TLoc = LocTB.Texts
+                    TLoc = LocTB.Texts,
+                    TeamContact = rescuer.Contact_Number
                 };
-
-                // Insert the team only if it doesn't exist
                 await activeTeams.InsertOneAsync(Teams);
                 MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

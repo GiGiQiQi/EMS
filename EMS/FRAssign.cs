@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Driver;
 using System.Configuration;
+using System.IO.Ports;
+using System.Threading;
 
 namespace EMS
 {
@@ -75,6 +77,62 @@ namespace EMS
             {
                 rjComboBox1.Items.Add(document["TeamNumber"].AsString);
             }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            var filter = Builders<CATeams>.Filter.Eq(u => u.TNum, rjComboBox1.Texts);
+            var user = activeTeams.Find(filter).FirstOrDefault();
+
+            var confirmation = "Your request Have been received, rescue will be sent immediately.";
+            var confirmation2 = "Your Assignment is to rescue an Evacuue at" + AddTB.Texts;
+
+            SerialPort sp = new SerialPort();
+            sp.PortName = "COM4";
+            sp.Open();
+            sp.WriteLine("AT" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp.WriteLine("AT+CMGS=\"" + MobTB.Texts + "\"" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp.WriteLine(confirmation + Environment.NewLine);
+            Thread.Sleep(500);
+            sp.Write(new byte[] { 26 }, 0, 1);
+            Thread.Sleep(3000);
+
+            var response = sp.ReadExisting();
+            sp.Close();
+
+            SerialPort sp1 = new SerialPort();
+            sp1.PortName = "COM4";
+            sp1.Open();
+            sp1.WriteLine("AT" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp1.WriteLine("AT+CMGF=1" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp1.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp1.WriteLine("AT+CMGS=\"" + user.TeamContact + "\"" + Environment.NewLine);
+            Thread.Sleep(500);
+            sp1.WriteLine(confirmation2 + Environment.NewLine);
+            Thread.Sleep(500);
+            sp1.Write(new byte[] { 26 }, 0, 1);
+            Thread.Sleep(500);
+
+            var response1 = sp1.ReadExisting();
+
+            if(response.Contains("Error") && response1.Contains("Error"))
+            {
+                MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Message sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            sp1.Close();
         }
     }
 }
