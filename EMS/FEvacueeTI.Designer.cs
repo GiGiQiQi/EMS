@@ -39,7 +39,11 @@ namespace EMS
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.ETB = new RJCodeAdvance.RJControls.RJTextBox();
             this.DPTB = new RJCodeAdvance.RJControls.RJComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // NameTB
@@ -51,7 +55,7 @@ namespace EMS
             this.NameTB.BorderSize = 2;
             this.NameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.NameTB.Location = new System.Drawing.Point(50, 157);
+            this.NameTB.Location = new System.Drawing.Point(25, 176);
             this.NameTB.Margin = new System.Windows.Forms.Padding(4);
             this.NameTB.Multiline = false;
             this.NameTB.Name = "NameTB";
@@ -73,7 +77,7 @@ namespace EMS
             this.AddTB.BorderSize = 2;
             this.AddTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AddTB.Location = new System.Drawing.Point(50, 222);
+            this.AddTB.Location = new System.Drawing.Point(25, 241);
             this.AddTB.Margin = new System.Windows.Forms.Padding(4);
             this.AddTB.Multiline = false;
             this.AddTB.Name = "AddTB";
@@ -95,7 +99,7 @@ namespace EMS
             this.ConTB.BorderSize = 2;
             this.ConTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ConTB.Location = new System.Drawing.Point(50, 286);
+            this.ConTB.Location = new System.Drawing.Point(25, 305);
             this.ConTB.Margin = new System.Windows.Forms.Padding(4);
             this.ConTB.Multiline = false;
             this.ConTB.Name = "ConTB";
@@ -110,6 +114,7 @@ namespace EMS
             // 
             // searchTB
             // 
+            this.searchTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchTB.BackColor = System.Drawing.SystemColors.Window;
             this.searchTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.searchTB.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -117,7 +122,7 @@ namespace EMS
             this.searchTB.BorderSize = 2;
             this.searchTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.searchTB.Location = new System.Drawing.Point(546, 54);
+            this.searchTB.Location = new System.Drawing.Point(247, 56);
             this.searchTB.Margin = new System.Windows.Forms.Padding(4);
             this.searchTB.Multiline = false;
             this.searchTB.Name = "searchTB";
@@ -135,7 +140,7 @@ namespace EMS
             this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjDatePicker1.BorderSize = 0;
             this.rjDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.rjDatePicker1.Location = new System.Drawing.Point(50, 405);
+            this.rjDatePicker1.Location = new System.Drawing.Point(25, 424);
             this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.rjDatePicker1.Name = "rjDatePicker1";
             this.rjDatePicker1.Size = new System.Drawing.Size(250, 35);
@@ -145,16 +150,20 @@ namespace EMS
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(339, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 110);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(596, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(639, 317);
             this.dataGridView1.TabIndex = 6;
             // 
             // rjButton1
             // 
+            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -163,7 +172,7 @@ namespace EMS
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(803, 405);
+            this.rjButton1.Location = new System.Drawing.Point(504, 433);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(132, 40);
             this.rjButton1.TabIndex = 7;
@@ -174,6 +183,7 @@ namespace EMS
             // 
             // rjButton2
             // 
+            this.rjButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -182,7 +192,7 @@ namespace EMS
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(803, 45);
+            this.rjButton2.Location = new System.Drawing.Point(504, 47);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(132, 40);
             this.rjButton2.TabIndex = 8;
@@ -200,7 +210,7 @@ namespace EMS
             this.ETB.BorderSize = 2;
             this.ETB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ETB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ETB.Location = new System.Drawing.Point(50, 91);
+            this.ETB.Location = new System.Drawing.Point(25, 110);
             this.ETB.Margin = new System.Windows.Forms.Padding(4);
             this.ETB.Multiline = false;
             this.ETB.Name = "ETB";
@@ -236,7 +246,7 @@ namespace EMS
             "10+"});
             this.DPTB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.DPTB.ListTextColor = System.Drawing.Color.DimGray;
-            this.DPTB.Location = new System.Drawing.Point(50, 346);
+            this.DPTB.Location = new System.Drawing.Point(25, 365);
             this.DPTB.MinimumSize = new System.Drawing.Size(200, 30);
             this.DPTB.Name = "DPTB";
             this.DPTB.Padding = new System.Windows.Forms.Padding(1);
@@ -244,26 +254,47 @@ namespace EMS
             this.DPTB.TabIndex = 10;
             this.DPTB.Texts = "";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ETB);
+            this.panel1.Controls.Add(this.DPTB);
+            this.panel1.Controls.Add(this.NameTB);
+            this.panel1.Controls.Add(this.AddTB);
+            this.panel1.Controls.Add(this.ConTB);
+            this.panel1.Controls.Add(this.rjDatePicker1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(315, 485);
+            this.panel1.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.searchTB);
+            this.panel2.Controls.Add(this.rjButton2);
+            this.panel2.Controls.Add(this.rjButton1);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(315, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(648, 485);
+            this.panel2.TabIndex = 12;
+            // 
             // FEvacueeTI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(963, 485);
-            this.Controls.Add(this.DPTB);
-            this.Controls.Add(this.ETB);
-            this.Controls.Add(this.rjButton2);
-            this.Controls.Add(this.rjButton1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.rjDatePicker1);
-            this.Controls.Add(this.searchTB);
-            this.Controls.Add(this.ConTB);
-            this.Controls.Add(this.AddTB);
-            this.Controls.Add(this.NameTB);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "FEvacueeTI";
             this.Text = "FEvacueeTI";
             this.Load += new System.EventHandler(this.FEvacueeTI_Load);
+            this.Resize += new System.EventHandler(this.FEvacueeTI_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,5 +311,7 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJButton rjButton2;
         private RJCodeAdvance.RJControls.RJTextBox ETB;
         private RJCodeAdvance.RJControls.RJComboBox DPTB;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

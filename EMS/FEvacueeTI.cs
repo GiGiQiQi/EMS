@@ -66,5 +66,18 @@ namespace EMS
             var families = activeEvacuues.Find(filterDefinition).ToList();
             dataGridView1.DataSource = families;
         }
+        private void responsiveDesign()
+        {
+            if (this.Height > 50)
+            {
+                panel2.Height = panel1.Height;
+            }
+        }
+
+        private void FEvacueeTI_Resize(object sender, EventArgs e)
+        {
+            responsiveDesign();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

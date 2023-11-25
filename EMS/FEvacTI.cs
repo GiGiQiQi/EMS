@@ -35,14 +35,19 @@ namespace EMS
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            var msgIN = "Time in";
-            var msgOUT = "Time out";
 
             var filter = Builders<CEvacuee>.Filter.Eq(u => u.RFID_Number, SCANTB.Text);
             var user = evacueeCollection.Find(filter).FirstOrDefault();
 
             var filters = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
             var users = activeEvacuues.Find(filters).FirstOrDefault();
+
+            string evacName = users.EName;
+            string evacSite = users.ESite;
+            string dateIn = dateTimePicker1.Text;
+
+            var msgIN = "Good day, this message is sent to inform you that" + evacName + "Have successfully evacuated at" + evacSite + " " + dateIn;
+            var msgOut = "Good day, this message is sent to inform you that" + evacName + "Have exited at" + evacSite + " " + dateIn;
 
             if (!isRfidProcessed && SCANTB.Text.Length == 10)
             {
@@ -72,7 +77,7 @@ namespace EMS
                     Thread.Sleep(200);
                     sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
                     Thread.Sleep(200);
-                    sp.WriteLine(msgOUT + Environment.NewLine);
+                    sp.WriteLine(msgOut + Environment.NewLine);
                     Thread.Sleep(200);
                     sp.Write(new byte[] { 26 }, 0, 1);
                     Thread.Sleep(200);
