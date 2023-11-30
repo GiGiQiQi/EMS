@@ -27,6 +27,7 @@ namespace EMS
             InitializeComponent();
             ScanTimer.Interval = DelayMilliseconds;
             ScanTimer.Tick += ScanTimer_Tick;
+            this.Load += new EventHandler(FDashboard_Load);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -36,6 +37,10 @@ namespace EMS
 
         private void FDashboard_Load(object sender, EventArgs e)
         {
+            textBox1.BeginInvoke((MethodInvoker)delegate {
+                textBox1.Select();
+            });
+
             var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
             var databaseName = MongoUrl.Create(connectionString).DatabaseName;
             var mongoClient = new MongoClient(connectionString);

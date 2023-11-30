@@ -25,6 +25,9 @@ namespace EMS
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
+            LoadForm LoadForm = new LoadForm();
+            LoadForm.Show();
+            List<string> statusMessages = new List<string>();
             var filter = Builders<CMNumbers1>.Filter.Empty;
             var documents = mobilenumbers.Find(filter).ToList();
 
@@ -57,16 +60,17 @@ namespace EMS
 
                 if (response.Contains("ERROR"))
                 {
-                    MessageBox.Show($"Message not sent to {data.Number}", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    statusMessages.Add($"Message not sent to {data.Number}");
                 }
                 else
                 {
-                    MessageBox.Show($"Message sent to {data.Number}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    statusMessages.Add($"Message sent to {data.Number}");
                 }
                 sp.Close();
             }
-
-
+            LoadForm.Close();
+            string summaryMessage = string.Join(Environment.NewLine, statusMessages);
+            MessageBox.Show(summaryMessage, "Messages Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void FWarnings_Load(object sender, EventArgs e)

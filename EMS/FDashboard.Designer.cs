@@ -54,7 +54,7 @@ namespace EMS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 321);
+            this.textBox1.Location = new System.Drawing.Point(27, 328);
             this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(264, 20);
@@ -64,11 +64,12 @@ namespace EMS
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(23, 305);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.Size = new System.Drawing.Size(234, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "RESCUER RFID";
+            this.label4.Text = "RESCUER RFID SCANNER";
             // 
             // ScanTimer
             // 
@@ -120,6 +121,7 @@ namespace EMS
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.TELabel);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -133,7 +135,7 @@ namespace EMS
             this.TELabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TELabel.AutoSize = true;
             this.TELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.TELabel.Location = new System.Drawing.Point(200, 73);
+            this.TELabel.Location = new System.Drawing.Point(198, 71);
             this.TELabel.Name = "TELabel";
             this.TELabel.Size = new System.Drawing.Size(25, 26);
             this.TELabel.TabIndex = 1;
@@ -152,6 +154,7 @@ namespace EMS
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.RLabel);
             this.panel3.Controls.Add(this.ReqLabel);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -165,7 +168,7 @@ namespace EMS
             this.RLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RLabel.AutoSize = true;
             this.RLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.RLabel.Location = new System.Drawing.Point(204, 73);
+            this.RLabel.Location = new System.Drawing.Point(202, 71);
             this.RLabel.Name = "RLabel";
             this.RLabel.Size = new System.Drawing.Size(25, 26);
             this.RLabel.TabIndex = 1;
@@ -184,6 +187,7 @@ namespace EMS
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.ACLabel);
             this.panel4.Controls.Add(this.ActiveLabel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -197,7 +201,7 @@ namespace EMS
             this.ACLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ACLabel.AutoSize = true;
             this.ACLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.ACLabel.Location = new System.Drawing.Point(206, 73);
+            this.ACLabel.Location = new System.Drawing.Point(204, 71);
             this.ACLabel.Name = "ACLabel";
             this.ACLabel.Size = new System.Drawing.Size(25, 26);
             this.ACLabel.TabIndex = 1;

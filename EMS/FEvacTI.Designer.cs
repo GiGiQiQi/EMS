@@ -44,6 +44,7 @@ namespace EMS
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,7 +107,7 @@ namespace EMS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 227);
+            this.textBox1.Location = new System.Drawing.Point(84, 236);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
@@ -156,6 +157,7 @@ namespace EMS
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.SCANTB);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.label1);
@@ -169,6 +171,7 @@ namespace EMS
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(441, 485);
             this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -178,6 +181,15 @@ namespace EMS
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(522, 503);
             this.panel3.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(81, 220);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "COM PORT";
             // 
             // FEvacTI
             // 
@@ -216,5 +228,6 @@ namespace EMS
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
     }
 }
