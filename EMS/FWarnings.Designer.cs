@@ -35,8 +35,9 @@ namespace EMS
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,6 +111,7 @@ namespace EMS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
@@ -118,6 +120,20 @@ namespace EMS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 479);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 13;
+            this.comboBox1.Items.AddRange(new object[] {
+            "San Isidro",
+            "San Rafael",
+            "San Jose",
+            "Burgos"});
+            this.comboBox1.Location = new System.Drawing.Point(40, 317);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(491, 21);
+            this.comboBox1.TabIndex = 5;
             // 
             // panel2
             // 
@@ -129,19 +145,12 @@ namespace EMS
             this.panel2.Size = new System.Drawing.Size(235, 479);
             this.panel2.TabIndex = 1;
             // 
-            // comboBox1
+            // textBox2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 13;
-            this.comboBox1.Items.AddRange(new object[] {
-            "San Isidro",
-            "San Rafael",
-            "San Jose",
-            "Burgos"});
-            this.comboBox1.Location = new System.Drawing.Point(40, 240);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(491, 21);
-            this.comboBox1.TabIndex = 5;
+            this.textBox2.Location = new System.Drawing.Point(40, 249);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(149, 20);
+            this.textBox2.TabIndex = 6;
             // 
             // FWarnings
             // 
@@ -170,5 +179,6 @@ namespace EMS
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -41,7 +41,7 @@ namespace EMS
             foreach (var data in dataList)
             {
                 SerialPort sp = new SerialPort();
-                sp.PortName = "COM4";
+                sp.PortName = textBox2.Text;
                 sp.Open();
                 sp.WriteLine("AT" + Environment.NewLine);
                 Thread.Sleep(500);
@@ -54,7 +54,7 @@ namespace EMS
                 sp.WriteLine(textBox1.Text + Environment.NewLine);
                 Thread.Sleep(500);
                 sp.Write(new byte[] { 26 }, 0, 1);
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
 
                 var response = sp.ReadExisting();
 

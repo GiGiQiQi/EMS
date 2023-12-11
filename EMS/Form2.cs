@@ -20,7 +20,6 @@ namespace EMS
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CRequests> requestCollection;
         private const int DelayMilliseconds = 500;
-        private bool isRfidProcessed = false;
 
         public Form2()
         {
@@ -127,14 +126,29 @@ namespace EMS
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
-            rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
-            activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
-            requestCollection = database.GetCollection<CRequests>("requests");
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
+                rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
+                activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
+                requestCollection = database.GetCollection<CRequests>("requests");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("Command error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
 
             openChildForm(new FDashboard());
         }
@@ -143,8 +157,6 @@ namespace EMS
         {
             ScanTimer.Stop();
             ScanTimer.Start();
-
-            isRfidProcessed = false;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

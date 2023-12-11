@@ -40,64 +40,94 @@ namespace EMS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            adminCollection = database.GetCollection<CAdmin>("AdminInfo");
-            personnelCollection = database.GetCollection<CPersonnel>("PersonnelInfo");
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                adminCollection = database.GetCollection<CAdmin>("AdminInfo");
+                personnelCollection = database.GetCollection<CPersonnel>("PersonnelInfo");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("MongoDB Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("MongoDB Command error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            string username = rjTextBox1.Texts;
-            string password = rjTextBox2.Texts;
-
-            if (AdminRad.Checked)
+            try
             {
-                var filter = Builders<CAdmin>.Filter.Eq(u => u.Username, username) & Builders<CAdmin>.Filter.Eq(u => u.Password, password);
-                var user = adminCollection.Find(filter).FirstOrDefault();
+                string username = rjTextBox1.Texts;
+                string password = rjTextBox2.Texts;
 
-                if (user != null)
+                if (AdminRad.Checked)
                 {
-                    MessageBox.Show("Login successful!");
-                    this.Hide();
-                    Form2 form2 = new Form2();
-                    form2.Show();
+                    var filter = Builders<CAdmin>.Filter.Eq(u => u.Username, username) & Builders<CAdmin>.Filter.Eq(u => u.Password, password);
+                    var user = adminCollection.Find(filter).FirstOrDefault();
+
+                    if (user != null)
+                    {
+                        MessageBox.Show("Login successful!");
+                        this.Hide();
+                        Form2 form2 = new Form2();
+                        form2.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password!");
+                    }
+                }
+                else if (PersonnelRad.Checked)
+                {
+                    var filters = Builders<CPersonnel>.Filter.Eq(u => u.Username, username) & Builders<CPersonnel>.Filter.Eq(u => u.Password, password);
+                    var user = personnelCollection.Find(filters).FirstOrDefault();
+
+                    if (user != null)
+                    {
+                        MessageBox.Show("Login successful!");
+                        this.Hide();
+                        FUserDashboard form22 = new FUserDashboard();
+                        form22.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password!");
+                    MessageBox.Show("Please select a User Type");
                 }
             }
-            else if (PersonnelRad.Checked)
+            catch (MongoConnectionException ex)
             {
-                var filters = Builders<CPersonnel>.Filter.Eq(u => u.Username, username) & Builders<CPersonnel>.Filter.Eq(u => u.Password, password);
-                var user = personnelCollection.Find(filters).FirstOrDefault();
-
-                if (user != null)
-                {
-                    MessageBox.Show("Login successful!");
-                    this.Hide();
-                    FUserDashboard form22 = new FUserDashboard();
-                    form22.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password!");
-                }
+                MessageBox.Show("Connection error: " + ex.Message);
             }
-            else
+            catch(MongoCommandException ex)
             {
-                MessageBox.Show("Please select a User Type");
+                MessageBox.Show("Command error: " + ex.Message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
             }
         }
 
-        private void rjButton2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FSignUp form9 = new FSignUp();
-            form9.Show();
+            private void rjButton2_Click(object sender, EventArgs e)
+            {
+                this.Hide();
+                FSignUp form9 = new FSignUp();
+                form9.Show();
+            }
         }
     }
-}
