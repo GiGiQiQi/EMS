@@ -88,7 +88,7 @@ namespace EMS
             var confirmation2 = "Your Assignment is to rescue an Evacuue at" + AddTB.Texts;
 
             SerialPort sp = new SerialPort();
-            sp.PortName = "COM4";
+            sp.PortName = "COM8";
             sp.Open();
             sp.WriteLine("AT" + Environment.NewLine);
             Thread.Sleep(500);
@@ -107,7 +107,7 @@ namespace EMS
             sp.Close();
 
             SerialPort sp1 = new SerialPort();
-            sp1.PortName = "COM4";
+            sp1.PortName = "COM8";
             sp1.Open();
             sp1.WriteLine("AT" + Environment.NewLine);
             Thread.Sleep(500);
