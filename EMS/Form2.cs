@@ -166,7 +166,7 @@ namespace EMS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            openChildForm(new FReports());
+            openChildForm(new Evacuation_Sites());
             hideSideMenu();
         }
 

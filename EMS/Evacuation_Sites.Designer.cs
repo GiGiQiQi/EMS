@@ -32,8 +32,10 @@ namespace EMS
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AELabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.CapLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
@@ -41,8 +43,6 @@ namespace EMS
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -72,13 +72,24 @@ namespace EMS
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.AELabel);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(317, 136);
             this.panel1.TabIndex = 2;
+            // 
+            // AELabel
+            // 
+            this.AELabel.AutoSize = true;
+            this.AELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.AELabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AELabel.Location = new System.Drawing.Point(239, 93);
+            this.AELabel.Name = "AELabel";
+            this.AELabel.Size = new System.Drawing.Size(25, 26);
+            this.AELabel.TabIndex = 1;
+            this.AELabel.Text = "0";
             // 
             // label2
             // 
@@ -94,13 +105,24 @@ namespace EMS
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.CapLabel);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(336, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(317, 136);
             this.panel2.TabIndex = 3;
+            // 
+            // CapLabel
+            // 
+            this.CapLabel.AutoSize = true;
+            this.CapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.CapLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.CapLabel.Location = new System.Drawing.Point(255, 93);
+            this.CapLabel.Name = "CapLabel";
+            this.CapLabel.Size = new System.Drawing.Size(25, 26);
+            this.CapLabel.TabIndex = 7;
+            this.CapLabel.Text = "0";
             // 
             // label3
             // 
@@ -131,6 +153,7 @@ namespace EMS
             this.rjButton1.Text = "Search";
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // rjButton2
             // 
@@ -143,11 +166,11 @@ namespace EMS
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(829, 433);
+            this.rjButton2.Location = new System.Drawing.Point(762, 433);
             this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(122, 40);
+            this.rjButton2.Size = new System.Drawing.Size(189, 40);
             this.rjButton2.TabIndex = 8;
-            this.rjButton2.Text = "History";
+            this.rjButton2.Text = "Generate Report";
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
             this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
@@ -173,6 +196,7 @@ namespace EMS
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(943, 100);
             this.panel3.TabIndex = 11;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // tableLayoutPanel1
             // 
@@ -205,28 +229,6 @@ namespace EMS
             this.panel4.Size = new System.Drawing.Size(271, 282);
             this.panel4.TabIndex = 4;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(110, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 26);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(131, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 26);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
-            // 
             // Evacuation_Sites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +240,7 @@ namespace EMS
             this.Name = "Evacuation_Sites";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Site_Status";
+            this.Load += new System.EventHandler(this.Evacuation_Sites_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -260,8 +263,8 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJButton rjButton1;
         private RJCodeAdvance.RJControls.RJButton rjButton2;
         private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label AELabel;
+        private System.Windows.Forms.Label CapLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
