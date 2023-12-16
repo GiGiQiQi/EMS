@@ -29,12 +29,27 @@ namespace EMS
 
         private void FEvacuees_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
-            mobileNumbers = database.GetCollection<CMNumbers1>("MobileNumbers");
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+                mobileNumbers = database.GetCollection<CMNumbers1>("MobileNumbers");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("MongoDB Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("MongoDB Command error: " + ex.Message);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
             LoadDataGrid();
         }
         private void LoadDataGrid()

@@ -164,14 +164,29 @@ namespace EMS
 
         private void FEvacTI_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
-            evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
-            evacuationHistory = database.GetCollection<CEHistory>("EvacuationHistory");
-            sitesCollection = database.GetCollection<ESite>("EvacuationSites");
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
+                evacueeCollection = database.GetCollection<CEvacuee>("EvacueeInfo");
+                evacuationHistory = database.GetCollection<CEHistory>("EvacuationHistory");
+                sitesCollection = database.GetCollection<ESite>("EvacuationSites");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("MongoDB Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("MongoDB Command error: " + ex.Message);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
 
             LoadComboBoxItems();
             LoadDataGrid();

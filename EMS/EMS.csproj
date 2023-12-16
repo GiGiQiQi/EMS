@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\TS\PublishedEMS\</PublishUrl>
+    <PublishUrl>C:\TS\EMS2\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -101,6 +101,9 @@
     </Reference>
     <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.Document, Version=2023.9.10.0, Culture=neutral, PublicKeyToken=e759c76c7515592a, processorArchitecture=MSIL">
+      <HintPath>..\packages\sautinsoft.document.2023.9.10\lib\net472\SautinSoft.Document.dll</HintPath>
     </Reference>
     <Reference Include="SharpCompress, Version=0.33.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpCompress.0.33.0\lib\net462\SharpCompress.dll</HintPath>
@@ -275,6 +278,12 @@
     <Compile Include="FRAssign.Designer.cs">
       <DependentUpon>FRAssign.cs</DependentUpon>
     </Compile>
+    <Compile Include="FReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReports.Designer.cs">
+      <DependentUpon>FReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRescuer_Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRAssign.resx">
       <DependentUpon>FRAssign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReports.resx">
+      <DependentUpon>FReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRescuer_Registration.resx">
       <DependentUpon>FRescuer_Registration.cs</DependentUpon>

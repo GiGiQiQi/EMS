@@ -41,14 +41,29 @@ namespace EMS
                 textBox1.Select();
             });
 
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
-            rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
-            activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
-            requestCollection = database.GetCollection<CRequests>("requests");
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
+                rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
+                activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
+                requestCollection = database.GetCollection<CRequests>("requests");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("MongoDB Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("MongoDB Command error: " + ex.Message);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
 
             var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
             long eCount = activeEvacuues.CountDocuments(AEFilter);

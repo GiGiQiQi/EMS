@@ -44,12 +44,27 @@ namespace EMS
 
         private void FRAssign_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            reqsCollection = database.GetCollection<CRequests>("requests");
-            activeTeams = database.GetCollection<CATeams>("ActiveTeams");
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                reqsCollection = database.GetCollection<CRequests>("requests");
+                activeTeams = database.GetCollection<CATeams>("ActiveTeams");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("MongoDB Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("MongoDB Command error: " + ex.Message);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
 
             loadDatagrid();
             LoadComboBoxItems();

@@ -57,7 +57,7 @@ namespace EMS
             {
                 MessageBox.Show("MongoDB Command error: " + ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occurred Please Check Internet Connection");
             }

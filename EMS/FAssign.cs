@@ -25,14 +25,28 @@ namespace EMS
 
         private void FAssign_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
-            var mongoClient = new MongoClient(connectionString);
-            var database = mongoClient.GetDatabase(databaseName);
-            activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
-            activeTeams = database.GetCollection<CATeams>("ActiveTeams");
-            rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
-
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+                var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+                var mongoClient = new MongoClient(connectionString);
+                var database = mongoClient.GetDatabase(databaseName);
+                activeRescuers = database.GetCollection<CActiveRescuers>("ActiveRescuers");
+                activeTeams = database.GetCollection<CATeams>("ActiveTeams");
+                rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
+            }
+            catch (MongoConnectionException ex)
+            {
+                MessageBox.Show("MongoDB Connection error: " + ex.Message);
+            }
+            catch (MongoCommandException ex)
+            {
+                MessageBox.Show("MongoDB Command error: " + ex.Message);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred Please Check Internet Connection");
+            }
             loadDataGrid();
         }
 

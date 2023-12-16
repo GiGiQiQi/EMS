@@ -145,7 +145,7 @@ namespace EMS
             {
                 MessageBox.Show("Command error: " + ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occurred Please Check Internet Connection");
             }
@@ -166,7 +166,7 @@ namespace EMS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            openChildForm(new FWarnings());
+            openChildForm(new FReports());
             hideSideMenu();
         }
 
