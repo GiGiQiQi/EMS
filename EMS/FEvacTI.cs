@@ -211,22 +211,13 @@ namespace EMS
 
         private void LoadDataGrid()
         {
-            var filterDefinition = Builders<CActiveEvacuees>.Filter.Empty;
-            var site = activeEvacuues.Find(filterDefinition).ToList();
-            dataGridView1.DataSource = site;
         }
         private void responsiveDesign()
         {
-            if (this.Height > 50)
-            {
-                panel3.Height = panel2.Height;
-            }
         }
 
         private void FEvacTI_Resize(object sender, EventArgs e)
         {
-            responsiveDesign();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

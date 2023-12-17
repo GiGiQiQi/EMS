@@ -37,12 +37,14 @@ namespace EMS
                 MessageBox.Show("An error occurred Please Check Internet Connection");
             }
             LoadDataGrid();
+
+            var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;
+            long eCount = activeEvacuues.CountDocuments(AEFilter);
+
+            AELabel.Text = eCount.ToString();
         }
         private void LoadDataGrid()
         {
-            var filterDefinition = Builders<CActiveEvacuees>.Filter.Empty;
-            var site = activeEvacuues.Find(filterDefinition).ToList();
-            dataGridView1.DataSource = site;
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -72,26 +74,13 @@ namespace EMS
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            var filterDefinition = Builders<CActiveEvacuees>.Filter.Or(
-                Builders<CActiveEvacuees>.Filter.Eq(a => a.EName, searchTB.Texts),
-                Builders<CActiveEvacuees>.Filter.Eq(a => a.EAddress, searchTB.Texts),
-                Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, searchTB.Texts)
-                );
-            var families = activeEvacuues.Find(filterDefinition).ToList();
-            dataGridView1.DataSource = families;
         }
         private void responsiveDesign()
         {
-            if (this.Height > 50)
-            {
-                panel2.Height = panel1.Height;
-            }
         }
 
         private void FEvacueeTI_Resize(object sender, EventArgs e)
         {
-            responsiveDesign();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

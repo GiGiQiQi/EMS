@@ -96,6 +96,7 @@ namespace EMS
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
+            var delfiler = Builders<CRequests>.Filter.Eq(a => a.ReqAddress, AddTB.Texts);
             var filter = Builders<CATeams>.Filter.Eq(u => u.TNum, rjComboBox1.Texts);
             var user = activeTeams.Find(filter).FirstOrDefault();
 
@@ -148,6 +149,7 @@ namespace EMS
                 MessageBox.Show("Message sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             sp1.Close();
+            var delUser = reqsCollection.DeleteOneAsync(delfiler);
         }
     }
 }

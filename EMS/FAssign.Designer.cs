@@ -34,13 +34,11 @@ namespace EMS
             this.RIDTB = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.LocTB = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TNCB = new RJCodeAdvance.RJControls.RJTextBox();
             this.RFIDTB2 = new RJCodeAdvance.RJControls.RJTextBox();
             this.RFIDTB1 = new RJCodeAdvance.RJControls.RJTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TNCB = new RJCodeAdvance.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,40 +113,9 @@ namespace EMS
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(48, 216);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Team Number";
-            // 
-            // LocTB
-            // 
-            this.LocTB.BackColor = System.Drawing.SystemColors.Window;
-            this.LocTB.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.LocTB.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.LocTB.BorderRadius = 10;
-            this.LocTB.BorderSize = 1;
-            this.LocTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LocTB.Location = new System.Drawing.Point(51, 282);
-            this.LocTB.Margin = new System.Windows.Forms.Padding(4);
-            this.LocTB.Multiline = false;
-            this.LocTB.Name = "LocTB";
-            this.LocTB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.LocTB.PasswordChar = false;
-            this.LocTB.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.LocTB.PlaceholderText = "";
-            this.LocTB.Size = new System.Drawing.Size(250, 31);
-            this.LocTB.TabIndex = 4;
-            this.LocTB.Texts = "";
-            this.LocTB.UnderlinedStyle = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 265);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Location";
+            this.label2.Text = "Team Name";
             // 
             // panel1
             // 
@@ -156,16 +123,36 @@ namespace EMS
             this.panel1.Controls.Add(this.RFIDTB2);
             this.panel1.Controls.Add(this.RFIDTB1);
             this.panel1.Controls.Add(this.rjButton1);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.RIDTB);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.LocTB);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(353, 485);
             this.panel1.TabIndex = 10;
+            // 
+            // TNCB
+            // 
+            this.TNCB.BackColor = System.Drawing.SystemColors.Window;
+            this.TNCB.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.TNCB.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TNCB.BorderRadius = 10;
+            this.TNCB.BorderSize = 1;
+            this.TNCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TNCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TNCB.Location = new System.Drawing.Point(51, 233);
+            this.TNCB.Margin = new System.Windows.Forms.Padding(4);
+            this.TNCB.Multiline = false;
+            this.TNCB.Name = "TNCB";
+            this.TNCB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TNCB.PasswordChar = false;
+            this.TNCB.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TNCB.PlaceholderText = "";
+            this.TNCB.Size = new System.Drawing.Size(250, 31);
+            this.TNCB.TabIndex = 12;
+            this.TNCB.Texts = "";
+            this.TNCB.UnderlinedStyle = false;
             // 
             // RFIDTB2
             // 
@@ -221,28 +208,6 @@ namespace EMS
             this.panel2.TabIndex = 11;
             this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
-            // TNCB
-            // 
-            this.TNCB.BackColor = System.Drawing.SystemColors.Window;
-            this.TNCB.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.TNCB.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TNCB.BorderRadius = 10;
-            this.TNCB.BorderSize = 1;
-            this.TNCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TNCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TNCB.Location = new System.Drawing.Point(51, 233);
-            this.TNCB.Margin = new System.Windows.Forms.Padding(4);
-            this.TNCB.Multiline = false;
-            this.TNCB.Name = "TNCB";
-            this.TNCB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TNCB.PasswordChar = false;
-            this.TNCB.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TNCB.PlaceholderText = "";
-            this.TNCB.Size = new System.Drawing.Size(250, 31);
-            this.TNCB.TabIndex = 12;
-            this.TNCB.Texts = "";
-            this.TNCB.UnderlinedStyle = false;
-            // 
             // FAssign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,8 +233,6 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJTextBox RIDTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private RJCodeAdvance.RJControls.RJTextBox LocTB;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private RJCodeAdvance.RJControls.RJTextBox RFIDTB2;

@@ -132,7 +132,6 @@ namespace EMS
                         RFIDTB2.Texts
                     },
                     TNum = teamNumber,
-                    TLoc = LocTB.Texts,
                     TeamContact = rescuer.Contact_Number
                 };
                 await activeTeams.InsertOneAsync(Teams);
