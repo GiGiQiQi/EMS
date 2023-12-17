@@ -43,8 +43,8 @@ namespace EMS
             this.AELabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,6 +100,14 @@ namespace EMS
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Montalban Gymnasium",
+            "Montalban Evacuation Center",
+            "Southville 8B PH2 Annex Evacuation Center",
+            "Sitio Tanag Covered Court",
+            "Southville 8B PH4 covered court",
+            "Southville 8B PH2 Covered Court",
+            "Soutvhille 8B National Highschool Covered Court"});
             this.comboBox1.Location = new System.Drawing.Point(84, 124);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(225, 21);
@@ -173,15 +181,6 @@ namespace EMS
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(441, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(522, 503);
-            this.panel3.TabIndex = 11;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -190,6 +189,15 @@ namespace EMS
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "COM PORT";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(441, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(522, 503);
+            this.panel3.TabIndex = 11;
             // 
             // FEvacTI
             // 

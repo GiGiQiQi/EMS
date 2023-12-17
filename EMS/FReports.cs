@@ -48,7 +48,7 @@ namespace EMS
         private void button1_Click(object sender, EventArgs e)
         {
             DocumentCore dc = new DocumentCore();
-            dc.Content.End.Insert("Hello World", new CharacterFormat { FontName = "Arial", Size = 12f });
+            dc.Content.End.Insert("Hello World \n Hello World", new CharacterFormat { FontName = "Arial", Size = 12f });
             dc.Save("Result.docx");
 
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("Result.docx") { UseShellExecute = true });

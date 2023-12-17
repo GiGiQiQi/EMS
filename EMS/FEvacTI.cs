@@ -188,7 +188,6 @@ namespace EMS
                 MessageBox.Show("An error occurred Please Check Internet Connection");
             }
 
-            LoadComboBoxItems();
             LoadDataGrid();
 
             var AEFilter = Builders<CActiveEvacuees>.Filter.Empty;

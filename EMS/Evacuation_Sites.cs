@@ -28,8 +28,44 @@ namespace EMS
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            FHistory form7 = new FHistory();
-            form7.Show();
+            string siteone = "Montalban Gymnasium";
+            string sitetwo = "Montalban Evacuation Center";
+            string sitethree = "Southville 8B PH2 Annex Evacuation Center";
+            string sitefour = "Sitio Tanag Covered Court";
+            string siteFive = "Southville 8B PH4 covered court";
+            string sitesix = "Southville 8B PH2 Covered Court";
+            string siteseven = "Soutvhille 8B National Highschool Covered Court";
+
+            var filterSiteone = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, siteone);
+            var filterSitetwo = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, sitetwo);
+            var filterSitethree = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, sitethree);
+            var filterSitefour = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, sitefour);
+            var filterSitefive = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, siteFive);
+            var filterSitesix = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, sitesix);
+            var filterSiteseven = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, siteseven);
+
+            var countOne = activeEvacuees.CountDocuments(filterSiteone);
+            var countTwo = activeEvacuees.CountDocuments(filterSitetwo);
+            var countThree = activeEvacuees.CountDocuments(filterSitethree);
+            var countFour = activeEvacuees.CountDocuments(filterSitefour);
+            var countFive = activeEvacuees.CountDocuments(filterSitefive);
+            var countSix = activeEvacuees.CountDocuments(filterSitesix);
+            var countSeven = activeEvacuees.CountDocuments(filterSiteseven);
+
+            string siteoneResult = string.Concat(siteone, countOne);
+            string sitetwoResult = string.Concat(sitetwo, countTwo);
+            string sitethreeResult = string.Concat(sitethree, countThree);
+            string sitefourResult = string.Concat(sitefour, countFour);
+            string sitefiveResult = string.Concat(siteFive, countFive);
+            string sitesixResult = string.Concat(sitesix, countSix);
+            string sitesevenResult = string.Concat(siteseven, countSeven);
+
+            DocumentCore dc = new DocumentCore();
+            dc.Content.End.Insert("Evacuation Site Status and Population " + rjDatePicker1.Text + siteoneResult + "\n" + sitetwoResult + "\n" + sitethreeResult + "\n" + sitefourResult + "\n" + sitefiveResult + "\n" + sitesixResult + "\n" + sitesevenResult, new CharacterFormat { FontName = "Arial", Size = 12f });
+            dc.Save("Result.docx");
+
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("Result.docx") { UseShellExecute = true });
+
         }
         private void LoadComboBoxItems()
         {
@@ -72,7 +108,6 @@ namespace EMS
             {
                 MessageBox.Show("An error occurred Please Check Internet Connection");
             }
-            LoadComboBoxItems();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -82,8 +117,6 @@ namespace EMS
             var site = sitesCollection.Find(filterDefinition).FirstOrDefault();
 
             var count = activeEvacuees.CountDocuments(filter);
-
-            CapLabel.Text = site.Capacity;
             AELabel.Text = count.ToString();
         }
     }
