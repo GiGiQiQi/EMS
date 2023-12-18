@@ -110,7 +110,8 @@ namespace EMS
                             EAddress = user.Evacuee_Address,
                             CPerson = user.Contact_Person_Number,
                             DPS = user.Dependents,
-                            Date = dateTimePicker1.Text
+                            Date = dateTimePicker1.Text,
+                            ESite = comboBox1.Text
                         };
                         activeEvacuues.InsertOneAsync(active);
                         SerialPort sp = new SerialPort();

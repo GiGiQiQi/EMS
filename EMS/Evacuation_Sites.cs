@@ -28,13 +28,13 @@ namespace EMS
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            string siteone = "Montalban Gymnasium";
-            string sitetwo = "Montalban Evacuation Center";
-            string sitethree = "Southville 8B PH2 Annex Evacuation Center";
-            string sitefour = "Sitio Tanag Covered Court";
-            string siteFive = "Southville 8B PH4 covered court";
+            string siteone = "Montalban Gymnasium  ";
+            string sitetwo = "Montalban Evacuation Center  ";
+            string sitethree = "Southville 8B PH2 Annex Evacuation Center  ";
+            string sitefour = "Sitio Tanag Covered Court  ";
+            string siteFive = "Southville 8B PH4 covered court  ";
             string sitesix = "Southville 8B PH2 Covered Court";
-            string siteseven = "Soutvhille 8B National Highschool Covered Court";
+            string siteseven = "Soutvhille 8B National Highschool Covered Court  ";
 
             var filterSiteone = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, siteone);
             var filterSitetwo = Builders<CActiveEvacuees>.Filter.Eq(a => a.ESite, sitetwo);
@@ -61,7 +61,7 @@ namespace EMS
             string sitesevenResult = string.Concat(siteseven, countSeven);
 
             DocumentCore dc = new DocumentCore();
-            dc.Content.End.Insert("Evacuation Site Status and Population " + rjDatePicker1.Text + siteoneResult + "\n" + sitetwoResult + "\n" + sitethreeResult + "\n" + sitefourResult + "\n" + sitefiveResult + "\n" + sitesixResult + "\n" + sitesevenResult, new CharacterFormat { FontName = "Arial", Size = 12f });
+            dc.Content.End.Insert("Evacuation Site Status and Population \n" + rjDatePicker1.Text + siteoneResult + "\n" + sitetwoResult + "\n" + sitethreeResult + "\n" + sitefourResult + "\n" + sitefiveResult + "\n" + sitesixResult + "\n" + sitesevenResult, new CharacterFormat { FontName = "Arial", Size = 14f });
             dc.Save("Result.docx");
 
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("Result.docx") { UseShellExecute = true });
