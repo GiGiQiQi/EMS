@@ -49,26 +49,32 @@ namespace EMS
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            var active = new CActiveEvacuees
+            if (ETB.Texts == "" && NameTB.Texts == "" && AddTB.Texts == "" && ConTB.Texts == "")
             {
-                RFID = "No RFID",
-                EName = NameTB.Texts,
-                EAddress = AddTB.Texts,
-                CPerson = ConTB.Texts,
-                ESite = ETB.Texts,
-                DPS = decimal.Parse(DPTB.Texts),
-                Date = rjDatePicker1.Text
-            };
-            LoadDataGrid();
-            activeEvacuues.InsertOneAsync(active);
-            LoadDataGrid();
-            if (active != null)
-            {
-                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please Fill out all the information needed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var active = new CActiveEvacuees
+                {
+                    RFID = "No RFID",
+                    EName = NameTB.Texts,
+                    EAddress = AddTB.Texts,
+                    CPerson = ConTB.Texts,
+                    ESite = ETB.Texts,
+                    Date = rjDatePicker1.Text
+                };
+                LoadDataGrid();
+                activeEvacuues.InsertOneAsync(active);
+                LoadDataGrid();
+                if (active != null)
+                {
+                    MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -91,13 +97,10 @@ namespace EMS
             if (evacuee != null)
             {
                 MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                NameTB.Texts = "";
-                AddTB.Texts = "";
-                ConTB.Texts = "";
             }
             else
             {
-                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There are no evacuue with that name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NameTB.Texts = "";
                 AddTB.Texts = "";
                 ConTB.Texts = "";

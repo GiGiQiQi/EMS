@@ -35,7 +35,6 @@ namespace EMS
             this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.ETB = new RJCodeAdvance.RJControls.RJTextBox();
-            this.DPTB = new RJCodeAdvance.RJControls.RJComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.AELabel = new System.Windows.Forms.Label();
@@ -168,44 +167,12 @@ namespace EMS
             this.ETB.Texts = "";
             this.ETB.UnderlinedStyle = false;
             // 
-            // DPTB
-            // 
-            this.DPTB.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DPTB.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.DPTB.BorderSize = 1;
-            this.DPTB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.DPTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DPTB.ForeColor = System.Drawing.Color.DimGray;
-            this.DPTB.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.DPTB.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "10+"});
-            this.DPTB.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.DPTB.ListTextColor = System.Drawing.Color.DimGray;
-            this.DPTB.Location = new System.Drawing.Point(68, 365);
-            this.DPTB.MinimumSize = new System.Drawing.Size(200, 30);
-            this.DPTB.Name = "DPTB";
-            this.DPTB.Padding = new System.Windows.Forms.Padding(1);
-            this.DPTB.Size = new System.Drawing.Size(250, 30);
-            this.DPTB.TabIndex = 10;
-            this.DPTB.Texts = "";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.rjButton2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.rjButton1);
             this.panel1.Controls.Add(this.ETB);
-            this.panel1.Controls.Add(this.DPTB);
             this.panel1.Controls.Add(this.NameTB);
             this.panel1.Controls.Add(this.AddTB);
             this.panel1.Controls.Add(this.ConTB);
@@ -295,7 +262,6 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
         private RJCodeAdvance.RJControls.RJTextBox ETB;
-        private RJCodeAdvance.RJControls.RJComboBox DPTB;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
