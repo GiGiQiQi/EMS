@@ -19,6 +19,7 @@ namespace EMS
         IMongoCollection<CRescuers> rescuersInfo;
         IMongoCollection<CActiveEvacuees> activeEvacuues;
         IMongoCollection<CRequests> requestCollection;
+        IMongoCollection<CATeams> activeTeams;
         private const int DelayMilliseconds = 100;
         private bool isRfidProcessed = false;
 
@@ -51,6 +52,7 @@ namespace EMS
                 rescuersInfo = database.GetCollection<CRescuers>("RescuersInfo");
                 activeEvacuues = database.GetCollection<CActiveEvacuees>("ActiveEvacuees");
                 requestCollection = database.GetCollection<CRequests>("requests");
+                activeTeams = database.GetCollection<CATeams>("ActiveTeams");
             }
             catch (MongoConnectionException ex)
             {
@@ -74,9 +76,13 @@ namespace EMS
             var RFilter = Builders<CRequests>.Filter.Empty;
             long rqCount = requestCollection.CountDocuments(RFilter);
 
+            var ATFilter = Builders<CATeams>.Filter.Empty;
+            long atCount = activeTeams.CountDocuments(ATFilter);
+
             TELabel.Text = eCount.ToString();
             ACLabel.Text = rCount.ToString();
             RLabel.Text = rqCount.ToString();
+            ATLabel.Text = atCount.ToString();
         }
 
         private void ScanTimer_Tick(object sender, EventArgs e)

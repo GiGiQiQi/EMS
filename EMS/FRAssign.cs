@@ -84,20 +84,20 @@ namespace EMS
         private void LoadComboBoxItems()
         {
             var filter = Builders<CATeams>.Filter.Empty;
-            var projection = Builders<CATeams>.Projection.Include("TeamNumber");
+            var projection = Builders<CATeams>.Projection.Include("TeamName");
 
             var cursor = activeTeams.Find(filter).Project(projection).ToCursor();
 
             foreach (var document in cursor.ToEnumerable())
             {
-                rjComboBox1.Items.Add(document["TeamNumber"].AsString);
+                rjComboBox1.Items.Add(document["TeamName"].AsString);
             }
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             var delfiler = Builders<CRequests>.Filter.Eq(a => a.ReqAddress, AddTB.Texts);
-            var filter = Builders<CATeams>.Filter.Eq(u => u.TNum, rjComboBox1.Texts);
+            var filter = Builders<CATeams>.Filter.Eq(u => u.TeamName, rjComboBox1.Texts);
             var user = activeTeams.Find(filter).FirstOrDefault();
 
             var confirmation = "Your request Have been received, rescue will be sent immediately.";

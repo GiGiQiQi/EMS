@@ -45,16 +45,22 @@ namespace EMS
             this.panel4 = new System.Windows.Forms.Panel();
             this.ACLabel = new System.Windows.Forms.Label();
             this.ActiveLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.ATLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 328);
+            this.textBox1.Location = new System.Drawing.Point(27, 397);
             this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(264, 20);
@@ -65,7 +71,7 @@ namespace EMS
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 305);
+            this.label4.Location = new System.Drawing.Point(23, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(234, 20);
             this.label4.TabIndex = 7;
@@ -217,11 +223,61 @@ namespace EMS
             this.ActiveLabel.TabIndex = 0;
             this.ActiveLabel.Text = "Active Rescuers";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 193);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(943, 137);
+            this.tableLayoutPanel2.TabIndex = 10;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.ATLabel);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(8, 8);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(305, 121);
+            this.panel5.TabIndex = 0;
+            // 
+            // ATLabel
+            // 
+            this.ATLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ATLabel.AutoSize = true;
+            this.ATLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.ATLabel.Location = new System.Drawing.Point(198, 71);
+            this.ATLabel.Name = "ATLabel";
+            this.ATLabel.Size = new System.Drawing.Size(25, 26);
+            this.ATLabel.TabIndex = 1;
+            this.ATLabel.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(3, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 26);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ActiveTeams";
+            // 
             // FDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 485);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -238,6 +294,9 @@ namespace EMS
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +318,9 @@ namespace EMS
         private System.Windows.Forms.Label ReqLabel;
         private System.Windows.Forms.Label ACLabel;
         private System.Windows.Forms.Label ActiveLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label ATLabel;
+        private System.Windows.Forms.Label label3;
     }
 }

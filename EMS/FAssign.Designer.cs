@@ -39,6 +39,8 @@ namespace EMS
             this.RFIDTB2 = new RJCodeAdvance.RJControls.RJTextBox();
             this.RFIDTB1 = new RJCodeAdvance.RJControls.RJTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rjRadioButton1 = new RJCodeAdvance.RJControls.RJRadioButton();
+            this.rjRadioButton2 = new RJCodeAdvance.RJControls.RJRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +62,7 @@ namespace EMS
             // 
             // rjButton1
             // 
+            this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rjButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -68,7 +71,7 @@ namespace EMS
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(95, 373);
+            this.rjButton1.Location = new System.Drawing.Point(448, 419);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(150, 40);
             this.rjButton1.TabIndex = 1;
@@ -84,9 +87,9 @@ namespace EMS
             this.RIDTB.BorderFocusColor = System.Drawing.Color.HotPink;
             this.RIDTB.BorderRadius = 10;
             this.RIDTB.BorderSize = 1;
-            this.RIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RIDTB.Location = new System.Drawing.Point(51, 62);
+            this.RIDTB.Location = new System.Drawing.Point(51, 77);
             this.RIDTB.Margin = new System.Windows.Forms.Padding(4);
             this.RIDTB.Multiline = false;
             this.RIDTB.Name = "RIDTB";
@@ -94,7 +97,7 @@ namespace EMS
             this.RIDTB.PasswordChar = false;
             this.RIDTB.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.RIDTB.PlaceholderText = "";
-            this.RIDTB.Size = new System.Drawing.Size(250, 31);
+            this.RIDTB.Size = new System.Drawing.Size(250, 35);
             this.RIDTB.TabIndex = 2;
             this.RIDTB.Texts = "";
             this.RIDTB.UnderlinedStyle = false;
@@ -102,18 +105,20 @@ namespace EMS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 45);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(47, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Rescuer ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 216);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(47, 234);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Team Name";
             // 
@@ -122,7 +127,6 @@ namespace EMS
             this.panel1.Controls.Add(this.TNCB);
             this.panel1.Controls.Add(this.RFIDTB2);
             this.panel1.Controls.Add(this.RFIDTB1);
-            this.panel1.Controls.Add(this.rjButton1);
             this.panel1.Controls.Add(this.RIDTB);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -139,9 +143,9 @@ namespace EMS
             this.TNCB.BorderFocusColor = System.Drawing.Color.HotPink;
             this.TNCB.BorderRadius = 10;
             this.TNCB.BorderSize = 1;
-            this.TNCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TNCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TNCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TNCB.Location = new System.Drawing.Point(51, 233);
+            this.TNCB.Location = new System.Drawing.Point(51, 258);
             this.TNCB.Margin = new System.Windows.Forms.Padding(4);
             this.TNCB.Multiline = false;
             this.TNCB.Name = "TNCB";
@@ -149,7 +153,7 @@ namespace EMS
             this.TNCB.PasswordChar = false;
             this.TNCB.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.TNCB.PlaceholderText = "";
-            this.TNCB.Size = new System.Drawing.Size(250, 31);
+            this.TNCB.Size = new System.Drawing.Size(250, 35);
             this.TNCB.TabIndex = 12;
             this.TNCB.Texts = "";
             this.TNCB.UnderlinedStyle = false;
@@ -161,9 +165,9 @@ namespace EMS
             this.RFIDTB2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.RFIDTB2.BorderRadius = 10;
             this.RFIDTB2.BorderSize = 1;
-            this.RFIDTB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RFIDTB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RFIDTB2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RFIDTB2.Location = new System.Drawing.Point(51, 140);
+            this.RFIDTB2.Location = new System.Drawing.Point(51, 163);
             this.RFIDTB2.Margin = new System.Windows.Forms.Padding(4);
             this.RFIDTB2.Multiline = false;
             this.RFIDTB2.Name = "RFIDTB2";
@@ -171,7 +175,7 @@ namespace EMS
             this.RFIDTB2.PasswordChar = false;
             this.RFIDTB2.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.RFIDTB2.PlaceholderText = "";
-            this.RFIDTB2.Size = new System.Drawing.Size(250, 31);
+            this.RFIDTB2.Size = new System.Drawing.Size(250, 35);
             this.RFIDTB2.TabIndex = 11;
             this.RFIDTB2.Texts = "";
             this.RFIDTB2.UnderlinedStyle = false;
@@ -183,9 +187,9 @@ namespace EMS
             this.RFIDTB1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.RFIDTB1.BorderRadius = 10;
             this.RFIDTB1.BorderSize = 1;
-            this.RFIDTB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RFIDTB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RFIDTB1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RFIDTB1.Location = new System.Drawing.Point(51, 101);
+            this.RFIDTB1.Location = new System.Drawing.Point(51, 120);
             this.RFIDTB1.Margin = new System.Windows.Forms.Padding(4);
             this.RFIDTB1.Multiline = false;
             this.RFIDTB1.Name = "RFIDTB1";
@@ -193,20 +197,59 @@ namespace EMS
             this.RFIDTB1.PasswordChar = false;
             this.RFIDTB1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.RFIDTB1.PlaceholderText = "";
-            this.RFIDTB1.Size = new System.Drawing.Size(250, 31);
+            this.RFIDTB1.Size = new System.Drawing.Size(250, 35);
             this.RFIDTB1.TabIndex = 10;
             this.RFIDTB1.Texts = "";
             this.RFIDTB1.UnderlinedStyle = false;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.rjRadioButton2);
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.rjRadioButton1);
+            this.panel2.Controls.Add(this.rjButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(353, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(610, 485);
             this.panel2.TabIndex = 11;
             this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
+            // 
+            // rjRadioButton1
+            // 
+            this.rjRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rjRadioButton1.AutoSize = true;
+            this.rjRadioButton1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjRadioButton1.Location = new System.Drawing.Point(29, 429);
+            this.rjRadioButton1.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rjRadioButton1.Name = "rjRadioButton1";
+            this.rjRadioButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rjRadioButton1.Size = new System.Drawing.Size(132, 24);
+            this.rjRadioButton1.TabIndex = 1;
+            this.rjRadioButton1.TabStop = true;
+            this.rjRadioButton1.Text = "Active Teams";
+            this.rjRadioButton1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rjRadioButton1.UseVisualStyleBackColor = true;
+            this.rjRadioButton1.CheckedChanged += new System.EventHandler(this.rjRadioButton1_CheckedChanged);
+            // 
+            // rjRadioButton2
+            // 
+            this.rjRadioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rjRadioButton2.AutoSize = true;
+            this.rjRadioButton2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjRadioButton2.Location = new System.Drawing.Point(177, 429);
+            this.rjRadioButton2.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rjRadioButton2.Name = "rjRadioButton2";
+            this.rjRadioButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rjRadioButton2.Size = new System.Drawing.Size(152, 24);
+            this.rjRadioButton2.TabIndex = 2;
+            this.rjRadioButton2.TabStop = true;
+            this.rjRadioButton2.Text = "Active Rescuers";
+            this.rjRadioButton2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rjRadioButton2.UseVisualStyleBackColor = true;
+            this.rjRadioButton2.CheckedChanged += new System.EventHandler(this.rjRadioButton2_CheckedChanged);
             // 
             // FAssign
             // 
@@ -222,6 +265,7 @@ namespace EMS
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +282,7 @@ namespace EMS
         private RJCodeAdvance.RJControls.RJTextBox RFIDTB2;
         private RJCodeAdvance.RJControls.RJTextBox RFIDTB1;
         private RJCodeAdvance.RJControls.RJTextBox TNCB;
+        private RJCodeAdvance.RJControls.RJRadioButton rjRadioButton2;
+        private RJCodeAdvance.RJControls.RJRadioButton rjRadioButton1;
     }
 }

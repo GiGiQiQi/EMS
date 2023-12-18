@@ -82,5 +82,26 @@ namespace EMS
         private void FEvacueeTI_Resize(object sender, EventArgs e)
         {
         }
+
+        private void rjButton2_Click_1(object sender, EventArgs e)
+        {
+            var filter = Builders<CActiveEvacuees>.Filter.Eq(u => u.EName, NameTB.Texts);
+            var evacuee = activeEvacuues.DeleteOne(filter);
+
+            if (evacuee != null)
+            {
+                MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NameTB.Texts = "";
+                AddTB.Texts = "";
+                ConTB.Texts = "";
+            }
+            else
+            {
+                MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NameTB.Texts = "";
+                AddTB.Texts = "";
+                ConTB.Texts = "";
+            }
+        }
     }
 }

@@ -38,8 +38,9 @@ namespace EMS
             this.DPTB = new RJCodeAdvance.RJControls.RJComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.AELabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rjButton2 = new RJCodeAdvance.RJControls.RJButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -134,8 +135,9 @@ namespace EMS
             this.rjButton1.BorderSize = 0;
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(758, 365);
+            this.rjButton1.Location = new System.Drawing.Point(617, 365);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(132, 40);
             this.rjButton1.TabIndex = 7;
@@ -199,6 +201,7 @@ namespace EMS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.rjButton2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.rjButton1);
             this.panel1.Controls.Add(this.ETB);
@@ -224,6 +227,16 @@ namespace EMS
             this.panel2.Size = new System.Drawing.Size(250, 231);
             this.panel2.TabIndex = 11;
             // 
+            // AELabel
+            // 
+            this.AELabel.AutoSize = true;
+            this.AELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
+            this.AELabel.Location = new System.Drawing.Point(201, 183);
+            this.AELabel.Name = "AELabel";
+            this.AELabel.Size = new System.Drawing.Size(33, 36);
+            this.AELabel.TabIndex = 2;
+            this.AELabel.Text = "0";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -235,15 +248,26 @@ namespace EMS
             this.label4.TabIndex = 1;
             this.label4.Text = "TOTAL EVACUEES";
             // 
-            // AELabel
+            // rjButton2
             // 
-            this.AELabel.AutoSize = true;
-            this.AELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.AELabel.Location = new System.Drawing.Point(201, 183);
-            this.AELabel.Name = "AELabel";
-            this.AELabel.Size = new System.Drawing.Size(33, 36);
-            this.AELabel.TabIndex = 2;
-            this.AELabel.Text = "0";
+            this.rjButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rjButton2.BackColor = System.Drawing.Color.IndianRed;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.IndianRed;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(791, 365);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(132, 40);
+            this.rjButton2.TabIndex = 12;
+            this.rjButton2.Text = "Remove";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click_1);
             // 
             // FEvacueeTI
             // 
@@ -276,5 +300,6 @@ namespace EMS
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label AELabel;
+        private RJCodeAdvance.RJControls.RJButton rjButton2;
     }
 }

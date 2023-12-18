@@ -62,7 +62,7 @@ namespace EMS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new Add_Site_Form());
+            openChildForm(new Evacuation_Sites());
             hideSideMenu();
         }
 
@@ -166,8 +166,6 @@ namespace EMS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            openChildForm(new Evacuation_Sites());
-            hideSideMenu();
         }
 
         private void button10_Click_1(object sender, EventArgs e)

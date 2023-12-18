@@ -32,7 +32,6 @@ namespace EMS
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.PsideMenu = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
             this.AssignMenu = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -48,11 +47,11 @@ namespace EMS
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ScanTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PsideMenu.SuspendLayout();
             this.AssignMenu.SuspendLayout();
             this.regMenu.SuspendLayout();
@@ -66,7 +65,6 @@ namespace EMS
             this.PsideMenu.AutoScroll = true;
             this.PsideMenu.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.PsideMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PsideMenu.Controls.Add(this.button12);
             this.PsideMenu.Controls.Add(this.AssignMenu);
             this.PsideMenu.Controls.Add(this.button8);
             this.PsideMenu.Controls.Add(this.regMenu);
@@ -83,25 +81,6 @@ namespace EMS
             this.PsideMenu.Size = new System.Drawing.Size(221, 600);
             this.PsideMenu.TabIndex = 0;
             // 
-            // button12
-            // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(0, 547);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(202, 41);
-            this.button12.TabIndex = 11;
-            this.button12.Text = "Warning";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
             // AssignMenu
             // 
             this.AssignMenu.Controls.Add(this.button11);
@@ -109,7 +88,7 @@ namespace EMS
             this.AssignMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.AssignMenu.Location = new System.Drawing.Point(0, 461);
             this.AssignMenu.Name = "AssignMenu";
-            this.AssignMenu.Size = new System.Drawing.Size(202, 86);
+            this.AssignMenu.Size = new System.Drawing.Size(219, 86);
             this.AssignMenu.TabIndex = 10;
             // 
             // button11
@@ -124,7 +103,7 @@ namespace EMS
             this.button11.Location = new System.Drawing.Point(0, 41);
             this.button11.Name = "button11";
             this.button11.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(202, 41);
+            this.button11.Size = new System.Drawing.Size(219, 41);
             this.button11.TabIndex = 2;
             this.button11.Text = "Rescue Assignment";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +123,7 @@ namespace EMS
             this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(202, 41);
+            this.button10.Size = new System.Drawing.Size(219, 41);
             this.button10.TabIndex = 1;
             this.button10.Text = "Team Assignment";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +142,7 @@ namespace EMS
             this.button8.Location = new System.Drawing.Point(0, 420);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(202, 41);
+            this.button8.Size = new System.Drawing.Size(219, 41);
             this.button8.TabIndex = 9;
             this.button8.Text = "Assign";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,7 +159,7 @@ namespace EMS
             this.regMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.regMenu.Location = new System.Drawing.Point(0, 326);
             this.regMenu.Name = "regMenu";
-            this.regMenu.Size = new System.Drawing.Size(202, 94);
+            this.regMenu.Size = new System.Drawing.Size(219, 94);
             this.regMenu.TabIndex = 0;
             // 
             // button7
@@ -195,7 +174,7 @@ namespace EMS
             this.button7.Location = new System.Drawing.Point(0, 41);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(200, 41);
+            this.button7.Size = new System.Drawing.Size(217, 41);
             this.button7.TabIndex = 1;
             this.button7.Text = "Rescuer";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,7 +194,7 @@ namespace EMS
             this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(200, 41);
+            this.button6.Size = new System.Drawing.Size(217, 41);
             this.button6.TabIndex = 0;
             this.button6.Text = "Evacuee";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,10 +208,10 @@ namespace EMS
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.button9.Location = new System.Drawing.Point(0, 588);
+            this.button9.Location = new System.Drawing.Point(0, 557);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(202, 41);
+            this.button9.Size = new System.Drawing.Size(219, 41);
             this.button9.TabIndex = 8;
             this.button9.Text = "Logout";
             this.button9.UseVisualStyleBackColor = true;
@@ -251,7 +230,7 @@ namespace EMS
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(202, 41);
+            this.button5.Size = new System.Drawing.Size(219, 41);
             this.button5.TabIndex = 4;
             this.button5.Text = "Registration";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,7 +248,7 @@ namespace EMS
             this.EvacDropDown.Location = new System.Drawing.Point(0, 196);
             this.EvacDropDown.Margin = new System.Windows.Forms.Padding(2);
             this.EvacDropDown.Name = "EvacDropDown";
-            this.EvacDropDown.Size = new System.Drawing.Size(202, 89);
+            this.EvacDropDown.Size = new System.Drawing.Size(219, 89);
             this.EvacDropDown.TabIndex = 2;
             // 
             // button4
@@ -286,9 +265,9 @@ namespace EMS
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 41);
+            this.button4.Size = new System.Drawing.Size(217, 41);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Site Status";
+            this.button4.Text = "Evacuation History";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
@@ -308,9 +287,9 @@ namespace EMS
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(200, 41);
+            this.button3.Size = new System.Drawing.Size(217, 41);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Add Site";
+            this.button3.Text = "Site Status";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
@@ -329,7 +308,7 @@ namespace EMS
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(202, 41);
+            this.button2.Size = new System.Drawing.Size(219, 41);
             this.button2.TabIndex = 3;
             this.button2.Text = "Evacuation";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,7 +329,7 @@ namespace EMS
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(202, 41);
+            this.button1.Size = new System.Drawing.Size(219, 41);
             this.button1.TabIndex = 2;
             this.button1.Text = "Dashboard";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -367,8 +346,21 @@ namespace EMS
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(202, 114);
+            this.panel2.Size = new System.Drawing.Size(219, 114);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 84);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -400,19 +392,6 @@ namespace EMS
             this.panel4.Size = new System.Drawing.Size(979, 502);
             this.panel4.TabIndex = 3;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 84);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Form2
             // 
@@ -460,7 +439,6 @@ namespace EMS
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Timer ScanTimer;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Panel AssignMenu;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
