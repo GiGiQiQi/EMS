@@ -76,6 +76,11 @@ namespace EMS
                     MessageBox.Show("Record save unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            ETB.Texts = "";
+            NameTB.Texts = "";
+            AddTB.Texts = "";
+            ConTB.Texts = "";
+
         }
 
         private void rjButton2_Click(object sender, EventArgs e)
