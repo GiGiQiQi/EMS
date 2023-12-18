@@ -41,116 +41,118 @@ namespace EMS
 
             var filters = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
             var users = activeEvacuues.Find(filters).FirstOrDefault();
-
+            if(user != null) {
             string evacName = user.Evacuee_Name;
             string dateIn = dateTimePicker1.Text;
 
             var msgIN = "Good day, this message is sent to inform you that " + evacName + "Have successfully evacuated at" +comboBox1.Text+ " " + dateIn;
             var msgOut = "Good day, this message is sent to inform you that " + evacName + "Have exited at" + comboBox1.Text + " " + dateIn;
 
-            if (!isRfidProcessed && SCANTB.Text.Length == 10)
-            {
-                textBox1.Enabled = false;
-                isRfidProcessed = true;
+                if (!isRfidProcessed && SCANTB.Text.Length == 10)
+                {
+                    SCANTB.Enabled = false;
+                    isRfidProcessed = true;
 
-                if(users != null)
-                {
-                    var archive = new CEHistory
+                    if (users != null)
                     {
-                        EvacueeName = users.EName,
-                        EvacueeAddress = users.EAddress,
-                        EvacSite = users.ESite,
-                        Dependents = users.DPS,
-                        dateIn = users.Date,
-                        dateOut = dateTimePicker1.Text
-                    };
-                    evacuationHistory.InsertOneAsync(archive);
-                    SerialPort sp = new SerialPort();
-                    sp.PortName = textBox1.Text;
-                    sp.Open();
-                    sp.WriteLine("AT" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine(msgOut + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.Write(new byte[] { 26 }, 0, 1);
-                    Thread.Sleep(200);
-                    var response = sp.ReadExisting();
-                    if (response.Contains("ERROR"))
-                    {
-                        DialogResult result = MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
+                        var archive = new CEHistory
                         {
-                            textBox1.Enabled = true;
-                        }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
+                            EvacueeName = users.EName,
+                            EvacueeAddress = users.EAddress,
+                            EvacSite = users.ESite,
+                            Dependents = users.DPS,
+                            dateIn = users.Date,
+                            dateOut = dateTimePicker1.Text
+                        };
+                        evacuationHistory.InsertOneAsync(archive);
+                        SerialPort sp = new SerialPort();
+                        sp.PortName = textBox1.Text;
+                        sp.Open();
+                        sp.WriteLine("AT" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine(msgOut + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.Write(new byte[] { 26 }, 0, 1);
+                        Thread.Sleep(200);
+                        var response = sp.ReadExisting();
+                        if (response.Contains("ERROR"))
                         {
-                            textBox1.Enabled = true;
+                            DialogResult result = MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (result == DialogResult.OK)
+                            {
+                                SCANTB.Enabled = true;
+                            }
                         }
+                        else
+                        {
+                            DialogResult result = MessageBox.Show("Timeout successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (result == DialogResult.OK)
+                            {
+                                SCANTB.Enabled = true;
+                            }
+                        }
+                        sp.Close();
+                        var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
+                        activeEvacuues.DeleteOneAsync(del);
                     }
-                    sp.Close();
-                    var del = Builders<CActiveEvacuees>.Filter.Eq(u => u.RFID, SCANTB.Text);
-                    activeEvacuues.DeleteOneAsync(del);
+                    else if (user != null)
+                    {
+                        var active = new CActiveEvacuees
+                        {
+                            RFID = SCANTB.Text,
+                            EName = user.Evacuee_Name,
+                            EAddress = user.Evacuee_Address,
+                            CPerson = user.Contact_Person_Number,
+                            DPS = user.Dependents,
+                            Date = dateTimePicker1.Text
+                        };
+                        activeEvacuues.InsertOneAsync(active);
+                        SerialPort sp = new SerialPort();
+                        sp.PortName = textBox1.Text;
+                        sp.Open();
+                        sp.WriteLine("AT" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.WriteLine(msgIN + Environment.NewLine);
+                        Thread.Sleep(200);
+                        sp.Write(new byte[] { 26 }, 0, 1);
+                        Thread.Sleep(200);
+                        var response = sp.ReadExisting();
+                        if (response.Contains("ERROR"))
+                        {
+                            DialogResult result = MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (result == DialogResult.OK)
+                            {
+                                SCANTB.Enabled = true;
+                            }
+                        }
+                        else
+                        {
+                            DialogResult result = MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (result == DialogResult.OK)
+                            {
+                                SCANTB.Enabled = true;
+                            }
+                        }
+                        sp.Close();
+                    }
                 }
-                else if (user != null)
-                {
-                    var active = new CActiveEvacuees
-                    {
-                        RFID = SCANTB.Text,
-                        EName = user.Evacuee_Name,
-                        EAddress = user.Evacuee_Address,
-                        CPerson = user.Contact_Person_Number,
-                        DPS = user.Dependents,
-                        Date = dateTimePicker1.Text
-                    };
-                    activeEvacuues.InsertOneAsync(active);
-                    SerialPort sp = new SerialPort();
-                    sp.PortName = textBox1.Text;
-                    sp.Open();
-                    sp.WriteLine("AT" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine("AT+CMGF=1" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine("AT+CSCS=\"GSM\"" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine("AT+CMGS=\"" + user.Contact_Person_Number + "\"" + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.WriteLine(msgIN + Environment.NewLine);
-                    Thread.Sleep(200);
-                    sp.Write(new byte[] { 26 }, 0, 1);
-                    Thread.Sleep(200);
-                    var response = sp.ReadExisting();
-                    if (response.Contains("ERROR"))
-                    {
-                        DialogResult result = MessageBox.Show("Message not sent", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
-                        {
-                            textBox1.Enabled = true;
-                        }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show("Record saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
-                        {
-                            textBox1.Enabled = true;
-                        }
-                    }
-                    sp.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Record not found!");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Record not found!");
+                SCANTB.Text = "";
             }
         }
 
